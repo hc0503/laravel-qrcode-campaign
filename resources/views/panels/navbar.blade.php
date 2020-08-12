@@ -159,7 +159,7 @@
                   Inbox</a><a class="dropdown-item" href="javascript:void(0)"><i class="feather icon-check-square"></i>
                   Task</a><a class="dropdown-item" href="javascript:void(0)"><i class="feather icon-message-square"></i>
                   Chats</a>
-                <div class="dropdown-divider"></div><a class="dropdown-item" href="javascript:void(0)"><i
+                <div class="dropdown-divider"></div><a class="dropdown-item" href="#logout" onclick="$('#logout').submit();"><i
                     class="feather icon-power"></i> Logout</a>
               </div>
             </li>
@@ -286,3 +286,7 @@
   </ul>
   {{-- Search Ends --}}
   <!-- END: Header-->
+
+<form id="logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+  @csrf
+</form>
