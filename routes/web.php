@@ -30,7 +30,7 @@ Route::get('/access-control', 'AccessController@index');
 Route::get('/access-control/{roles}', 'AccessController@roles');
 Route::get('/modern-admin', 'AccessController@home')->middleware('permissions:approve-post');
 
-// Auth::routes();
+Auth::routes();
 
 // locale Route
 Route::get('lang/{locale}',[LanguageController::class,'swap']);
