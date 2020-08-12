@@ -1,6 +1,5 @@
 <?php
-
-use Illuminate\Support\Facades\Route;
+  use App\Http\Controllers\LanguageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +12,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+// Route url
+Route::get('/', 'DashboardController@dashboardAnalytics');
+
+// Route Dashboards
+Route::get('/dashboard-analytics', 'DashboardController@dashboardAnalytics');
+
+// Route Components
+Route::get('/sk-layout-2-columns', 'StaterkitController@columns_2');
+Route::get('/sk-layout-fixed-navbar', 'StaterkitController@fixed_navbar');
+Route::get('/sk-layout-floating-navbar', 'StaterkitController@floating_navbar');
+Route::get('/sk-layout-fixed', 'StaterkitController@fixed_layout');
+
+// acess controller
+Route::get('/access-control', 'AccessController@index');
+Route::get('/access-control/{roles}', 'AccessController@roles');
+Route::get('/modern-admin', 'AccessController@home')->middleware('permissions:approve-post');
+
+// Auth::routes();
+
+// locale Route
+Route::get('lang/{locale}',[LanguageController::class,'swap']);
