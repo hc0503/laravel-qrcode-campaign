@@ -18,7 +18,7 @@ class CreateCampaignsTable extends Migration
             $table->foreignId('user_id')
                 ->constrained('users')
                 ->onDelete('cascade');
-            $table->string('qrcode');
+            $table->string('campaign_name');
             $table->string('url');
             $table->timestamps();
         });
