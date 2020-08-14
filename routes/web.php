@@ -19,6 +19,12 @@ Route::get('/', 'DashboardController@dashboardAnalytics');
 // Route Dashboards
 Route::get('/dashboard-analytics', 'DashboardController@dashboardAnalytics');
 
+// Route Campaign
+Route::resource('/campaigns', 'CampaignController');
+
+// Route QRCode
+Route::get('/qrcode/{campaign}','QRCodeController@generateQRCode');
+
 // Route Components
 Route::get('/sk-layout-2-columns', 'StaterkitController@columns_2');
 Route::get('/sk-layout-fixed-navbar', 'StaterkitController@fixed_navbar');
