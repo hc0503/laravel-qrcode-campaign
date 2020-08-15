@@ -20,6 +20,9 @@ class Campaign extends Model
         'url'
     ];
 
+    /**
+     * @var array
+     */
     protected $casts = [
         'user_id' => 'int',
         'campaign_name' => 'string',
@@ -34,4 +37,11 @@ class Campaign extends Model
         return $this->belongsTo(User::Class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function campaignHits()
+    {
+        return $this->hasMany(CampaignHit::Class);
+    }
 }
