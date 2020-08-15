@@ -23,7 +23,10 @@ Route::get('/dashboard-analytics', 'DashboardController@dashboardAnalytics');
 Route::resource('/campaigns', 'CampaignController');
 
 // Route QRCode
-Route::get('/qrcode/{campaign}','QRCodeController@generateQRCode');
+Route::get('/qrcode/generate/{campaign}', 'QRCodeController@generateQRCode')->name('qrcode-generate');
+Route::get('/qrcode/track/{campaign}', 'QRCodeController@qrcodeTrack')->name('qrcode-track');
+
+
 
 // Route Components
 Route::get('/sk-layout-2-columns', 'StaterkitController@columns_2');
