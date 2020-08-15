@@ -18,8 +18,8 @@ class CreateCampaignHitsTable extends Migration
             $table->foreignId('campaign_id')
                 ->constrained('campaigns')
                 ->onDelete('cascade');
-            $table->string('gpslat')->nullable();
-            $table->string('gpslng')->nullable();
+            $table->string('latitude')->nullable();
+            $table->string('longitude')->nullable();
             $table->string('browser')->nullable();
             $table->string('location')->nullable();
             $table->timestamps();
