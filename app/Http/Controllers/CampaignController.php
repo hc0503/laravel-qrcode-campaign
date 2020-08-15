@@ -24,7 +24,7 @@ class CampaignController extends Controller
     {
         $campaigns = Auth::user()->campaigns;
         $breadcrumbs = [
-            ['link'=>"",'name'=>trans('locale.Campaigns')], ['name'=>trans('locale.ViewCampaign')]
+            ['link'=>"",'name'=>trans('locale.Campaigns')], ['name'=>trans('locale.CampaignList')]
         ];
         return view('/pages/campaigns/index', [
             'pageConfigs' => $this->pageConfigs,
@@ -72,11 +72,9 @@ class CampaignController extends Controller
             ['link'=>"",'name'=>trans('locale.Campaigns')], ['name'=>trans('locale.ViewCampaign')]
         ];
 
-        return view('/pages/campaigns/view', [
-            'pageConfigs' => $this->pageConfigs,
-            'breadcrumbs' => $breadcrumbs,
-            'campaign' => $campaign
-        ]);
+        return redirect()
+            ->route('campaigns.show', $campaign->id)
+            ->with('message', trans('locale.saveSuccess'));
     }
 
     /**
@@ -85,9 +83,16 @@ class CampaignController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Campaign $campaign)
     {
-        //
+        $breadcrumbs = [
+            ['link'=>"",'name'=>trans('locale.Campaigns')], ['name'=>trans('locale.ViewCampaign')]
+        ];
+        return view('/pages/campaigns/view', [
+            'pageConfigs' => $this->pageConfigs,
+            'breadcrumbs' => $breadcrumbs,
+            'campaign' => $campaign
+        ]);
     }
 
     /**
