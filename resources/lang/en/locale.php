@@ -15,5 +15,6 @@ return [
     "EnterURL" => "Enter URL...",
     "SaveCampaign" => "Save Campaign",
     "PreviousCampaigns" => "Previous Campaigns",
-    "saveSuccess" => "The campaign is saved successfuly."
+    "saveSuccess" => "The campaign is saved successfully.",
+    "deleteSuccess" => "The campaign is deleted successfully."
 ];
