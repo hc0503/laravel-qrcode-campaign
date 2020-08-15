@@ -3,6 +3,7 @@
 return [
     "Dashboard" => "Dashboard",
     "CreateCampaign" => "Create Campaign",
+    "CampaignList" => "Campaign List",
     "ViewCampaign" => "View Campaign",
     "Campaigns" => "Campaigns",
     "createDescription" => "Create a new QR Code Campaign.",
@@ -13,5 +14,6 @@ return [
     "URL" => "URL",
     "EnterURL" => "Enter URL...",
     "SaveCampaign" => "Save Campaign",
-    "PreviousCampaigns" => "Previous Campaigns"
+    "PreviousCampaigns" => "Previous Campaigns",
+    "saveSuccess" => "The campaign is saved successfuly."
 ];
