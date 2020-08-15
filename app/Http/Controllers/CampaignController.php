@@ -80,7 +80,7 @@ class CampaignController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Campaign  $campaign
      * @return \Illuminate\Http\Response
      */
     public function show(Campaign $campaign)
@@ -121,11 +121,15 @@ class CampaignController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Campaign  $campaign
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Campaign $campaign)
     {
-        //
+        $campaign->delete();
+
+        return redirect()
+            ->route('campaigns.index')
+            ->with('message', trans('locale.deleteSuccess'));
     }
 }
