@@ -3,6 +3,17 @@
 @section('title', "View Campaign")
 
 @section('content')
+	@if (session()->get('message'))
+	<div class="alert alert-primary alert-dismissible fade show" role="alert">
+		<p class="mb-0">
+			{{ session()->get('message') }}
+		</p>
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	@endif
+
 	<!-- Start Campaign -->
 	<div class="row">
 		<div class="col-lg-8 col-md-12 col-sm-12">
