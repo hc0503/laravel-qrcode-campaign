@@ -51,7 +51,7 @@
 				<div class="card-content">
 					<div class="card-body">
 						<div class="row">
-							<img src="/qrcode/{{ $campaign->id }}" height="197px;">
+							<img src="/qrcode/generate/{{ $campaign->id }}" height="197px;">
 						</div>
 					</div>
 				</div>
