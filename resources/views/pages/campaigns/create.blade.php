@@ -2,11 +2,6 @@
 
 @section('title', "Create Campaign")
 
-@section('vendor-style')
-	<!-- vendor css files -->
-	<link rel="stylesheet" href="{{ asset(mix('vendors/css/ui/prism.min.css')) }}">
-@endsection
-
 @section('content')
 <!-- Start Campaign -->
 <div class="row">
@@ -47,9 +42,3 @@
 </div>
 <!--/ Start Campaign -->
 @endsection
-
-@section('vendor-script')
-	<!-- vendor files -->
-	<script src="{{ asset(mix('vendors/js/ui/prism.min.js')) }}"></script>
-@endsection
-

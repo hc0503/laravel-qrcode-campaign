@@ -3,8 +3,8 @@
 @section('title', "View Campaign")
 
 @section('vendor-style')
-	<!-- vendor css files -->
-	<link rel="stylesheet" href="{{ asset(mix('vendors/css/ui/prism.min.css')) }}">
+	{{-- vendor css files --}}
+	<link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/datatables.min.css')) }}">
 @endsection
 
 @section('content')
@@ -34,7 +34,15 @@
 									<td>{{ $campaign->id }}</td>
 									<td>{{ $campaign->campaign_name }}</td>
 									<td>{{ $campaign->url }}</td>
-									<td></td>
+									<th>{{ $campaign->created_at }}</th>
+									<td>
+										<a href="">
+											<i class="feather icon-eye"></i>
+										</a>
+										<a href="">
+											<i class="users-delete-icon feather icon-trash-2"></i>
+										</a>
+									</td>
 								</tr>
 							@endforeach
 						</tbody>
@@ -45,9 +53,3 @@
 </div>
 <!--/ Start Campaign -->
 @endsection
-
-@section('vendor-script')
-	<!-- vendor files -->
-	<script src="{{ asset(mix('vendors/js/ui/prism.min.js')) }}"></script>
-@endsection
-
