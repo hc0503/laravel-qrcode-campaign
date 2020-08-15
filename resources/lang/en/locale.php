@@ -2,11 +2,16 @@
 
 return [
     "Dashboard" => "Dashboard",
-    "Starter kit" => "Starter kit",
-    "2 Columns" => "2 Columns",
-    "Fixed Navbar" => "Fixed Navbar",
-    "Floating Navbar" => "Floating Navbar",
-    "Fixed Layout" => "Fixed Layout",
-    "Raise Support" => "Raise Support",
-    "Documentation" => "Documentation"
+    "CreateCampaign" => "Create Campaign",
+    "ViewCampaign" => "View Campaign",
+    "Campaigns" => "Campaigns",
+    "createDescription" => "Create a new QR Code Campaign.",
+    "CampaignDetails" => "Campaign Details",
+    "QRCode" => "QR Code",
+    "EnterCampaignName" => "Enter campaign Name...",
+    "CampaignName" => "Campaign name",
+    "URL" => "URL",
+    "EnterURL" => "Enter URL...",
+    "SaveCampaign" => "Save Campaign",
+    "PreviousCampaigns" => "Previous Campaigns"
 ];
