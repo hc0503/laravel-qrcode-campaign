@@ -36,8 +36,8 @@ class CampaignHit extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user()
+    public function campaign()
     {
-        return $this->belongsTo(User::Class);
+        return $this->belongsTo(Campaign::Class);
     }
 }
