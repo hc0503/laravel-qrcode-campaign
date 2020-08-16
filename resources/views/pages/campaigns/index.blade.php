@@ -31,44 +31,45 @@
 	<!-- Start Campaign -->
 	<div class="card">
 		<div class="card-header">
-		<h4 class="card-title">@lang('locale.CampaignDetails')</h4>
+			<h4 class="card-title">@lang('locale.CampaignDetails')</h4>
 		</div>
 		<div class="card-content">
-		<div class="card-body">
-			<div class="table-responsive">
-				<table id="campaignTable" class="table table-striped">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Campaign Name</th>
-							<th>URL</th>
-							<th>CreatedAt</th>
-							<th>Actions</th>
-						</tr>
-					</thead>
-					<tbody>
-						@foreach($campaigns as $campaign)
-						<tr>
-							<td>{{ $campaign->id }}</td>
-							<td>{{ $campaign->campaign_name }}</td>
-							<td>{{ $campaign->url }}</td>
-							<th>{{ $campaign->created_at }}</th>
-							<td>
-								<form id="deleteForm{{ $campaign->id }}" action="{{ route('campaigns.destroy', $campaign->id) }}" method="POST" style="display: none;">
-									@csrf
-									@method('DELETE')
-								</form>
-								<a href="{{ route('campaigns.show', $campaign->id) }}">
-									<i class="feather icon-eye"></i>
-								</a>
-								<a href="javascript:deleteCampaign({{ $campaign->id }})">
-									<i class="users-delete-icon feather icon-trash-2"></i>
-								</a>
-							</td>
-						</tr>
-						@endforeach
-					</tbody>
-				</table>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table id="campaignTable" class="table table-striped">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Campaign Name</th>
+								<th>URL</th>
+								<th>CreatedAt</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach($campaigns as $campaign)
+							<tr>
+								<td>{{ $campaign->id }}</td>
+								<td>{{ $campaign->campaign_name }}</td>
+								<td>{{ $campaign->url }}</td>
+								<th>{{ $campaign->created_at }}</th>
+								<td>
+									<form id="deleteForm{{ $campaign->id }}" action="{{ route('campaigns.destroy', $campaign->id) }}" method="POST" style="display: none;">
+										@csrf
+										@method('DELETE')
+									</form>
+									<a href="{{ route('campaigns.show', $campaign->id) }}">
+										<i class="feather icon-eye"></i>
+									</a>
+									<a href="javascript:deleteCampaign({{ $campaign->id }})">
+										<i class="users-delete-icon feather icon-trash-2"></i>
+									</a>
+								</td>
+							</tr>
+							@endforeach
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 	</div>
