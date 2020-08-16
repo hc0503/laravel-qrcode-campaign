@@ -34,7 +34,7 @@
 		<h4 class="card-title">@lang('locale.CampaignDetails')</h4>
 		</div>
 		<div class="card-content">
-		<div class="card-body card-dashboard">
+		<div class="card-body">
 			<div class="table-responsive">
 				<table id="campaignTable" class="table table-striped">
 					<thead>
