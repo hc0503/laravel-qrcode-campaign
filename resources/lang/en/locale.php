@@ -16,5 +16,13 @@ return [
     "SaveCampaign" => "Save Campaign",
     "PreviousCampaigns" => "Previous Campaigns",
     "saveSuccess" => "The campaign is saved successfully.",
-    "deleteSuccess" => "The campaign is deleted successfully."
+    "deleteSuccess" => "The campaign is deleted successfully.",
+    "UsageStatistics" => "Usage Statistics",
+    "Maps" => "Maps",
+    "QRCodeAccessHits" => "QR Code Access Hits",
+    "ID" => "ID",
+    "CreatedAt" => "CreatedAt",
+    "Actions" => "Actions",
+    "Location" => "Location",
+    "Browser" => "Browser"
 ];
