@@ -39,11 +39,11 @@
 					<table id="campaignTable" class="table table-striped">
 						<thead>
 							<tr>
-								<th>ID</th>
-								<th>Campaign Name</th>
-								<th>URL</th>
-								<th>CreatedAt</th>
-								<th>Actions</th>
+								<th>@lang('locale.ID')</th>
+								<th>@lang('locale.CampaignName')</th>
+								<th>@lang('locale.URL')</th>
+								<th>@lang('locale.CreatedAt')</th>
+								<th>@lang('locale.Actions')</th>
 							</tr>
 						</thead>
 						<tbody>
