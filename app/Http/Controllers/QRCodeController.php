@@ -17,9 +17,10 @@ class QRCodeController extends Controller
      * This generates QR code image from campaign id.
      * 
      * @param \App\Models\Campaign  $campaign
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function generateQRCode(Campaign $campaign)
+    public function generateQRCode(Campaign $campaign, Request $request)
     {
         $url = route('qrcode-track', $campaign);
         return QRCode::text($url)->png();
@@ -29,9 +30,10 @@ class QRCodeController extends Controller
      * User info track and return QR code url
      * 
      * @param \App\Models\Campaign  $campaign
-     * @return String  $string
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
-    public function qrCodeTrack(Campaign $campaign)
+    public function qrCodeTrack(Campaign $campaign, Request $request)
     {
         $ip = $_SERVER['REMOTE_ADDR'];
         $ipTrackURL = 'http://api.ipstack.com/' . $ip . '?access_key=' . $this->accessKey;
