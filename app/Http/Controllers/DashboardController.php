@@ -16,17 +16,6 @@ class DashboardController extends Controller
         'footerType' => 'sticky'
     ];
 
-    // Dashboard - Analytics
-    public function dashboardAnalytics(){
-        $pageConfigs = [
-            'pageHeader' => false
-        ];
-
-        return view('/pages/dashboard-analytics', [
-            'pageConfigs' => $pageConfigs
-        ]);
-    }
-
     /**
      * User dashboard
      * 
