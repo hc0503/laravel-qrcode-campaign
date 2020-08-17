@@ -9,7 +9,12 @@
       {
           "url": "admin/roles",
           "name": "role.title",
-          "icon": "feather icon-grid"
+          "icon": "feather icon-box"
+      },
+      {
+          "url": "admin/users",
+          "name": "user.title",
+          "icon": "feather icon-unlock"
       }
   ]
 }
