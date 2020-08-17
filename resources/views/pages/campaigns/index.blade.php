@@ -1,6 +1,6 @@
 @extends('layouts/contentLayoutMaster')
 
-@section('title', "Campaign List")
+@section('title', trans('locale.campaign.list'))
 
 @section('vendor-style')
 	{{-- vendor css files --}}
@@ -31,7 +31,7 @@
 	<!-- Start Campaign -->
 	<div class="card">
 		<div class="card-header">
-			<h4 class="card-title">@lang('locale.CampaignDetails')</h4>
+			<h4 class="card-title">@lang('locale.campaign.details')</h4>
 		</div>
 		<div class="card-content">
 			<div class="card-body">
@@ -39,9 +39,9 @@
 					<table id="campaignTable" class="table table-striped">
 						<thead>
 							<tr>
-								<th>@lang('locale.ID')</th>
-								<th>@lang('locale.CampaignName')</th>
-								<th>@lang('locale.URL')</th>
+								<th>@lang('locale.id')</th>
+								<th>@lang('locale.campaign.field.name')</th>
+								<th>@lang('locale.campaign.field.url')</th>
 								<th>@lang('locale.CreatedAt')</th>
 								<th>@lang('locale.Actions')</th>
 							</tr>
@@ -58,10 +58,10 @@
 										@csrf
 										@method('DELETE')
 									</form>
-									<a href="{{ route('campaigns.show', $campaign->id) }}">
+									<a href="{{ route('campaigns.show', $campaign->id) }}" class="btn btn-icon rounded-circle btn-flat-success waves-effect waves-light">
 										<i class="feather icon-eye"></i>
 									</a>
-									<a href="javascript:deleteCampaign({{ $campaign->id }})">
+									<a href="javascript:deleteCampaign({{ $campaign->id }})" class="btn btn-icon rounded-circle btn-flat-danger waves-effect waves-light">
 										<i class="users-delete-icon feather icon-trash-2"></i>
 									</a>
 								</td>
