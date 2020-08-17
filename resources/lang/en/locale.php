@@ -63,4 +63,19 @@ return [
             "delete" => "The role is deleted successfully."
         ]
     ],
+    "user" => [
+        "title" => "Users",
+        "create" => "Create User",
+        "edit" => "Edit User",
+        "update" => "Update User",
+        "save" => "Save User",
+        "list" => "User List",
+        "details" => "User Details",
+        "lock" => "Lock",
+        "message" => [
+            "save" => "The user is added successfully.",
+            "update" => "The user is updated successfully.",
+            "delete" => "The user is deleted successfully."
+        ],
+    ]
 ];
