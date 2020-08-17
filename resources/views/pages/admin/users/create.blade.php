@@ -40,7 +40,7 @@
 
 				<fieldset class="form-group">
 					<label for="email">@lang('locale.Email')*</label>
-					<input name="email" type="email" class="form-control" id="email" placeholder="@lang('locale.Surname')" value="{{ old('email') }}">
+					<input name="email" type="email" class="form-control" id="email" placeholder="@lang('locale.Email')" value="{{ old('email') }}">
 					<span class="danger">{{ $errors->first('email') }}</span>
 				</fieldset>
 
