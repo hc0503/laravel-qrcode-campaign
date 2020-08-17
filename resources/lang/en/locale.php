@@ -34,5 +34,13 @@ return [
     "enterPassword" => "Enter password",
     "Email" => "Email",
     "Password" => "Password",
-    "RememberMe" => "Remember Me"
+    "RememberMe" => "Remember Me",
+    "Name" => "Name",
+    "Surname" => "Surname",
+    "ConfirmPassword" => "Confirm Password",
+    "Register" => "Register",
+    "acceptCondition" => "I accept the terms & conditions.",
+    "CreateAccount" => "Create Account",
+    "fillCreateForm" => "Fill the below form to create a new account.",
+    "Login" => "Login"
 ];
