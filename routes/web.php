@@ -14,10 +14,13 @@
 
 
 Route::group(['middleware' => 'auth'], function () {
+  Route::get('/', 'DashboardController@userDashboard')->name('user-dashboard');
+  Route::get('dashboard', 'DashboardController@userDashboard')->name('user-dashboard');
+
   // Route Campaign
   Route::resource('campaigns', 'CampaignController');
-  Route::get('dashboard', 'DashboardController@userDashboard')->name('user-dashboard');
-  Route::get('/', 'DashboardController@userDashboard')->name('user-dashboard');
+  Route::get('coordinates', 'DashboardController@getCoordinates')->name('get-coordinates');
+
 });
 
 // Route QRCode

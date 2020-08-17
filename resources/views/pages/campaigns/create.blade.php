@@ -16,14 +16,14 @@
 						@csrf
 						<fieldset class="form-group">
 							<label for="campaign_name">@lang('locale.CampaignName')</label>
-							<input name="campaign_name" type="text" class="form-control" id="campaignName" placeholder="@lang('locale.EnterCampaignName')">
-							<strong class="danger">{{ $errors->login->first('campaign_name') }}</strong>
+							<input name="campaign_name" type="text" class="form-control" id="campaignName" placeholder="@lang('locale.EnterCampaignName')" value="{{ old('campaign_name') }}">
+							<span class="danger">{{ $errors->first('campaign_name') }}</span>
 						</fieldset>
 
 						<fieldset class="form-group">
 							<label for="url">@lang('locale.URL')</label>
-							<input name="url" type="text" class="form-control" id="url" placeholder="@lang('locale.EnterURL')">
-							<strong class="danger">{{ $errors->login->first('url') }}</strong>
+							<input name="url" type="text" class="form-control" id="url" placeholder="@lang('locale.EnterURL')" value="{{ old('url') }}">
+							<span class="danger">{{ $errors->first('url') }}</span>
 						</fieldset>
 
 						<div class="form-group d-flex justify-content-between align-items-center">

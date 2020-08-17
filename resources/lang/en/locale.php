@@ -24,5 +24,10 @@ return [
     "CreatedAt" => "CreatedAt",
     "Actions" => "Actions",
     "Location" => "Location",
-    "Browser" => "Browser"
+    "Browser" => "Browser",
+    "ScannedCount" => "Scanned Count",
+    "ScannedToday" => "Scanned Today",
+    "ScannedThisWeek" => "Scanned This Week",
+    "ScannedThisMonth" => "Scanned This Month",
+    "AllScans" => "All Scans"
 ];
