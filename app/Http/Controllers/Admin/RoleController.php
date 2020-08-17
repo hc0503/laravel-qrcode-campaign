@@ -43,7 +43,7 @@ class RoleController extends Controller
     {
         $roles = Role::all(); //Get all roles
         $breadcrumbs = [
-            ['link'=>"/admin/roles",'name'=>trans('locale.role.title')], ['name'=>trans('locale.role.list')]
+            ['link'=>"/admin/roles", 'name'=>trans('locale.role.title')], ['name'=>trans('locale.role.list')]
         ];
 
         return view('/pages/admin/roles/index', [
@@ -151,7 +151,7 @@ class RoleController extends Controller
         ]);
         
         $permissions = $request->permissions;
-        
+
         $role->update([
             'name' => $request->name
         ]);
