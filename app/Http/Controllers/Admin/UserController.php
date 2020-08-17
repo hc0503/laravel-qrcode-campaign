@@ -71,7 +71,26 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name'=>'required|max:120',
+            'surname'=>'required|max:120',
+            'email'=>'required|email|unique:users',
+            'password'=>'required|min:6'
+        ]);
+
+        $user = User::create($request->all()); //Retrieving only the email and password data
+
+        $roles = $request->roles; //Retrieving the roles field
+        //Checking if a role was selected
+        if (isset($roles)) {
+            foreach ($roles as $role) {
+                $role_r = Role::where('id', '=', $role)->firstOrFail();            
+                $user->assignRole($role_r); //Assigning role to user
+            }
+        }        
+        //Redirect to the users.index view and display message
+        return redirect()->route('users.index')
+            ->with('message', trans('locale.user.message.save'));
     }
 
     /**
