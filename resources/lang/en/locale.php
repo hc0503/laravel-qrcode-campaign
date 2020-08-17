@@ -47,19 +47,20 @@ return [
             "urlPlace" => "Enter URL..."
         ],
     ],
-    "permission" => [
-        "title" => "Permissions",
-        "create" => "Create Permission",
-        "edit" => "Edit Permission",
-        "save" => "Save Permission",
-        "list" => "Permission List",
-        "name" => "Name"
-    ],
     "role" => [
         "title" => "Roles",
         "create" => "Create Role",
         "edit" => "Edit Role",
+        "update" => "Update Role",
         "save" => "Save Role",
-        "list" => "Role List"
-    ]
+        "list" => "Role List",
+        "name" => "Name",
+        "details" => "Role Details",
+        "permissions" => "Permissions",
+        "message" => [
+            "save" => "The role is added successfully.",
+            "update" => "The role is updated successfully.",
+            "delete" => "The role is deleted successfully."
+        ]
+    ],
 ];
