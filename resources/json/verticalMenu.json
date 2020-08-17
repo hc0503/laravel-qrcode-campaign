@@ -8,12 +8,12 @@
         },
         {
             "url": "campaigns/create",
-            "name": "CreateCampaign",
+            "name": "campaign.create",
             "icon": "feather icon-grid"
         },
         {
             "url": "campaigns",
-            "name": "Campaigns",
+            "name": "campaign.title",
             "icon": "feather icon-aperture"
         }
     ]
