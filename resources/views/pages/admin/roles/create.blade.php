@@ -28,7 +28,7 @@
 				@csrf
 				<fieldset class="form-group">
 					<label for="name">@lang('locale.role.name')*</label>
-					<input name="name" type="text" class="form-control" id="campaignName" placeholder="@lang('locale.role.name')" value="{{ old('name') }}">
+					<input name="name" type="text" class="form-control" id="name" placeholder="@lang('locale.role.name')" value="{{ old('name') }}">
 					<span class="danger">{{ $errors->first('name') }}</span>
 				</fieldset>
 

@@ -29,7 +29,7 @@
 				@method('PUT')
 				<fieldset class="form-group">
 					<label for="name">@lang('locale.role.name')*</label>
-					<input name="name" type="text" class="form-control" id="campaignName" placeholder="@lang('locale.role.name')" value="{{ $role->name }}">
+					<input name="name" type="text" class="form-control" id="name" placeholder="@lang('locale.role.name')" value="{{ $role->name }}">
 					<span class="danger">{{ $errors->first('name') }}</span>
 				</fieldset>
 
