@@ -51,7 +51,16 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $roles = Role::all(); //Get all roles
+        $breadcrumbs = [
+            ['link'=>"/admin/users",'name'=>trans('locale.user.title')], ['name'=>trans('locale.user.create')]
+        ];
+        
+        return view('/pages/admin/users/create', [
+            'pageConfigs' => $this->pageConfigs,
+            'breadcrumbs' => $breadcrumbs,
+            'roles' => $roles
+        ]);
     }
 
     /**
