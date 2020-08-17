@@ -2,27 +2,14 @@
 
 return [
     "Dashboard" => "Dashboard",
-    "CreateCampaign" => "Create Campaign",
-    "CampaignList" => "Campaign List",
-    "ViewCampaign" => "View Campaign",
-    "Campaigns" => "Campaigns",
-    "createDescription" => "Create a new QR Code Campaign.",
-    "CampaignDetails" => "Campaign Details",
+    "id" => "ID",
+    "CreatedAt" => "CreatedAt",
+    "UpdatedAt" => "UpdatedAt",
+    "Actions" => "Actions",
     "QRCode" => "QR Code",
-    "EnterCampaignName" => "Enter campaign Name...",
-    "CampaignName" => "Campaign name",
-    "URL" => "URL",
-    "EnterURL" => "Enter URL...",
-    "SaveCampaign" => "Save Campaign",
-    "PreviousCampaigns" => "Previous Campaigns",
-    "saveSuccess" => "The campaign is saved successfully.",
-    "deleteSuccess" => "The campaign is deleted successfully.",
     "UsageStatistics" => "Usage Statistics",
     "Maps" => "Maps",
     "QRCodeAccessHits" => "QR Code Access Hits",
-    "ID" => "ID",
-    "CreatedAt" => "CreatedAt",
-    "Actions" => "Actions",
     "Location" => "Location",
     "Browser" => "Browser",
     "ScannedCount" => "Scanned Count",
@@ -42,5 +29,37 @@ return [
     "acceptCondition" => "I accept the terms & conditions.",
     "CreateAccount" => "Create Account",
     "fillCreateForm" => "Fill the below form to create a new account.",
-    "Login" => "Login"
+    "Login" => "Login",
+    "campaign" => [
+        "title" => "Campaigns",
+        "create" => "Create Campaign",
+        "view" => "View Campaign",
+        "list" => "Campaign List",
+        "description" => "Create a new QR Code Campaign.",
+        "details" => "Campaign Details",
+        "previous" => "Previous Campaigns",
+        "saveSuccess" => "The campaign is saved successfully.",
+        "deleteSuccess" => "The campaign is deleted successfully.",
+        "field" => [
+            "name" => "Campaign name",
+            "namePlace" => "Enter campaign Name...",
+            "url" => "URL",
+            "urlPlace" => "Enter URL..."
+        ],
+    ],
+    "permission" => [
+        "title" => "Permissions",
+        "create" => "Create Permission",
+        "edit" => "Edit Permission",
+        "save" => "Save Permission",
+        "list" => "Permission List",
+        "name" => "Name"
+    ],
+    "role" => [
+        "title" => "Roles",
+        "create" => "Create Role",
+        "edit" => "Edit Role",
+        "save" => "Save Role",
+        "list" => "Role List"
+    ]
 ];
