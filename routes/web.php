@@ -13,17 +13,24 @@
 */
 
 
-// Route url
-Route::get('/', 'DashboardController@dashboardAnalytics');
+Route::group(['middleware' => 'auth'], function () {
+  // Route Campaign
+  Route::resource('campaigns', 'CampaignController');
+  Route::get('dashboard', 'DashboardController@userDashboard')->name('user-dashboard');
+  Route::get('/', 'DashboardController@userDashboard')->name('user-dashboard');
+});
+
+// Route QRCode
+Route::get('qrcode/generate/{campaign}', 'QRCodeController@generateQRCode')->name('qrcode-generate');
+Route::get('qrcode/track/{campaign}', 'QRCodeController@qrcodeTrack')->name('qrcode-track');
+
+
+
+
+
 
 // Route Dashboards
 Route::get('/dashboard-analytics', 'DashboardController@dashboardAnalytics');
-
-// Route Campaign
-Route::resource('/campaigns', 'CampaignController');
-
-// Route QRCode
-Route::get('/qrcode/{campaign}','QRCodeController@generateQRCode');
 
 // Route Components
 Route::get('/sk-layout-2-columns', 'StaterkitController@columns_2');

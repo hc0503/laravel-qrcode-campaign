@@ -4,8 +4,6 @@
             "url": "/",
             "name": "Dashboard",
             "slug": "dashboard",
-            "badge": "2",
-            "badgeClass": "badge badge-warning badge-pill float-right",
             "icon": "feather icon-home"
         },
         {
@@ -16,7 +14,7 @@
         {
             "url": "campaigns",
             "name": "Campaigns",
-            "icon": "feather icon-grid"
+            "icon": "feather icon-aperture"
         }
     ]
 }

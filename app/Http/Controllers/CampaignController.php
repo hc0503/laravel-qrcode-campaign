@@ -24,7 +24,7 @@ class CampaignController extends Controller
     {
         $campaigns = Auth::user()->campaigns;
         $breadcrumbs = [
-            ['link'=>"",'name'=>trans('locale.Campaigns')], ['name'=>trans('locale.ViewCampaign')]
+            ['link'=>"",'name'=>trans('locale.Campaigns')], ['name'=>trans('locale.CampaignList')]
         ];
         return view('/pages/campaigns/index', [
             'pageConfigs' => $this->pageConfigs,
@@ -72,22 +72,27 @@ class CampaignController extends Controller
             ['link'=>"",'name'=>trans('locale.Campaigns')], ['name'=>trans('locale.ViewCampaign')]
         ];
 
-        return view('/pages/campaigns/view', [
-            'pageConfigs' => $this->pageConfigs,
-            'breadcrumbs' => $breadcrumbs,
-            'campaign' => $campaign
-        ]);
+        return redirect()
+            ->route('campaigns.show', $campaign->id)
+            ->with('message', trans('locale.saveSuccess'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Campaign  $campaign
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Campaign $campaign)
     {
-        //
+        $breadcrumbs = [
+            ['link'=>"",'name'=>trans('locale.Campaigns')], ['name'=>trans('locale.ViewCampaign')]
+        ];
+        return view('/pages/campaigns/view', [
+            'pageConfigs' => $this->pageConfigs,
+            'breadcrumbs' => $breadcrumbs,
+            'campaign' => $campaign
+        ]);
     }
 
     /**
@@ -116,11 +121,15 @@ class CampaignController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Campaign  $campaign
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Campaign $campaign)
     {
-        //
+        $campaign->delete();
+
+        return redirect()
+            ->route('campaigns.index')
+            ->with('message', trans('locale.deleteSuccess'));
     }
 }
