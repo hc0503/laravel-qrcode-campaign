@@ -29,5 +29,10 @@ return [
     "ScannedToday" => "Scanned Today",
     "ScannedThisWeek" => "Scanned This Week",
     "ScannedThisMonth" => "Scanned This Month",
-    "AllScans" => "All Scans"
+    "AllScans" => "All Scans",
+    "enterEmail" => "Enter email address",
+    "enterPassword" => "Enter password",
+    "Email" => "Email",
+    "Password" => "Password",
+    "RememberMe" => "Remember Me"
 ];
