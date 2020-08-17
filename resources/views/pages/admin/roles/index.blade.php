@@ -1,6 +1,6 @@
 @extends('layouts/contentLayoutMaster')
 
-@section('title', trans('locale.permission.list'))
+@section('title', trans('locale.role.list'))
 
 @section('vendor-style')
 	{{-- vendor css files --}}
