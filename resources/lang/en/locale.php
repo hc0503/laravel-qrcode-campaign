@@ -30,6 +30,7 @@ return [
     "CreateAccount" => "Create Account",
     "fillCreateForm" => "Fill the below form to create a new account.",
     "Login" => "Login",
+    "qrcodeScanRate" => "QR Code Scan Rate",
     "campaign" => [
         "title" => "Campaigns",
         "create" => "Create Campaign",
@@ -80,5 +81,9 @@ return [
             "update" => "The user is updated successfully.",
             "delete" => "The user is deleted successfully."
         ],
+    ],
+    "error" => [
+        "lockTitle" => "Your account is locked!",
+        "lockDescription" => "Your account is locked by admin now, contact to admin."
     ]
 ];

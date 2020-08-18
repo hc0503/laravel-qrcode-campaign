@@ -56,12 +56,28 @@ class DashboardController extends Controller
             array_push($compaignhits_values, $one->count);
         }
 
+        $query = DB::select(DB::raw("
+            SELECT b.count FROM campaigns AS a
+            LEFT JOIN (
+                SELECT campaign_id, COUNT(campaign_id) AS COUNT FROM campaign_hits GROUP BY campaign_id
+                ) AS b ON a.id = b.campaign_id ORDER BY a.id
+        "));
+        $scanned_values = array();
+        foreach ($query as $one)
+        {
+            if (!isset($one->count))
+                array_push($scanned_values, 0);
+            else
+                array_push($scanned_values, $one->count);
+        }
+
         return view('/pages/admin/dashboard', [
             'pageConfigs' => $this->pageConfigs,
             'campaigns' => $campaigns,
             'campaignHits' => $campaignHits,
             'compaigns_values' => json_encode($compaigns_values),
-            'compaignhits_values' => json_encode($compaignhits_values)
+            'compaignhits_values' => json_encode($compaignhits_values),
+            'scanned_values' => json_encode($scanned_values)
         ]);
     }
 }

@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Support\Facades\Auth;
+
+class CheckLock
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        if ($request->user()->islocked == 1) {
+            Auth::logout();
+
+            return redirect('/locked');
+        }
+        return $next($request);
+    }
+}
