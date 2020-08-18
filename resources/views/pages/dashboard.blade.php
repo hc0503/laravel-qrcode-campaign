@@ -247,7 +247,7 @@
 			responsiveAnimationDuration: 500,
 			legend: { display: false },
 			scales: {
-			  	xAxes: [{
+				xAxes: [{
 				 	display: true,
 				 	gridLines: {
 						color: grid_line_color,
@@ -255,8 +255,8 @@
 				 	scaleLabel: {
 						display: true,
 				 	}
-			  	}],
-			  	yAxes: [{
+				}],
+				yAxes: [{
 				 	display: true,
 				 	gridLines: {
 						color: grid_line_color,
@@ -267,7 +267,7 @@
 				 	ticks: {
 						stepSize: 1000
 				 	},
-			  	}],
+				}],
 			},
 		};
 		// Chart Data
