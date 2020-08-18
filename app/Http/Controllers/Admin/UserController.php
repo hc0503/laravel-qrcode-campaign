@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Illuminate\Http\JsonResponse;
 
 class UserController extends Controller
 {
@@ -164,5 +165,20 @@ class UserController extends Controller
         return redirect()
             ->route('users.index')
             ->with('message', trans('locale.user.message.delete'));
+    }
+
+    /**
+     * Set user lock, the default user has 0 as islocked field.
+     * 
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function setLock(Request $request)
+    {
+        $user = User::findOrfail($request->user_id);
+        $user->islocked = $request->state;
+        $user->save();
+
+        return new JsonResponse(null, 204);
     }
 }
