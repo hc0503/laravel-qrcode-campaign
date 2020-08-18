@@ -19,7 +19,7 @@ class CheckLock
         if ($request->user()->islocked == 1) {
             Auth::logout();
 
-            return redirect('/login');
+            return redirect('/locked');
         }
         return $next($request);
     }
