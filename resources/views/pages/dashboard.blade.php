@@ -119,8 +119,8 @@
 							<table id="campaignHitTable" class="table table-striped">
 								<thead>
 									<tr>
-										<th>@lang('locale.ID')</th>
-										<th>@lang('locale.CampaignName')</th>
+										<th>@lang('locale.id')</th>
+										<th>@lang('locale.campaign.field.name')</th>
 										<th>@lang('locale.Location')</th>
 										<th>@lang('locale.Browser')</th>
 										<th>@lang('locale.CreatedAt')</th>
