@@ -43,6 +43,7 @@
 								<th>@lang('locale.Name')</th>
 								<th>@lang('locale.Surname')</th>
 								<th>@lang('locale.Email')</th>
+								<th>@lang('locale.role.title')</th>
 								<th>@lang('locale.user.lock')</th>
 								<th>@lang('locale.CreatedAt')</th>
 								<th>@lang('locale.UpdatedAt')</th>
@@ -57,6 +58,11 @@
 								<td>{{ $user->surname }}</td>
 								<td>{{ $user->email }}</td>
 								<td>
+									@foreach($user->roles as $role)
+									<div class="badge badge-primary">{{ $role->name }}</div>
+									@endforeach
+								</td>
+								<td>
 									<div class="custom-control custom-switch custom-switch-danger switch-lg mr-2">
 										<input id="locked_{{ $user->id }}" class="custom-control-input" type="checkbox" {{ $user->islocked == 1 ? "checked" : "" }} onchange="lockUser(this.checked, {{ $user->id }})" {{ Auth::user()->id == $user->id ? "disabled" : "" }}>
 										<label class="custom-control-label" for="locked_{{ $user->id }}">
@@ -68,7 +74,7 @@
 								<th>{{ $user->created_at }}</th>
 								<th>{{ $user->updated_at }}</th>
 								<td>
-									<form id="deleteForm{{ $user->id }}" action="{{ route('roles.destroy', $user->id) }}" method="POST" style="display: none;">
+									<form id="deleteForm{{ $user->id }}" action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: none;">
 										@csrf
 										@method('DELETE')
 									</form>
