@@ -6,6 +6,7 @@
 	{{-- vendor css files --}}
 	<link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/datatables.min.css')) }}">
 	<link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/sweetalert2.min.css')) }}">
+	<link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/toastr.css')) }}">
 @endsection
 
 
@@ -102,12 +103,19 @@
 	<script src="{{ asset(mix('vendors/js/tables/datatable/datatables.min.js')) }}"></script>
 	<script src="{{ asset(mix('vendors/js/tables/datatable/datatables.bootstrap4.min.js')) }}"></script>
 	<script src="{{ asset(mix('vendors/js/extensions/sweetalert2.all.min.js')) }}"></script>
+	<script src="{{ asset(mix('vendors/js/extensions/toastr.min.js')) }}"></script>
 @endsection
 
 @section('page-script')
 	<script>
 		$(document).ready(function() {
 			$('#userTable').DataTable();
+
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
 		});
 
 		function deleteUser(userId) {
@@ -127,6 +135,29 @@
 					$('#deleteForm'+userId).submit();
 				}
 			})
+		}
+
+		function lockUser(state, user_id) {
+			$.ajax({
+				url: "{{ url('/admin/users/setlock') }}",
+				type: 'POST',
+				data: {
+					state : state ? 1 : 0,
+					user_id: user_id
+				},
+				dataType: "JSON",
+				success : function (data, status, jqXhr) {
+					if (jqXhr.status === 204) {
+						toastr.success('That user was locked successfully.', 'Notification', {
+							"showMethod": "fadeIn",
+							"hideMethod": "fadeOut",
+							"closeButton": true,
+							"progressBar": true,
+							timeOut: 2000
+						});
+					}
+				}
+			});
 		}
 	</script>
 @endsection
