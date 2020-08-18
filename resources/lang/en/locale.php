@@ -30,6 +30,7 @@ return [
     "CreateAccount" => "Create Account",
     "fillCreateForm" => "Fill the below form to create a new account.",
     "Login" => "Login",
+    "qrcodeScanRate" => "QR Code Scan Rate",
     "campaign" => [
         "title" => "Campaigns",
         "create" => "Create Campaign",
