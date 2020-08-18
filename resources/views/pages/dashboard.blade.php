@@ -1,6 +1,6 @@
 @extends('layouts/contentLayoutMaster')
 
-@section('title', "Dashboard")
+@section('title', trans('locale.Dashboard'))
 
 @section('vendor-style')
 	{{-- vendor css files --}}

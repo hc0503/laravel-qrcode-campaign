@@ -1,12 +1,13 @@
 @extends('layouts/contentLayoutMaster')
 
-@section('title', trans('locale.campaign.list'))
+@section('title', trans('locale.user.list'))
 
 @section('vendor-style')
 	{{-- vendor css files --}}
 	<link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/datatables.min.css')) }}">
 	<link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/sweetalert2.min.css')) }}">
 @endsection
+
 
 @section('page-style')
 	<style>
@@ -28,42 +29,57 @@
 	</div>
 	@endif
 
-	<!-- Start Campaign -->
 	<div class="card">
 		<div class="card-header">
-			<h4 class="card-title">@lang('locale.campaign.details')</h4>
+			<a href="{{ route('users.create') }}" class="btn btn-primary mr-1 mb-1 waves-effect waves-light"><i class="fa fa-plus"></i> @lang('locale.user.create')</a>
 		</div>
 		<div class="card-content">
 			<div class="card-body">
 				<div class="table-responsive">
-					<table id="campaignTable" class="table table-striped">
+					<table id="userTable" class="table table-striped">
 						<thead>
 							<tr>
 								<th>@lang('locale.id')</th>
-								<th>@lang('locale.campaign.field.name')</th>
-								<th>@lang('locale.campaign.field.url')</th>
+								<th>@lang('locale.Name')</th>
+								<th>@lang('locale.Surname')</th>
+								<th>@lang('locale.Email')</th>
+								<th>@lang('locale.user.lock')</th>
 								<th>@lang('locale.CreatedAt')</th>
+								<th>@lang('locale.UpdatedAt')</th>
 								<th>@lang('locale.Actions')</th>
 							</tr>
 						</thead>
 						<tbody>
-							@foreach($campaigns as $campaign)
+							@foreach($users as $user)
 							<tr>
-								<td>{{ $campaign->id }}</td>
-								<td>{{ $campaign->campaign_name }}</td>
-								<td>{{ $campaign->url }}</td>
-								<th>{{ $campaign->created_at }}</th>
+								<td>{{ $user->id }}</td>
+								<td>{{ $user->name }}</td>
+								<td>{{ $user->surname }}</td>
+								<td>{{ $user->email }}</td>
 								<td>
-									<form id="deleteForm{{ $campaign->id }}" action="{{ route('campaigns.destroy', $campaign->id) }}" method="POST" style="display: none;">
+									<div class="custom-control custom-switch custom-switch-danger switch-lg mr-2">
+										<input id="locked_{{ $user->id }}" class="custom-control-input" type="checkbox" {{ $user->islocked == 1 ? "checked" : "" }} onchange="lockUser(this.checked, {{ $user->id }})" {{ Auth::user()->id == $user->id ? "disabled" : "" }}>
+										<label class="custom-control-label" for="locked_{{ $user->id }}">
+											<span class="switch-text-left">Locked</span>
+											<span class="switch-text-right">Unlocked</span>
+										</label>
+									</div>
+							  	</td>
+								<th>{{ $user->created_at }}</th>
+								<th>{{ $user->updated_at }}</th>
+								<td>
+									<form id="deleteForm{{ $user->id }}" action="{{ route('roles.destroy', $user->id) }}" method="POST" style="display: none;">
 										@csrf
 										@method('DELETE')
 									</form>
-									<a href="{{ route('campaigns.show', $campaign->id) }}" class="btn btn-icon rounded-circle btn-flat-success waves-effect waves-light">
-										<i class="feather icon-eye"></i>
+									<a href="{{ route('users.edit', $user->id) }}" class="btn btn-icon rounded-circle btn-flat-success waves-effect waves-light">
+										<i class="feather icon-edit"></i>
 									</a>
-									<a href="javascript:deleteCampaign({{ $campaign->id }})" class="btn btn-icon rounded-circle btn-flat-danger waves-effect waves-light">
-										<i class="users-delete-icon feather icon-trash-2"></i>
+									@if (Auth::user()->id != $user->id)
+									<a href="javascript:deleteUser({{ $user->id }})" class="btn btn-icon rounded-circle btn-flat-danger waves-effect waves-light">
+										<i class="feather icon-trash-2"></i>
 									</a>
+									@endif
 								</td>
 							</tr>
 							@endforeach
@@ -73,7 +89,6 @@
 			</div>
 		</div>
 	</div>
-	<!--/ Start Campaign -->
 @endsection
 
 @section('vendor-script')
@@ -86,10 +101,10 @@
 @section('page-script')
 	<script>
 		$(document).ready(function() {
-			$('#campaignTable').DataTable();
+			$('#userTable').DataTable();
 		});
 
-		function deleteCampaign(campaignId) {
+		function deleteUser(userId) {
 			Swal.fire({
 				title: 'Are you sure?',
 				text: "You won't be able to revert this!",
@@ -103,7 +118,7 @@
 				buttonsStyling: false,
 			}).then(function (result) {
 				if (result.value) {
-					$('#deleteForm'+campaignId).submit();
+					$('#deleteForm'+userId).submit();
 				}
 			})
 		}

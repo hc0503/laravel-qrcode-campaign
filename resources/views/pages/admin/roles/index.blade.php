@@ -1,12 +1,13 @@
 @extends('layouts/contentLayoutMaster')
 
-@section('title', trans('locale.campaign.list'))
+@section('title', trans('locale.role.list'))
 
 @section('vendor-style')
 	{{-- vendor css files --}}
 	<link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/datatables.min.css')) }}">
 	<link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/sweetalert2.min.css')) }}">
 @endsection
+
 
 @section('page-style')
 	<style>
@@ -28,41 +29,46 @@
 	</div>
 	@endif
 
-	<!-- Start Campaign -->
 	<div class="card">
 		<div class="card-header">
-			<h4 class="card-title">@lang('locale.campaign.details')</h4>
+			<a href="{{ route('roles.create') }}" class="btn btn-primary mr-1 mb-1 waves-effect waves-light"><i class="fa fa-plus"></i> @lang('locale.role.create')</a>
 		</div>
 		<div class="card-content">
 			<div class="card-body">
 				<div class="table-responsive">
-					<table id="campaignTable" class="table table-striped">
+					<table id="roleTable" class="table table-striped">
 						<thead>
 							<tr>
 								<th>@lang('locale.id')</th>
-								<th>@lang('locale.campaign.field.name')</th>
-								<th>@lang('locale.campaign.field.url')</th>
+								<th>@lang('locale.role.name')</th>
+								<th>@lang('locale.role.permissions')</th>
 								<th>@lang('locale.CreatedAt')</th>
+								<th>@lang('locale.UpdatedAt')</th>
 								<th>@lang('locale.Actions')</th>
 							</tr>
 						</thead>
 						<tbody>
-							@foreach($campaigns as $campaign)
+							@foreach($roles as $role)
 							<tr>
-								<td>{{ $campaign->id }}</td>
-								<td>{{ $campaign->campaign_name }}</td>
-								<td>{{ $campaign->url }}</td>
-								<th>{{ $campaign->created_at }}</th>
+								<td>{{ $role->id }}</td>
+								<td>{{ $role->name }}</td>
 								<td>
-									<form id="deleteForm{{ $campaign->id }}" action="{{ route('campaigns.destroy', $campaign->id) }}" method="POST" style="display: none;">
+									@foreach ($role->permissions as $permission)
+									<div class="badge badge-primary">{{ $permission->name }}</div>
+									@endforeach
+								</td>
+								<th>{{ $role->created_at }}</th>
+								<th>{{ $role->updated_at }}</th>
+								<td>
+									<form id="deleteForm{{ $role->id }}" action="{{ route('roles.destroy', $role->id) }}" method="POST" style="display: none;">
 										@csrf
 										@method('DELETE')
 									</form>
-									<a href="{{ route('campaigns.show', $campaign->id) }}" class="btn btn-icon rounded-circle btn-flat-success waves-effect waves-light">
-										<i class="feather icon-eye"></i>
+									<a href="{{ route('roles.edit', $role->id) }}" class="btn btn-icon rounded-circle btn-flat-success waves-effect waves-light">
+										<i class="feather icon-edit"></i>
 									</a>
-									<a href="javascript:deleteCampaign({{ $campaign->id }})" class="btn btn-icon rounded-circle btn-flat-danger waves-effect waves-light">
-										<i class="users-delete-icon feather icon-trash-2"></i>
+									<a href="javascript:deleteRole({{ $role->id }})" class="btn btn-icon rounded-circle btn-flat-danger waves-effect waves-light">
+										<i class="feather icon-trash-2"></i>
 									</a>
 								</td>
 							</tr>
@@ -73,7 +79,6 @@
 			</div>
 		</div>
 	</div>
-	<!--/ Start Campaign -->
 @endsection
 
 @section('vendor-script')
@@ -86,10 +91,10 @@
 @section('page-script')
 	<script>
 		$(document).ready(function() {
-			$('#campaignTable').DataTable();
+			$('#roleTable').DataTable();
 		});
 
-		function deleteCampaign(campaignId) {
+		function deleteRole(roleId) {
 			Swal.fire({
 				title: 'Are you sure?',
 				text: "You won't be able to revert this!",
@@ -103,7 +108,7 @@
 				buttonsStyling: false,
 			}).then(function (result) {
 				if (result.value) {
-					$('#deleteForm'+campaignId).submit();
+					$('#deleteForm'+roleId).submit();
 				}
 			})
 		}

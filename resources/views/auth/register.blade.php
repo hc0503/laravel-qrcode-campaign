@@ -28,9 +28,8 @@
                             <form method="POST" action="{{ route('register') }}">
                               @csrf
                                   <div class="form-label-group">
-                                      <!-- <input type="text" id="inputName" class="form-control" placeholder="Name" required> -->
-                                      <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                      <label for="name">Name</label>
+                                      <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="{{ trans('locale.Name') }}" value="{{ old('name') }}" autofocus>
+                                      <label for="name">@lang('locale.Name')</label>
                                       @error('name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -38,8 +37,16 @@
                                       @enderror
                                   </div>
                                   <div class="form-label-group">
-                                      <!-- <input type="email" id="inputEmail" class="form-control" placeholder="Email" required> -->
-                                      <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email" value="{{ old('email') }}" required autocomplete="email">
+                                      <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" placeholder="{{ trans('locale.Surname') }}" value="{{ old('surname') }}">
+                                      <label for="surname">@lang('locale.Surname')</label>
+                                      @error('surname')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                      @enderror
+                                  </div>
+                                  <div class="form-label-group">
+                                      <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="{{ trans('locale.Email') }}" value="{{ old('email') }}">
                                       <label for="email">Email</label>
                                       @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -48,9 +55,8 @@
                                       @enderror
                                   </div>
                                   <div class="form-label-group">
-                                      <!-- <input type="password" id="inputPassword" class="form-control" placeholder="Password" required> -->
-                                      <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="new-password">
-                                      <label for="password">Password</label>
+                                      <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="{{ trans('locale.Password') }}" value="{{ old('password') }}">
+                                      <label for="password">@lang('locale.Password')</label>
                                       @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -58,9 +64,8 @@
                                       @enderror
                                   </div>
                                   <div class="form-label-group">
-                                      <!-- <input type="password" id="inputConfPassword" class="form-control" placeholder="Confirm Password" required> -->
-                                      <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
-                                      <label for="password-confirm">Confirm Password</label>
+                                      <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="{{ trans('locale.confirmPassword') }}" value="{{ old('password_confirmation') }}">
+                                      <label for="password-confirm">@lang('locale.confirmPassword')</label>
                                   </div>
                                   <div class="form-group row">
                                       <div class="col-12">
@@ -72,13 +77,13 @@
                                                   <i class="vs-icon feather icon-check"></i>
                                                 </span>
                                               </span>
-                                              <span class=""> I accept the terms & conditions.</span>
+                                              <span class="">@lang('locale.acceptCondition')</span>
                                             </div>
                                           </fieldset>
                                       </div>
                                   </div>
-                                  <a href="login" class="btn btn-outline-primary float-left btn-inline mb-50">Login</a>
-                                  <button type="submit" class="btn btn-primary float-right btn-inline mb-50">Register</a>
+                                  <a href="login" class="btn btn-outline-primary float-left btn-inline mb-50">@lang('locale.Login')</a>
+                                  <button type="submit" class="btn btn-primary float-right btn-inline mb-50">@lang('locale.Register')</a>
                               </form>
                           </div>
                       </div>

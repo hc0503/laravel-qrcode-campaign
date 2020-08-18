@@ -12,6 +12,7 @@
 |
 */
 
+Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
   Route::get('/', 'DashboardController@userDashboard')->name('user-dashboard');
@@ -21,13 +22,14 @@ Route::group(['middleware' => 'auth'], function () {
   Route::resource('campaigns', 'CampaignController');
   Route::get('coordinates', 'DashboardController@getCoordinates')->name('get-coordinates');
 
+  // Route Role
+  Route::resource('admin/roles', 'Admin\RoleController');
+  Route::resource('admin/users', 'Admin\UserController');
 });
 
 // Route QRCode
 Route::get('qrcode/generate/{campaign}', 'QRCodeController@generateQRCode')->name('qrcode-generate');
 Route::get('qrcode/track/{campaign}', 'QRCodeController@qrcodeTrack')->name('qrcode-track');
-
-
 
 
 
@@ -46,7 +48,7 @@ Route::get('/access-control', 'AccessController@index');
 Route::get('/access-control/{roles}', 'AccessController@roles');
 Route::get('/modern-admin', 'AccessController@home')->middleware('permissions:approve-post');
 
-Auth::routes();
+
 
 // locale Route
 Route::get('lang/{locale}',[LanguageController::class,'swap']);

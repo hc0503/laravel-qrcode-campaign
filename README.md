@@ -4,8 +4,7 @@
 ```sh
 npm i
 ```
-
+## Mix build
 ```sh
 npm run dev
 ```
-
