@@ -1,20 +1,15 @@
 {
   "menu": [
-      {
-          "url": "admin",
-          "name": "Dashboard",
-          "slug": "dashboard",
-          "icon": "feather icon-home"
-      },
-      {
-          "url": "admin/roles",
-          "name": "role.title",
-          "icon": "feather icon-box"
-      },
-      {
-          "url": "admin/users",
-          "name": "user.title",
-          "icon": "feather icon-unlock"
-      }
+    {
+        "url": "admin",
+        "name": "Dashboard",
+        "slug": "dashboard",
+        "icon": "feather icon-home"
+    },
+    {
+        "url": "admin/users",
+        "name": "user.title",
+        "icon": "feather icon-unlock"
+    }
   ]
 }

@@ -14,44 +14,39 @@
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => ['auth','locked']], function () {
+  // User dashboard
   Route::get('/', 'DashboardController@userDashboard')->name('user-dashboard');
   Route::get('dashboard', 'DashboardController@userDashboard')->name('user-dashboard');
 
-  // Route Campaign
+  // Campaigns
   Route::resource('campaigns', 'CampaignController');
+
+  // QRCode
+  Route::get('qrcode/generate/{campaign}', 'QRCodeController@generateQRCode')->name('qrcode-generate');
+
+  // coordinates
   Route::get('coordinates', 'DashboardController@getCoordinates')->name('get-coordinates');
 
-  // Route Role
-  Route::resource('admin/roles', 'Admin\RoleController');
-  Route::resource('admin/users', 'Admin\UserController');
-  Route::post('admin/users/setlock', 'Admin\UserController@setLock');
-  Route::get('admin', 'Admin\DashboardController@adminDashboard');
-  Route::post('admin/campaigns/delete', 'CampaignController@ajaxDelete');
+  Route::group(['middleware' => ['permission:user_manage'], 'prefix' => 'admin'], function () {
+    // Roles
+    Route::resource('roles', 'Admin\RoleController');
+
+    // Users
+    Route::resource('users', 'Admin\UserController');
+    Route::post('users/setlock', 'Admin\UserController@setLock');
+
+    // Admin dashboard
+    Route::get('/', 'Admin\DashboardController@adminDashboard');
+    Route::post('campaigns/delete', 'CampaignController@ajaxDelete');
+  });
 });
 
-// Route QRCode
-Route::get('qrcode/generate/{campaign}', 'QRCodeController@generateQRCode')->name('qrcode-generate');
+// Locked page
+Route::get('locked', 'HomeController@lockedPage');
+
+// QR code track
 Route::get('qrcode/track/{campaign}', 'QRCodeController@qrcodeTrack')->name('qrcode-track');
-
-
-
-
-// Route Dashboards
-Route::get('/dashboard-analytics', 'DashboardController@dashboardAnalytics');
-
-// Route Components
-Route::get('/sk-layout-2-columns', 'StaterkitController@columns_2');
-Route::get('/sk-layout-fixed-navbar', 'StaterkitController@fixed_navbar');
-Route::get('/sk-layout-floating-navbar', 'StaterkitController@floating_navbar');
-Route::get('/sk-layout-fixed', 'StaterkitController@fixed_layout');
-
-// acess controller
-Route::get('/access-control', 'AccessController@index');
-Route::get('/access-control/{roles}', 'AccessController@roles');
-Route::get('/modern-admin', 'AccessController@home')->middleware('permissions:approve-post');
-
-
 
 // locale Route
 Route::get('lang/{locale}',[LanguageController::class,'swap']);

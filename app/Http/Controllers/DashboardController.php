@@ -25,7 +25,9 @@ class DashboardController extends Controller
     public function userDashboard(Request $request)
     {
         $campaigns = Auth::user()->campaigns;
-        $campaignHits = CampaignHit::all();
+        $campaignHits = CampaignHit::whereHas('campaign', function($query) {
+            $query->where('user_id', Auth::user()->id);
+        });
         $campaignHitCounts = array();
 
         foreach ($campaigns as $campaign) {
