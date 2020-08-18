@@ -31,8 +31,7 @@ class DashboardController extends Controller
         foreach ($campaigns as $campaign) {
             array_push($campaignHitCounts, $campaign->campaignHits()->count());
         }
-        // dd($campaignNames);
-        // dd($campaigns->pluck('campaign_name'));
+        
         return view('/pages/dashboard', [
             'pageConfigs' => $this->pageConfigs,
             'campaignNames' => $campaigns->pluck('campaign_name'),

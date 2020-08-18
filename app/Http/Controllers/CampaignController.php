@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Campaign;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\JsonResponse;
 
 class CampaignController extends Controller
 {
@@ -24,7 +25,7 @@ class CampaignController extends Controller
     {
         $campaigns = Auth::user()->campaigns;
         $breadcrumbs = [
-            ['link'=>"",'name'=>trans('locale.Campaigns')], ['name'=>trans('locale.CampaignList')]
+            ['link'=>"",'name'=>trans('locale.campaign.title')], ['name'=>trans('locale.campaign.list')]
         ];
         return view('/pages/campaigns/index', [
             'pageConfigs' => $this->pageConfigs,
@@ -41,7 +42,7 @@ class CampaignController extends Controller
     public function create()
     {
         $breadcrumbs = [
-            ['link'=>"",'name'=>trans('locale.Campaigns')], ['name'=>trans('locale.CreateCampaign')]
+            ['link'=>"",'name'=>trans('locale.campaign.title')], ['name'=>trans('locale.campaign.create')]
         ];
 
         return view('/pages/campaigns/create', [
@@ -67,10 +68,6 @@ class CampaignController extends Controller
             $request->all()
         );
 
-        $breadcrumbs = [
-            ['link'=>"",'name'=>trans('locale.Campaigns')], ['name'=>trans('locale.ViewCampaign')]
-        ];
-
         return redirect()
             ->route('campaigns.show', $campaign->id)
             ->with('message', trans('locale.saveSuccess'));
@@ -85,7 +82,7 @@ class CampaignController extends Controller
     public function show(Campaign $campaign)
     {
         $breadcrumbs = [
-            ['link'=>"",'name'=>trans('locale.Campaigns')], ['name'=>trans('locale.ViewCampaign')]
+            ['link'=>"",'name'=>trans('locale.campaign.title')], ['name'=>trans('locale.campaign.view')]
         ];
         return view('/pages/campaigns/view', [
             'pageConfigs' => $this->pageConfigs,
@@ -130,5 +127,19 @@ class CampaignController extends Controller
         return redirect()
             ->route('campaigns.index')
             ->with('message', trans('locale.deleteSuccess'));
+    }
+
+    /**
+     * Remove the specified resource from storage via ajax.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function ajaxDelete(Request $request)
+    {
+        $campaign = Campaign::findOrfail($request->campaign_id);
+        $campaign->delete();
+
+        return new JsonResponse(null, 204);
     }
 }
