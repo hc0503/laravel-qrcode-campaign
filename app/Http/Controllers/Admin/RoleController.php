@@ -88,15 +88,12 @@ class RoleController extends Controller
 
         $permissions = $request->permissions;
 
-        Role::create([
+        $role = Role::create([
             'name' => $request->name
         ]);
-
-        foreach ($permissions as $permission) {
-            $p = Permission::where('id', '=', $permission)->firstOrFail(); 
-            //Fetch the newly created role and assign permission
-            $role = Role::where('name', '=', $request->name)->first(); 
-            $role->givePermissionTo($p);
+        
+        if (isset($permissions)) {
+            $role->givePermissionTo($permissions);
         }
 
         return redirect()
@@ -156,16 +153,7 @@ class RoleController extends Controller
             'name' => $request->name
         ]);
         
-        $p_all = Permission::all(); //Get all permissions
-
-        foreach ($p_all as $p) {
-            $role->revokePermissionTo($p); //Remove all permissions associated with role
-        }
-
-        foreach ($permissions as $permission) {
-            $p = Permission::where('id', '=', $permission)->firstOrFail(); //Get corresponding form //permission in db
-            $role->givePermissionTo($p);  //Assign permission to role
-        }
+        $role->syncPermissions($permissions);
 
         return redirect()->route('roles.index')
             ->with('message', trans('locale.role.message.update'));

@@ -40,6 +40,9 @@ return [
         "previous" => "Previous Campaigns",
         "saveSuccess" => "The campaign is saved successfully.",
         "deleteSuccess" => "The campaign is deleted successfully.",
+        "management" => "Campaign Management",
+        "authorName" => "Author Name",
+        "authorEmail" => "Author Email",
         "field" => [
             "name" => "Campaign name",
             "namePlace" => "Enter campaign Name...",

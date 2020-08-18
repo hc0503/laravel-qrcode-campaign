@@ -36,7 +36,7 @@
 					<label for="permissions">@lang('locale.role.permissions')*</label>
 					<select name="permissions[]" class="select2 form-control" multiple="multiple">
 						@foreach ($permissions as $permission)
-						<option value="{{ $permission->id }}">{{ $permission->name }}</option>
+						<option value="{{ $permission->name }}">{{ $permission->name }}</option>
 						@endforeach
 					</select>
 					<span class="danger">{{ $errors->first('permissions') }}</span>

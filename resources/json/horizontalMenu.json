@@ -1,7 +1,7 @@
 {
   "menu": [
       {
-          "url": "/",
+          "url": "admin",
           "name": "Dashboard",
           "slug": "dashboard",
           "icon": "feather icon-home"
