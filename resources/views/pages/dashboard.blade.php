@@ -237,10 +237,10 @@
 			// Elements options apply to all of the options unless overridden in a dataset
 			// In this case, we are setting the border of each bar to be 2px wide
 			elements: {
-			  	rectangle: {
-				 	borderWidth: 2,
-				 	borderSkipped: 'left'
-			  	}
+				rectangle: {
+				borderWidth: 2,
+				borderSkipped: 'left'
+				}
 			},
 			responsive: true,
 			maintainAspectRatio: false,
