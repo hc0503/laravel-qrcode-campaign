@@ -71,7 +71,9 @@
 					</div>
 			</div>
 		</div>
+	</div>
 
+	<div class="row">
 		<div class="col-md-12 col-12">
 			<div class="card">
 				<div class="card-content">
@@ -128,6 +130,23 @@
 		</div>
 	</div>
 
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-header d-flex justify-content-between pb-0">
+					<h4 class="card-title">@lang('locale.qrcodeScanRate')</h4>
+				</div>
+				<div class="card-content">
+					<div class="card-body pt-0">
+						<div class="height-450">
+							<canvas id="bar-chart"></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="modal fade text-center" id="backdrop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel20" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs" role="document">
 			<div class="modal-content">
@@ -154,6 +173,7 @@
 @section('vendor-script')
 	<!-- vendor files -->
 	<script src="{{ asset(mix('vendors/js/charts/apexcharts.min.js')) }}"></script>
+	<script src="{{ asset(mix('vendors/js/charts/chart.min.js')) }}"></script>
 	<script src="{{ asset(mix('vendors/js/extensions/tether.min.js')) }}"></script>
 	<script src="{{ asset(mix('vendors/js/extensions/shepherd.min.js')) }}"></script>
 	<script src="{{ asset(mix('vendors/js/tables/datatable/datatables.min.js')) }}"></script>
@@ -180,6 +200,9 @@
 		var compaigns_values = {!! $compaigns_values !!};
 		var compaignhits_values = {!! $compaignhits_values !!};
 
+		var campaigns = {!! $campaigns->pluck('campaign_name') !!};
+		var scanned_values = {!! $scanned_values !!};
+						
 		var campaignTable;
 
 		$(document).ready(function() {
@@ -191,6 +214,7 @@
 				}
 			});
 		});
+
 		// Subscribers Gained Chart starts //
 		// ----------------------------------
 		var gainedChartoptions = {
@@ -379,5 +403,69 @@
 				}
 			})
 		}
+
+		var barChartctx = $("#bar-chart");
+		// Chart Options
+		var barchartOptions = {
+			// Elements options apply to all of the options unless overridden in a dataset
+			// In this case, we are setting the border of each bar to be 2px wide
+			elements: {
+				rectangle: {
+					borderWidth: 2,
+					borderSkipped: 'left'
+				}
+			},
+			responsive: true,
+			maintainAspectRatio: false,
+			responsiveAnimationDuration: 500,
+			legend: { display: false },
+			scales: {
+				xAxes: [{
+					display: true,
+					gridLines: {
+						color: $primary,
+					},
+					scaleLabel: {
+						display: true,
+					}
+				}],
+				yAxes: [{
+					display: true,
+					gridLines: {
+						color: $primary,
+					},
+					scaleLabel: {
+						display: true,
+					},
+					ticks: {
+						stepSize: 10
+					},
+				}],
+			},
+			title: {
+				display: true,
+				text: ''
+			}
+		};
+		// Chart Data
+		var barchartData = {
+			labels: campaigns,
+			datasets: [{
+				label: "{{ trans('locale.ScannedCount') }}",
+				data: scanned_values,
+				backgroundColor: $primary,
+				borderColor: "transparent"
+			}]
+		};
+
+		var barChartconfig = {
+			type: 'bar',
+			// Chart Options
+			options: barchartOptions,
+			data: barchartData
+		};
+
+		// Create the chart
+		var barChart = new Chart(barChartctx, barChartconfig);
 	</script>
 @endsection

@@ -49,8 +49,16 @@
                 {{ Auth::user()->name }} {{ Auth::user()->surname }}
               </span><span class="user-status">Available</span></div><span><img class="round" src="{{asset('images/portrait/small/avatar-s-11.jpg') }}" alt="avatar" height="40" width="40" /></span>
             </a>
-            <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="javascript:void(0)"><i class="feather icon-user"></i> Edit Profile</a>
-              <div class="dropdown-divider"></div><a class="dropdown-item" href="#logout" onclick="$('#logout').submit();"><i class="feather icon-power"></i> Logout</a>
+            <div class="dropdown-menu dropdown-menu-right">
+              @can('user_manage')
+              @if (Request::route()->getPrefix() == '/admin')
+              <a class="dropdown-item" href="/"><i class="feather icon-log-in"></i> User panel</a>
+              @else
+              <a class="dropdown-item" href="/admin"><i class="feather icon-log-in"></i> Admin panel</a>
+              @endif
+              <div class="dropdown-divider"></div>
+              @endcan
+              <a class="dropdown-item" href="#logout" onclick="$('#logout').submit();"><i class="feather icon-power"></i> Logout</a>
             </div>
           </li>
         </ul>

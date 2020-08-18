@@ -119,8 +119,8 @@
 							<table id="campaignHitTable" class="table table-striped">
 								<thead>
 									<tr>
-										<th>@lang('locale.ID')</th>
-										<th>@lang('locale.CampaignName')</th>
+										<th>@lang('locale.id')</th>
+										<th>@lang('locale.campaign.field.name')</th>
 										<th>@lang('locale.Location')</th>
 										<th>@lang('locale.Browser')</th>
 										<th>@lang('locale.CreatedAt')</th>
@@ -237,17 +237,17 @@
 			// Elements options apply to all of the options unless overridden in a dataset
 			// In this case, we are setting the border of each bar to be 2px wide
 			elements: {
-			  	rectangle: {
-				 	borderWidth: 2,
-				 	borderSkipped: 'left'
-			  	}
+				rectangle: {
+				borderWidth: 2,
+				borderSkipped: 'left'
+				}
 			},
 			responsive: true,
 			maintainAspectRatio: false,
 			responsiveAnimationDuration: 500,
 			legend: { display: false },
 			scales: {
-			  	xAxes: [{
+				xAxes: [{
 				 	display: true,
 				 	gridLines: {
 						color: grid_line_color,
@@ -255,8 +255,8 @@
 				 	scaleLabel: {
 						display: true,
 				 	}
-			  	}],
-			  	yAxes: [{
+				}],
+				yAxes: [{
 				 	display: true,
 				 	gridLines: {
 						color: grid_line_color,
@@ -267,7 +267,7 @@
 				 	ticks: {
 						stepSize: 1000
 				 	},
-			  	}],
+				}],
 			},
 		};
 		// Chart Data
