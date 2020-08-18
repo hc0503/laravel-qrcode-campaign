@@ -37,10 +37,10 @@
 					<label for="name">@lang('locale.role.permissions')*</label>
 					<select name="permissions[]" class="select2 form-control" multiple="multiple">
 						@php
-						$arrPermissions = $role->permissions->pluck("id")->toArray();
+						$arrPermissions = $role->permissions->pluck("name")->toArray();
 						@endphp
 						@foreach ($permissions as $permission)
-						<option value="{{ $permission->id }}" {{ in_array($permission->id, $arrPermissions) ? "selected" : "" }} >{{ $permission->name }}</option>
+						<option value="{{ $permission->name }}" {{ in_array($permission->name, $arrPermissions) ? "selected" : "" }} >{{ $permission->name }}</option>
 						@endforeach
 					</select>
 					<span class="danger">{{ $errors->first('permissions') }}</span>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Campaign;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\JsonResponse;
 
 class CampaignController extends Controller
 {
@@ -126,5 +127,19 @@ class CampaignController extends Controller
         return redirect()
             ->route('campaigns.index')
             ->with('message', trans('locale.deleteSuccess'));
+    }
+
+    /**
+     * Remove the specified resource from storage via ajax.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function ajaxDelete(Request $request)
+    {
+        $campaign = Campaign::findOrfail($request->campaign_id);
+        $campaign->delete();
+
+        return new JsonResponse(null, 204);
     }
 }

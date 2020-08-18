@@ -25,6 +25,9 @@ Route::group(['middleware' => 'auth'], function () {
   // Route Role
   Route::resource('admin/roles', 'Admin\RoleController');
   Route::resource('admin/users', 'Admin\UserController');
+  Route::post('admin/users/setlock', 'Admin\UserController@setLock');
+  Route::get('admin', 'Admin\DashboardController@adminDashboard');
+  Route::post('admin/campaigns/delete', 'CampaignController@ajaxDelete');
 });
 
 // Route QRCode

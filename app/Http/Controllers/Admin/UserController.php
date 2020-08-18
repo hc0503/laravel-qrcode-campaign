@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Illuminate\Http\JsonResponse;
 
 class UserController extends Controller
 {
@@ -83,10 +84,7 @@ class UserController extends Controller
         $roles = $request->roles; //Retrieving the roles field
         //Checking if a role was selected
         if (isset($roles)) {
-            foreach ($roles as $role) {
-                $role_r = Role::where('id', '=', $role)->firstOrFail();            
-                $user->assignRole($role_r); //Assigning role to user
-            }
+            $user->assignRole($roles); //Assigning role to user
         }        
         //Redirect to the users.index view and display message
         return redirect()->route('users.index')
@@ -107,34 +105,80 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \Spatie\Permission\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        $roles = Role::all(); //Get all roles
+
+        $breadcrumbs = [
+            ['link'=>"/admin/users",'name'=>trans('locale.user.title')], ['name'=>trans('locale.user.edit')]
+        ];
+        
+        return view('/pages/admin/users/edit', [
+            'pageConfigs' => $this->pageConfigs,
+            'breadcrumbs' => $breadcrumbs,
+            'roles' => $roles,
+            'user' => $user
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Spatie\Permission\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $this->validate($request, [
+            'name'=>'required|max:120',
+            'surname'=>'required|max:120',
+            'email'=>'required|email|unique:users,email,'.$user->id,
+        ]);
+
+        $user->update($request->all());
+        $roles = $request->roles;
+
+        if (isset($roles)) {
+            $user->syncRoles($roles);
+        } else {
+            $user->roles()->detach(); //If no role is selected remove exisiting role associated to a user
+        }
+        
+        return redirect()->route('users.index')
+            ->with('message', trans('locale.user.message.update'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \Spatie\Permission\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        return redirect()
+            ->route('users.index')
+            ->with('message', trans('locale.user.message.delete'));
+    }
+
+    /**
+     * Set user lock, the default user has 0 as islocked field.
+     * 
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function setLock(Request $request)
+    {
+        $user = User::findOrfail($request->user_id);
+        $user->islocked = $request->state;
+        $user->save();
+
+        return new JsonResponse(null, 204);
     }
 }

@@ -40,7 +40,7 @@
 
 				<fieldset class="form-group">
 					<label for="email">@lang('locale.Email')*</label>
-					<input name="email" type="email" class="form-control" id="email" placeholder="@lang('locale.Surname')" value="{{ old('email') }}">
+					<input name="email" type="email" class="form-control" id="email" placeholder="@lang('locale.Email')" value="{{ old('email') }}">
 					<span class="danger">{{ $errors->first('email') }}</span>
 				</fieldset>
 
@@ -54,7 +54,7 @@
 					<label for="roles">@lang('locale.role.title')*</label>
 					<select name="roles[]" class="select2 form-control" multiple="multiple">
 						@foreach ($roles as $role)
-						<option value="{{ $role->id }}">{{ $role->name }}</option>
+						<option value="{{ $role->name }}">{{ $role->name }}</option>
 						@endforeach
 					</select>
 					<span class="danger">{{ $errors->first('roles') }}</span>

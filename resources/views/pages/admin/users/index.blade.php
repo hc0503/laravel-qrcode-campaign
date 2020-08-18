@@ -6,6 +6,7 @@
 	{{-- vendor css files --}}
 	<link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/datatables.min.css')) }}">
 	<link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/sweetalert2.min.css')) }}">
+	<link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/toastr.css')) }}">
 @endsection
 
 
@@ -43,6 +44,7 @@
 								<th>@lang('locale.Name')</th>
 								<th>@lang('locale.Surname')</th>
 								<th>@lang('locale.Email')</th>
+								<th>@lang('locale.role.title')</th>
 								<th>@lang('locale.user.lock')</th>
 								<th>@lang('locale.CreatedAt')</th>
 								<th>@lang('locale.UpdatedAt')</th>
@@ -57,6 +59,11 @@
 								<td>{{ $user->surname }}</td>
 								<td>{{ $user->email }}</td>
 								<td>
+									@foreach($user->roles as $role)
+									<div class="badge badge-primary">{{ $role->name }}</div>
+									@endforeach
+								</td>
+								<td>
 									<div class="custom-control custom-switch custom-switch-danger switch-lg mr-2">
 										<input id="locked_{{ $user->id }}" class="custom-control-input" type="checkbox" {{ $user->islocked == 1 ? "checked" : "" }} onchange="lockUser(this.checked, {{ $user->id }})" {{ Auth::user()->id == $user->id ? "disabled" : "" }}>
 										<label class="custom-control-label" for="locked_{{ $user->id }}">
@@ -68,7 +75,7 @@
 								<th>{{ $user->created_at }}</th>
 								<th>{{ $user->updated_at }}</th>
 								<td>
-									<form id="deleteForm{{ $user->id }}" action="{{ route('roles.destroy', $user->id) }}" method="POST" style="display: none;">
+									<form id="deleteForm{{ $user->id }}" action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: none;">
 										@csrf
 										@method('DELETE')
 									</form>
@@ -96,12 +103,19 @@
 	<script src="{{ asset(mix('vendors/js/tables/datatable/datatables.min.js')) }}"></script>
 	<script src="{{ asset(mix('vendors/js/tables/datatable/datatables.bootstrap4.min.js')) }}"></script>
 	<script src="{{ asset(mix('vendors/js/extensions/sweetalert2.all.min.js')) }}"></script>
+	<script src="{{ asset(mix('vendors/js/extensions/toastr.min.js')) }}"></script>
 @endsection
 
 @section('page-script')
 	<script>
 		$(document).ready(function() {
 			$('#userTable').DataTable();
+
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
 		});
 
 		function deleteUser(userId) {
@@ -121,6 +135,29 @@
 					$('#deleteForm'+userId).submit();
 				}
 			})
+		}
+
+		function lockUser(state, user_id) {
+			$.ajax({
+				url: "{{ url('/admin/users/setlock') }}",
+				type: 'POST',
+				data: {
+					state : state ? 1 : 0,
+					user_id: user_id
+				},
+				dataType: "JSON",
+				success : function (data, status, jqXhr) {
+					if (jqXhr.status === 204) {
+						toastr.success('That user was locked successfully.', 'Notification', {
+							"showMethod": "fadeIn",
+							"hideMethod": "fadeOut",
+							"closeButton": true,
+							"progressBar": true,
+							timeOut: 2000
+						});
+					}
+				}
+			});
 		}
 	</script>
 @endsection
