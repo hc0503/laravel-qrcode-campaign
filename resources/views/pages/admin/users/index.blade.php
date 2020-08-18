@@ -65,7 +65,7 @@
 								</td>
 								<td>
 									<div class="custom-control custom-switch custom-switch-danger switch-lg mr-2">
-										<input id="locked_{{ $user->id }}" class="custom-control-input" type="checkbox" {{ $user->islocked == 1 ? "checked" : "" }} onchange="lockUser(this.checked, {{ $user->id }})" {{ Auth::user()->id == $user->id ? "disabled" : "" }}>
+										<input id="locked_{{ $user->id }}" class="custom-control-input" type="checkbox" {{ $user->islocked == 1 ? "checked" : "" }} onchange="lockUser(this.checked, {{ $user->id }})" {{ Auth::user()->id == $user->id || $user->id == 1 ? "disabled" : "" }}>
 										<label class="custom-control-label" for="locked_{{ $user->id }}">
 											<span class="switch-text-left">Locked</span>
 											<span class="switch-text-right">Unlocked</span>
@@ -82,7 +82,7 @@
 									<a href="{{ route('users.edit', $user->id) }}" class="btn btn-icon rounded-circle btn-flat-success waves-effect waves-light">
 										<i class="feather icon-edit"></i>
 									</a>
-									@if (Auth::user()->id != $user->id)
+									@if (Auth::user()->id != $user->id && $user->id != 1)
 									<a href="javascript:deleteUser({{ $user->id }})" class="btn btn-icon rounded-circle btn-flat-danger waves-effect waves-light">
 										<i class="feather icon-trash-2"></i>
 									</a>
