@@ -54,7 +54,7 @@
 					<label for="roles">@lang('locale.role.title')*</label>
 					<select name="roles[]" class="select2 form-control" multiple="multiple">
 						@foreach ($roles as $role)
-						<option value="{{ $role->id }}">{{ $role->name }}</option>
+						<option value="{{ $role->name }}">{{ $role->name }}</option>
 						@endforeach
 					</select>
 					<span class="danger">{{ $errors->first('roles') }}</span>
