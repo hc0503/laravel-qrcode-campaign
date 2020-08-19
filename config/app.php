@@ -165,7 +165,6 @@ return [
         /*
          * Package Service Providers...
          */
-        LaravelQRCode\Providers\QRCodeServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -228,7 +227,6 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Helper' => App\Helpers\Helper::class,
-        'QRCode' => LaravelQRCode\Facades\QRCode::class,
     ],
 
 ];
