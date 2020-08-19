@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Campaign;
 use App\Models\CampaignHit;
-use LaravelQRCode\Facades\QRCode;
 use Illuminate\Support\Facades\Http;
 
 class QRCodeController extends Controller
@@ -23,7 +22,20 @@ class QRCodeController extends Controller
     public function generateQRCode(Campaign $campaign, Request $request)
     {
         $url = route('qrcode-track', $campaign);
-        return QRCode::text($url)->png();
+
+        $image = \QrCode::format('png');
+
+        $image = $image->size(300)
+            ->errorCorrection('H')
+            ->color($this->convertRGB($campaign->foreground)[0], $this->convertRGB($campaign->foreground)[1], $this->convertRGB($campaign->foreground)[2])
+            ->backgroundColor($this->convertRGB($campaign->background)[0], $this->convertRGB($campaign->background)[1], $this->convertRGB($campaign->background)[2]);
+
+        if ($campaign->logo != null) {
+            $image = $image->merge(asset("storage/" . $campaign->logo), 0.4, true);
+        }
+
+        $image = $image->generate($url);
+        return response($image)->header('Content-type','image/png');
     }
 
     /**
@@ -47,5 +59,26 @@ class QRCodeController extends Controller
         ]);
 
         return $campaign->url;
+    }
+
+    /**
+     * convert hex color value to rgb color
+     * 
+     * @param String  $hexValue
+     * @return Array  $arrayRGB
+     */
+    public function convertRGB($hexValue)
+    {
+        $arrayRGB = [];
+
+        $hexValue = str_replace("#", "", $hexValue);
+        $split_hex_color = str_split($hexValue, 2);
+        $rgb1 = hexdec($split_hex_color[0]);
+        $rgb2 = hexdec($split_hex_color[1]);
+        $rgb3 = hexdec($split_hex_color[2]);
+
+        array_push($arrayRGB, $rgb1, $rgb2, $rgb3);
+
+        return $arrayRGB;
     }
 }
