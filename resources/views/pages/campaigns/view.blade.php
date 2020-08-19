@@ -2,6 +2,17 @@
 
 @section('title', trans('locale.campaign.view'))
 
+@section('page-style')
+	<style>
+		.color-picker {
+			padding-top: 2px;
+			padding-bottom: 2px;
+			padding-left: 4px;
+			padding-right: 4px;
+		}
+	</style>
+@endsection
+
 @section('content')
 	@if (session()->get('message'))
 	<div class="alert alert-primary alert-dismissible fade show" role="alert">
@@ -33,6 +44,16 @@
 						<input name="url" type="text" class="form-control" id="url" readonly="readonly" value="{{ $campaign->url }}">
 					</fieldset>
 
+					<fieldset class="form-group">
+						<label for="foreground">@lang('locale.campaign.field.foreground')</label>
+						<input type="color" id="foreground" name="foreground" class="form-control color-picker" disabled value="{{ $campaign->foreground }}">
+					</fieldset>
+
+					<fieldset class="form-group">
+						<label for="background">@lang('locale.campaign.field.background')</label>
+						<input type="color" id="background" name="background" class="form-control color-picker" disabled value="{{ $campaign->background }}">
+					</fieldset>
+					
 					<div class="form-group d-flex justify-content-between align-items-center">
 						<div class="text-left">
 							<a href="/campaigns" class="card-link">@lang('locale.campaign.previous')</a>
@@ -51,7 +72,9 @@
 				<div class="card-content">
 					<div class="card-body">
 						<div class="row">
-							<img src="/qrcode/generate/{{ $campaign->id }}" height="197px;">
+							<div class="col-md-12 text-center">
+								<img src="{!! url('/qrcode/generate', $campaign->id) !!}" width="100%">
+							</div>
 						</div>
 					</div>
 				</div>
