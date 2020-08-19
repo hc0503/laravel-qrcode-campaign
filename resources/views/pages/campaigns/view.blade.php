@@ -53,7 +53,7 @@
 						<label for="background">@lang('locale.campaign.field.background')</label>
 						<input type="color" id="background" name="background" class="form-control color-picker" disabled value="{{ $campaign->background }}">
 					</fieldset>
-					
+
 					<div class="form-group d-flex justify-content-between align-items-center">
 						<div class="text-left">
 							<a href="/campaigns" class="card-link">@lang('locale.campaign.previous')</a>
@@ -63,7 +63,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="col-lg-4 col-md-12 col-sm-12">
 			<div class="card">
 				<div class="card-header">
@@ -73,7 +73,7 @@
 					<div class="card-body">
 						<div class="row">
 							<div class="col-md-12 text-center">
-								<img src="{!! url('/qrcode/generate', $campaign->id) !!}" width="100%">
+								<img src="{!! url('/qrcode/generate', $campaign->id) !!}" width="100%" style="max-width: 400px;" />
 							</div>
 						</div>
 					</div>

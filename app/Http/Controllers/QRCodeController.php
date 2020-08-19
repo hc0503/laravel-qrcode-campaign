@@ -7,6 +7,11 @@ use App\Models\Campaign;
 use App\Models\CampaignHit;
 use Illuminate\Support\Facades\Http;
 
+use Endroid\QrCode\ErrorCorrectionLevel;
+use Endroid\QrCode\LabelAlignment;
+use Endroid\QrCode\QrCode;
+use Endroid\QrCode\Response\QrCodeResponse;
+
 class QRCodeController extends Controller
 {
     // IP track access key
@@ -14,7 +19,7 @@ class QRCodeController extends Controller
 
     /**
      * This generates QR code image from campaign id.
-     * 
+     *
      * @param \App\Models\Campaign  $campaign
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -22,25 +27,38 @@ class QRCodeController extends Controller
     public function generateQRCode(Campaign $campaign, Request $request)
     {
         $url = route('qrcode-track', $campaign);
+        $qrCode = new QrCode($url);
+        $qrCode->setSize(1000);
+        $qrCode->setMargin(10);
 
-        $image = \QrCode::format('png');
-
-        $image = $image->size(300)
-            ->errorCorrection('H')
-            ->color($this->convertRGB($campaign->foreground)[0], $this->convertRGB($campaign->foreground)[1], $this->convertRGB($campaign->foreground)[2])
-            ->backgroundColor($this->convertRGB($campaign->background)[0], $this->convertRGB($campaign->background)[1], $this->convertRGB($campaign->background)[2]);
+        $qrCode->setWriterByName('png');
+        $qrCode->setEncoding('UTF-8');
+        $qrCode->setErrorCorrectionLevel(ErrorCorrectionLevel::HIGH());
+        $qrCode->setForegroundColor(['r' => $this->convertRGB($campaign->foreground)[0]
+                                , 'g' => $this->convertRGB($campaign->foreground)[1]
+                                , 'b' => $this->convertRGB($campaign->foreground)[2], 'a' => 0]);
+        $qrCode->setBackgroundColor(['r' => $this->convertRGB($campaign->background)[0]
+                                , 'g' => $this->convertRGB($campaign->background)[1]
+                                , 'b' => $this->convertRGB($campaign->background)[2], 'a' => 0]);
 
         if ($campaign->logo != null) {
-            $image = $image->merge(asset("storage/" . $campaign->logo), 0.4, true);
+          $qrCode->setLogoPath(asset("storage/" . $campaign->logo));
+          $qrCode->setLogoSize(350, 350);
         }
+        $qrCode->setValidateResult(false);
+        $qrCode->setRoundBlockSize(true, QrCode::ROUND_BLOCK_SIZE_MODE_MARGIN); // The size of the qr code is shrinked, if necessary, but the size of the final image remains unchanged due to additional margin being added (default)
+        $qrCode->setRoundBlockSize(true, QrCode::ROUND_BLOCK_SIZE_MODE_ENLARGE); // The size of the qr code and the final image is enlarged, if necessary
+        $qrCode->setRoundBlockSize(true, QrCode::ROUND_BLOCK_SIZE_MODE_SHRINK); // The size of the qr code and the final image is shrinked, if necessary
 
-        $image = $image->generate($url);
+        $qrCode->setWriterOptions(['exclude_xml_declaration' => true]);
+
+        return response($qrCode->writeString())->header('Content-Type: ', $qrCode->getContentType());
         return response($image)->header('Content-type','image/png');
     }
 
     /**
      * User info track and return QR code url
-     * 
+     *
      * @param \App\Models\Campaign  $campaign
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -63,7 +81,7 @@ class QRCodeController extends Controller
 
     /**
      * convert hex color value to rgb color
-     * 
+     *
      * @param String  $hexValue
      * @return Array  $arrayRGB
      */
