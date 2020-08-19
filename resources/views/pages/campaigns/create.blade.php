@@ -36,23 +36,23 @@
 							<input name="url" type="text" class="form-control" id="url" placeholder="@lang('locale.campaign.field.urlPlace')" value="{{ old('url') }}">
 							<span class="danger">{{ $errors->first('url') }}</span>
 						</fieldset>
-						
+
 						<div class="row">
 							<div class="col-lg-6 col-md-6 col-sm-12">
 								<fieldset class="form-group">
 									<label for="foreground">@lang('locale.campaign.field.foreground')</label>
-									<input type="color" id="foreground" name="foreground" class="form-control color-picker" value="#ff0000">
+									<input type="color" id="foreground" name="foreground" class="form-control color-picker" value="{{ old('foreground') ?? '#000000' }}">
 								</fieldset>
 
 								<fieldset class="form-group">
 									<label for="background">@lang('locale.campaign.field.background')</label>
-									<input type="color" id="background" name="background" class="form-control color-picker" value="#ff0000">
+									<input type="color" id="background" name="background" class="form-control color-picker" value="{{ old('background') ?? '#ffffff' }}">
 								</fieldset>
 							</div>
-							
+
 							<div class="col-lg-6 col-md-6 col-sm-12">
 								<div class="form-group">
-									<img src="{{ asset('images/portrait/small/avatar-s-12.jpg') }}" id="imgLogo" class="rounded mr-75" alt="logo image" height="140">
+									<img src="{{ asset('images/default.png') }}" id="imgLogo" class="rounded mr-75" alt="logo image" height="140">
 									<div class="mt-75">
 										<div class="col-12 px-0 d-flex flex-sm-row flex-column justify-content-start">
 											<label class="btn btn-sm btn-primary ml-50 mb-50 mb-sm-0 cursor-pointer waves-effect waves-light" for="logo">@lang('locale.campaign.field.uploadLogo')</label>

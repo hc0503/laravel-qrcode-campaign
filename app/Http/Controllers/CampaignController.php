@@ -63,7 +63,7 @@ class CampaignController extends Controller
             'campaign_name' => 'required|string|max:190',
             'url' => "required|url",
         ]);
-        
+
         $logoPath = null;
         if ($request->hasFile('logo')) {
             $logoPath = $request->file('logo')->store('logos', 'public');
@@ -79,7 +79,7 @@ class CampaignController extends Controller
 
         return redirect()
             ->route('campaigns.show', $campaign->id)
-            ->with('message', trans('locale.saveSuccess'));
+            ->with('message', trans('locale.campaign.saveSuccess'));
     }
 
     /**
@@ -135,7 +135,7 @@ class CampaignController extends Controller
 
         return redirect()
             ->route('campaigns.index')
-            ->with('message', trans('locale.deleteSuccess'));
+            ->with('message', trans('locale.campaign.deleteSuccess'));
     }
 
     /**

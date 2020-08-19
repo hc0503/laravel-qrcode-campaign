@@ -28,7 +28,7 @@ class QRCodeController extends Controller
     {
         $url = route('qrcode-track', $campaign);
         $qrCode = new QrCode($url);
-        $qrCode->setSize(1000);
+        $qrCode->setSize(400);
         $qrCode->setMargin(10);
 
         $qrCode->setWriterByName('png');
@@ -43,7 +43,7 @@ class QRCodeController extends Controller
 
         if ($campaign->logo != null) {
           $qrCode->setLogoPath(asset("storage/" . $campaign->logo));
-          $qrCode->setLogoSize(350, 350);
+          $qrCode->setLogoSize(150, 150);
         }
         $qrCode->setValidateResult(false);
         $qrCode->setRoundBlockSize(true, QrCode::ROUND_BLOCK_SIZE_MODE_MARGIN); // The size of the qr code is shrinked, if necessary, but the size of the final image remains unchanged due to additional margin being added (default)
@@ -53,7 +53,6 @@ class QRCodeController extends Controller
         $qrCode->setWriterOptions(['exclude_xml_declaration' => true]);
 
         return response($qrCode->writeString())->header('Content-Type: ', $qrCode->getContentType());
-        return response($image)->header('Content-type','image/png');
     }
 
     /**

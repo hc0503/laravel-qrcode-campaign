@@ -73,7 +73,7 @@
 					<div class="card-body">
 						<div class="row">
 							<div class="col-md-12 text-center">
-								<img src="{!! url('/qrcode/generate', $campaign->id) !!}" width="100%" style="max-width: 400px;" />
+								<img src="{!! url('/qrcode/generate', $campaign->id) !!}" id="qrcode" width="400" />
 							</div>
 						</div>
 					</div>
@@ -82,4 +82,22 @@
 		</div>
 	</div>
 	<!--/ Start Campaign -->
+@endsection
+
+@section('page-script')
+  <script>
+    $(document).ready(function() {
+      {{--$.ajax({--}}
+      {{--  url: "{{ url('/qrcode/generate', $campaign->id) }}",--}}
+      {{--  type: 'GET',--}}
+      {{--  data: {--}}
+      {{--  },--}}
+      {{--  dataType: "text",--}}
+      {{--  success : function (data, status, jqXhr) {--}}
+      {{--    console.log(data);--}}
+      {{--    $("#qrcode").attr("src", data);--}}
+      {{--  }--}}
+      {{--});--}}
+    });
+  </script>
 @endsection
