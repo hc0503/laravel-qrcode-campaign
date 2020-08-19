@@ -52,7 +52,7 @@
 
 							<div class="col-lg-6 col-md-6 col-sm-12">
 								<div class="form-group">
-									<img src="{{ asset('images/default.png') }}" id="imgLogo" class="rounded mr-75" alt="logo image" height="140">
+									<img src="{{ asset(mix('images/default.png')) }}" id="imgLogo" class="rounded mr-75" alt="logo image" height="140">
 									<div class="mt-75">
 										<div class="col-12 px-0 d-flex flex-sm-row flex-column justify-content-start">
 											<label class="btn btn-sm btn-primary ml-50 mb-50 mb-sm-0 cursor-pointer waves-effect waves-light" for="logo">@lang('locale.campaign.field.uploadLogo')</label>
@@ -84,7 +84,7 @@
 
 @section('page-script')
 	<script>
-		var defaultLogo = "{{ asset('images/portrait/small/avatar-s-12.jpg') }}";
+		var defaultLogo = "{{ asset(mix('images/default.png')) }}";
 		// logo preview
 		function previewLogo() {
 			var file = $('#logo')[0].files[0];
