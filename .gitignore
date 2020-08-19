@@ -17,3 +17,5 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 /vuexy-shell-scripts
+
+composer.lock
