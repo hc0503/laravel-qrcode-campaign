@@ -4,32 +4,32 @@ Dynamic QR code generate, hitmap dashboard and admin panel using [Laravel 7](htt
 
 ## Installation
 
-### Composer install
+#### Composer install
 ```
 $ composer install
 ```
 
-### Laravel key generate
+#### Laravel key generate
 ```
 $ php artisan key:generate
 ```
 
-### Node module install
+#### Node module install
 ```
 $ npm i
 ```
 
-### Mix build
+#### Mix build
 ```
 $ npm run dev
 ```
 
-### Database migrate and seed
+#### Database migrate and seed
 ```
 $ php artisan migrate --seed
 ```
 
-### Run server
+#### Run server
 ```
 $ php artisan serve
 ```
