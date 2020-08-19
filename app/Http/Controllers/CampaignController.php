@@ -63,10 +63,19 @@ class CampaignController extends Controller
             'campaign_name' => 'required|string|max:190',
             'url' => "required|url",
         ]);
+        
+        $logoPath = null;
+        if ($request->hasFile('logo')) {
+            $logoPath = $request->file('logo')->store('logos', 'public');
+        }
 
-        $campaign = $request->user()->campaigns()->create(
-            $request->all()
-        );
+        $campaign = $request->user()->campaigns()->create([
+            'campaign_name' => $request->campaign_name,
+            'url' => $request->url,
+            'foreground' => $request->foreground,
+            'background' => $request->background,
+            'logo' => $logoPath
+        ]);
 
         return redirect()
             ->route('campaigns.show', $campaign->id)
