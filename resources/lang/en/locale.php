@@ -45,6 +45,7 @@ return [
         "authorName" => "Author Name",
         "authorEmail" => "Author Email",
         "reset" => "Reset",
+        "logo" => "Logo",
         "field" => [
             "name" => "Campaign name",
             "namePlace" => "Enter campaign Name...",

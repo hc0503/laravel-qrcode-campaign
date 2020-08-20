@@ -13,6 +13,13 @@
 		.custom-select {
 			height: auto;
 		}
+
+		.color-picker {
+			padding-top: 2px;
+			padding-bottom: 2px;
+			padding-left: 4px;
+			padding-right: 4px;
+		}
 	</style>
 @endsection
 
@@ -42,6 +49,9 @@
 								<th>@lang('locale.id')</th>
 								<th>@lang('locale.campaign.field.name')</th>
 								<th>@lang('locale.campaign.field.url')</th>
+								<th>@lang('locale.campaign.field.foreground')</th>
+								<th>@lang('locale.campaign.field.background')</th>
+								<th>@lang('locale.campaign.logo')</th>
 								<th>@lang('locale.CreatedAt')</th>
 								<th>@lang('locale.Actions')</th>
 							</tr>
@@ -52,6 +62,19 @@
 								<td>{{ $campaign->id }}</td>
 								<td>{{ $campaign->campaign_name }}</td>
 								<td>{{ $campaign->url }}</td>
+								<td>
+									<input type="color" class="form-control color-picker" disabled value="{{ $campaign->foreground }}">
+								</td>
+								<td>
+									<input type="color" class="form-control color-picker" disabled value="{{ $campaign->background }}">
+								</td>
+								<td>
+									@if($campaign->logo == null)
+									<img src='{{ asset("images/default.png") }}' width="50">
+									@else
+									<img src='{{ asset("storage/$campaign->logo") }}' width="50">
+									@endif
+								</td>
 								<th>{{ $campaign->created_at }}</th>
 								<td>
 									<form id="deleteForm{{ $campaign->id }}" action="{{ route('campaigns.destroy', $campaign->id) }}" method="POST" style="display: none;">
