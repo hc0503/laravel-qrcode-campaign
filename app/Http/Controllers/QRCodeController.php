@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Campaign;
 use App\Models\CampaignHit;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Redirect;
 
 use Endroid\QrCode\ErrorCorrectionLevel;
 use Endroid\QrCode\LabelAlignment;
@@ -75,7 +76,7 @@ class QRCodeController extends Controller
             'browser' => $_SERVER['HTTP_USER_AGENT']
         ]);
 
-        return $campaign->url;
+        return Redirect::to($campaign->url);
     }
 
     /**
