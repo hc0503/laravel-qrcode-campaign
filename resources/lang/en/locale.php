@@ -44,11 +44,15 @@ return [
         "management" => "Campaign Management",
         "authorName" => "Author Name",
         "authorEmail" => "Author Email",
+        "reset" => "Reset",
         "field" => [
             "name" => "Campaign name",
             "namePlace" => "Enter campaign Name...",
             "url" => "URL",
-            "urlPlace" => "Enter URL..."
+            "urlPlace" => "Enter URL...",
+            "foreground" => "Foreground Color",
+            "background" => "Background Color",
+            "uploadLogo" => "Upload logo"
         ],
     ],
     "role" => [

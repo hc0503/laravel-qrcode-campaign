@@ -20,6 +20,9 @@ class CreateCampaignsTable extends Migration
                 ->onDelete('cascade');
             $table->string('campaign_name');
             $table->string('url');
+            $table->string('foreground');
+            $table->string('background');
+            $table->string('logo')->nullable();
             $table->timestamps();
         });
     }
