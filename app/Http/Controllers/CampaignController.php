@@ -64,13 +64,22 @@ class CampaignController extends Controller
             'url' => "required|url",
         ]);
 
-        $campaign = $request->user()->campaigns()->create(
-            $request->all()
-        );
+        $logoPath = null;
+        if ($request->hasFile('logo')) {
+            $logoPath = $request->file('logo')->store('logos', 'public');
+        }
+
+        $campaign = $request->user()->campaigns()->create([
+            'campaign_name' => $request->campaign_name,
+            'url' => $request->url,
+            'foreground' => $request->foreground,
+            'background' => $request->background,
+            'logo' => $logoPath
+        ]);
 
         return redirect()
             ->route('campaigns.show', $campaign->id)
-            ->with('message', trans('locale.saveSuccess'));
+            ->with('message', trans('locale.campaign.saveSuccess'));
     }
 
     /**
@@ -126,7 +135,7 @@ class CampaignController extends Controller
 
         return redirect()
             ->route('campaigns.index')
-            ->with('message', trans('locale.deleteSuccess'));
+            ->with('message', trans('locale.campaign.deleteSuccess'));
     }
 
     /**

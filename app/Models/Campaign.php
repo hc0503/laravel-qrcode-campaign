@@ -17,7 +17,10 @@ class Campaign extends Model
     protected $fillable = [
         'user_id',
         'campaign_name',
-        'url'
+        'url',
+        'foreground',
+        'background',
+        'logo'
     ];
 
     /**
@@ -26,7 +29,10 @@ class Campaign extends Model
     protected $casts = [
         'user_id' => 'int',
         'campaign_name' => 'string',
-        'url' => 'string'
+        'url' => 'string',
+        'foreground' => 'string',
+        'background' => 'string',
+        'logo' => 'string'
     ];
 
     /**
