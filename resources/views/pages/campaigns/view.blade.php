@@ -73,7 +73,7 @@
 					<div class="card-body">
 						<div class="row">
 							<div class="col-md-12 text-center">
-								<img src="{!! url('/qrcode/generate', $campaign->id) !!}" id="qrcode" width="400" />
+								<img src="{!! url('/qrcode/generate', $campaign->id) !!}" id="qrcode" width="100%" />
 							</div>
 						</div>
 					</div>
