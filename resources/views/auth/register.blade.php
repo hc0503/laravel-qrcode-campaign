@@ -64,8 +64,8 @@
                                       @enderror
                                   </div>
                                   <div class="form-label-group">
-                                      <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="{{ trans('locale.confirmPassword') }}" value="{{ old('password_confirmation') }}">
-                                      <label for="password-confirm">@lang('locale.confirmPassword')</label>
+                                      <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="{{ trans('locale.ConfirmPassword') }}" value="{{ old('password_confirmation') }}">
+                                      <label for="password-confirm">@lang('locale.ConfirmPassword')</label>
                                   </div>
                                   <div class="form-group row">
                                       <div class="col-12">
