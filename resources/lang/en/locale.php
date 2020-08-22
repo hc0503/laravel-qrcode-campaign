@@ -46,6 +46,7 @@ return [
         "authorEmail" => "Author Email",
         "reset" => "Reset",
         "logo" => "Logo",
+        "maxfileSize" => "Allowed JPG or PNG. Max size of 800kB",
         "field" => [
             "name" => "Campaign name",
             "namePlace" => "Enter campaign Name...",
