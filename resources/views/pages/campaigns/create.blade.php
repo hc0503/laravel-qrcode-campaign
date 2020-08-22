@@ -56,7 +56,7 @@
 									<div class="mt-75">
 										<div class="col-12 px-0 d-flex flex-sm-row flex-column justify-content-start">
 											<label class="btn btn-sm btn-primary ml-50 mb-50 mb-sm-0 cursor-pointer waves-effect waves-light" for="logo">@lang('locale.campaign.field.uploadLogo')</label>
-											<input type="file" id="logo" name="logo" onchange="previewLogo()" hidden="">
+											<input type="file" id="logo" name="logo" onchange="previewLogo()" hidden="" accept="image/png, image/jpeg">
 											<a href="javascript:resetLogo();" class="btn btn-sm btn-outline-warning ml-50 waves-effect waves-light">@lang('locale.campaign.reset')</a>
 										</div>
 										<p class="text-muted ml-75 mt-50"><small>Allowed JPG, GIF or PNG. Max size of 800kB</small></p>
