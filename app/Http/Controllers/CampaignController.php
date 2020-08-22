@@ -13,7 +13,7 @@ class CampaignController extends Controller
     // Default pageConfig
     protected $pageConfigs = [
         'navbarType' => 'sticky',
-        'footerType' => 'sticky'
+        'footerType' => 'static',
     ];
 
     /**
