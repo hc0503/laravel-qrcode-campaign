@@ -46,6 +46,7 @@ return [
         "authorEmail" => "Author Email",
         "reset" => "Reset",
         "logo" => "Logo",
+        "allow" => "Allowed JPG, GIF or PNG. Max size of 800kB",
         "field" => [
             "name" => "Campaign name",
             "namePlace" => "Enter campaign Name...",
@@ -86,6 +87,17 @@ return [
             "update" => "The user is updated successfully.",
             "delete" => "The user is deleted successfully."
         ],
+    ],
+    "profile" => [
+        "title" => "Profile",
+        "save" => "Save changes",
+        "edit" => "Edit Profile",
+        "general" => "General",
+        "changePassword" => "Change Password",
+        "upload" => "Upload new photo",
+        "allow" => "Allowed JPG, GIF or PNG. Max size of 800kB",
+
+
     ],
     "error" => [
         "lockTitle" => "Your account is locked!",
