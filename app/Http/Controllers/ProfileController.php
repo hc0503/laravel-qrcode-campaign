@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use File;
 
 class ProfileController extends Controller
 {
@@ -71,19 +72,37 @@ class ProfileController extends Controller
             'email' => 'required|email|unique:users,email,'.$user->id,
         ]);
 
-        $photoPath = null;
-        if ($request->hasFile('photo')) {
-            $photoPath = $request->file('photo')->store('photos', 'public');
-        }
-
-        $user = $user->update([
+        $user->update([
             'name' => $request->name,
             'surname' => $request->surname,
-            'email' => $request->email,
+            'email' => $request->email
         ]);
+
+        if ($request->hasFile('photo')) {
+            $photoPath = public_path("/storage/$user->photo"); // get previous image from folder
+            if (File::exists($photoPath) && $user->photo != null) { // unlink or remove previous image from folder
+                unlink($photoPath);
+            }
+
+            $photoPath = $request->file('photo')->store('photos', 'public');
+            $user->update([
+                'photo' => $photoPath
+            ]);
+        } else {
+            if ($request->reset == '1') {
+                $photoPath = public_path("/storage/$user->photo"); // get previous image from folder
+                if (File::exists($photoPath) && $user->photo != null) { // unlink or remove previous image from folder
+                    unlink($photoPath);
+                }
+
+                $user->update([
+                    'photo' => null
+                ]);
+            }
+        }
 
         return redirect()
             ->route('profile-edit', $user->id)
-            ->with('message', trans('locale.campaign.saveSuccess'));
+            ->with('message', trans('locale.profile.updateSuccess'));
     }
 }

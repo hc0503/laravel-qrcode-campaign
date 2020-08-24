@@ -47,7 +47,12 @@
             <div class="user-nav d-sm-flex d-none">
               <span class="user-name text-bold-600">
                 {{ Auth::user()->name }} {{ Auth::user()->surname }}
-              </span><span class="user-status">Available</span></div><span><img class="round" src="{{asset('images/portrait/small/avatar-s-11.jpg') }}" alt="avatar" height="40" width="40" /></span>
+              </span>
+              @if (Auth::user()->photo === null)
+              <span class="user-status">Available</span></div><span><img class="round" src="{{asset('images/avatar.png') }}" alt="avatar" height="40" width="40" /></span>
+              @else
+              <span class="user-status">Available</span></div><span><img class="round" src="{{asset('storage/' . Auth::user()->photo) }}" alt="avatar" height="40" width="40" /></span>
+              @endif
             </a>
             <div class="dropdown-menu dropdown-menu-right">
               @can('user_manage')

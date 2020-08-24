@@ -3,6 +3,17 @@
 @section('title', trans('locale.profile.edit'))
 
 @section('content')
+@if (session()->get('message'))
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+  <p class="mb-0">
+    {{ session()->get('message') }}
+  </p>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
+  
 <!-- account setting page start -->
 <section id="page-account-settings">
     <div class="row">
@@ -35,18 +46,18 @@
                   aria-labelledby="account-pill-general" aria-expanded="true">
                   <form action="{{ route('profile-update', $user) }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @method('PUT')
                     <div class="media">
                       @if ($user->photo === null)
-                      <img src="{{ asset('images/default.png') }}" id="imgPhoto" class="rounded mr-75" alt="photo" height="80">
+                      <img src="{{ asset('images/avatar.png') }}" id="imgPhoto" class="rounded mr-75" alt="photo image" height="80">
                       @else
-                      <img src="{{ asset('store/$user->photo') }}" id="imgPhoto" class="rounded mr-75" alt="photo" height="80">
+                      <img src="{{ asset('storage/' . $user->photo) }}" id="imgPhoto" class="rounded mr-75" alt="photo image" height="80">
                       @endif
                       <div class="media-body mt-75">
                         <div class="col-12 px-0 d-flex flex-sm-row flex-column justify-content-start">
                           <label class="btn btn-sm btn-primary ml-50 mb-50 mb-sm-0 cursor-pointer"
                             for="photo">@lang('locale.profile.upload')</label>
-                          <input type="file" id="photo" hidden>
+                          <input type="file" id="photo" name="photo" onchange="previewPhoto();" hidden>
+                          <input type="number" id="reset" name="reset" value="0" hidden>
                           <a href="javascript:resetPhoto();" class="btn btn-sm btn-outline-warning ml-50 waves-effect waves-light">@lang('locale.campaign.reset')</a>
                         </div>
                         <p class="text-muted ml-75 mt-50"><small>@lang('locale.profile.allow')</small></p>
@@ -59,7 +70,7 @@
                       <div class="col-12">
                         <div class="form-group">
                           <label for="name">@lang('locale.Name')</label>
-                          <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="{{ trans('locale.Name') }}" value="{{ old('name') }}" autofocus>
+                          <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="{{ trans('locale.Name') }}" value="{{ $user->name }}" autofocus>
                           @error('name')
                             <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
@@ -71,7 +82,7 @@
                       <div class="col-12">
                         <div class="form-group">
                           <label for="surname">@lang('locale.Surname')</label>
-                          <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" placeholder="{{ trans('locale.Surname') }}" value="{{ old('surname') }}">
+                          <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" placeholder="{{ trans('locale.Surname') }}" value="{{ $user->surname }}">
                           @error('surname')
                             <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
@@ -83,7 +94,7 @@
                       <div class="col-12">
                         <div class="form-group">
                           <label for="email">@lang('locale.Email')</label>
-                          <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="{{ trans('locale.Email') }}" value="{{ old('email') }}">
+                          <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="{{ trans('locale.Email') }}" value="{{ $user->email }}">
                           @error('email')
                             <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
@@ -153,4 +164,26 @@
     </div>
 </section>
 <!-- account setting page end -->
+@endsection
+
+@section('page-script')
+	<script>
+		var defaultPhoto = "{{ asset('images/avatar.png') }}";
+		// photo preview
+		function previewPhoto() {
+      var file = $('#photo')[0].files[0];
+			if (file) {
+        $("#imgPhoto").attr("src", URL.createObjectURL(file));
+        $("#reset").val(0);
+			} else {
+				$("#imgPhoto").attr("src", defaultPhoto);
+			}
+		}
+
+		// photo remove and set default logo
+		function resetPhoto() {
+      $("#imgPhoto").attr("src", defaultPhoto);
+      $("#reset").val(1);
+		}
+	</script>
 @endsection

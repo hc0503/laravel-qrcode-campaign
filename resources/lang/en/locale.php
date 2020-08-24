@@ -96,7 +96,7 @@ return [
         "changePassword" => "Change Password",
         "upload" => "Upload new photo",
         "allow" => "Allowed JPG, GIF or PNG. Max size of 800kB",
-
+        "updateSuccess" => "The profile is saved successfully."
 
     ],
     "error" => [
