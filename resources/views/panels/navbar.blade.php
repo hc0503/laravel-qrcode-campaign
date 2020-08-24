@@ -39,6 +39,12 @@
               <a class="dropdown-item" href="{{url('lang/pt')}}" data-language="pt">
                 <i class="flag-icon flag-icon-pt"></i> Portuguese
               </a>
+              <a class="dropdown-item" href="{{url('lang/es')}}" data-language="es">
+                <i class="flag-icon flag-icon-es"></i> Spanish
+              </a>
+              <a class="dropdown-item" href="{{url('lang/cn')}}" data-language="cn">
+                <i class="flag-icon flag-icon-cn"></i> Chinese
+              </a>
             </div>
           </li>
           <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i
