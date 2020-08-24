@@ -41,8 +41,7 @@
 						<thead>
 							<tr>
 								<th>@lang('locale.id')</th>
-								<th>@lang('locale.Name')</th>
-								<th>@lang('locale.Surname')</th>
+								<th>@lang('locale.Username')</th>
 								<th>@lang('locale.Email')</th>
 								<th>@lang('locale.role.title')</th>
 								<th>@lang('locale.user.lock')</th>
@@ -55,8 +54,14 @@
 							@foreach($users as $user)
 							<tr>
 								<td>{{ $user->id }}</td>
-								<td>{{ $user->name }}</td>
-								<td>{{ $user->surname }}</td>
+								<td>
+									@if ($user->photo === null)
+									<span class="avatar"><img src="{{ asset('/images/avatar.png') }}" height="32" width="32"></span>
+									@else
+									<span class="avatar"><img src="{{ asset('storage/' . $user->photo) }}" height="32" width="32"></span>
+									@endif
+									{{ $user->name }} {{ $user->surname }}
+								</td>
 								<td>{{ $user->email }}</td>
 								<td>
 									@foreach($user->roles as $role)

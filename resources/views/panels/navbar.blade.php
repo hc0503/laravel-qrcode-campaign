@@ -55,15 +55,16 @@
               @endif
             </a>
             <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="{{ route('profile-edit', Auth::user()) }}"><i class="feather icon-user"></i> @lang('locale.profile.edit')</a>
               @can('user_manage')
               @if (Request::route()->getPrefix() == '/admin')
-              <a class="dropdown-item" href="/"><i class="feather icon-log-in"></i> User panel</a>
+              <a class="dropdown-item" href="/"><i class="feather icon-log-in"></i> @lang('locale.userPanel')</a>
               @else
-              <a class="dropdown-item" href="/admin"><i class="feather icon-log-in"></i> Admin panel</a>
+              <a class="dropdown-item" href="/admin"><i class="feather icon-log-in"></i> @lang('locale.adminPanel')</a>
               @endif
               <div class="dropdown-divider"></div>
               @endcan
-              <a class="dropdown-item" href="#logout" onclick="$('#logout').submit();"><i class="feather icon-power"></i> Logout</a>
+              <a class="dropdown-item" href="#logout" onclick="$('#logout').submit();"><i class="feather icon-power"></i> @lang('locale.Logout')</a>
             </div>
           </li>
         </ul>

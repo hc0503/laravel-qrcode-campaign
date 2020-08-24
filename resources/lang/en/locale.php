@@ -31,6 +31,10 @@ return [
     "fillCreateForm" => "Fill the below form to create a new account.",
     "Login" => "Login",
     "qrcodeScanRate" => "QR Code Scan Rate",
+    "Username" => "Username",
+    "Logout" => "Logout",
+    "userPanel" => "User panel",
+    "adminPanel" => "Admin panel",
     "campaign" => [
         "title" => "Campaigns",
         "create" => "Create Campaign",
