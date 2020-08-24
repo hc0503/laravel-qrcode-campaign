@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use File;
 use Hash;
+use Auth;
 
 class ProfileController extends Controller
 {
@@ -15,9 +16,9 @@ class ProfileController extends Controller
         'footerType' => 'static'
     ];
 
-    public function __construct()
+    public function __construct(Request $request)
     {
-
+        $this->middleware('owner');
     }
 
     /**
