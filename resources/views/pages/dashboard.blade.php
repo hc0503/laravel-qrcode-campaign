@@ -165,8 +165,8 @@
 		var label_color = '#1E1E1E';
 		var campaignNames = {!! $campaignNames !!};
 		var campaignHitCounts = {!! $campaignHitCounts !!};
-		var initLat = 52;
-		var InitLng = 15.3;
+		var initLat = 40.730610;
+		var InitLng = -73.935242;
 		var initZoom = 3;
 		var initType = 'today';
 		var googleMap = new GMaps({
