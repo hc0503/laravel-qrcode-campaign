@@ -59,7 +59,7 @@
 											<input type="file" id="logo" name="logo" onchange="previewLogo()" hidden="" accept="image/png, image/jpeg">
 											<a href="javascript:resetLogo();" class="btn btn-sm btn-outline-warning ml-50 waves-effect waves-light">@lang('locale.campaign.reset')</a>
 										</div>
-										<p class="text-muted ml-75 mt-50"><small>@lang('locale.campaign.maxfileSize')</small></p>
+										<p class="text-muted ml-75 mt-50"><small>@lang('locale.campaign.allow')</small></p>
 									</div>
 								</div>
 							</div>

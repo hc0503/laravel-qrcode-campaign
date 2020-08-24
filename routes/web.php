@@ -19,6 +19,11 @@ Route::group(['middleware' => ['auth','locked']], function () {
   Route::get('/', 'DashboardController@userDashboard')->name('user-dashboard');
   Route::get('dashboard', 'DashboardController@userDashboard')->name('user-dashboard');
 
+  // Profile
+  Route::get('/profiles/{user}/edit', 'ProfileController@editProfile')->name('profile-edit');
+  Route::post('/profiles/{user}', 'ProfileController@updateProfile')->name('profile-update');
+  Route::post('/profiles/{user}/reset', 'ProfileController@changePassword')->name('profile-reset');
+
   // Campaigns
   Route::resource('campaigns', 'CampaignController');
 

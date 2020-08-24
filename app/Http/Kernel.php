@@ -66,6 +66,7 @@ class Kernel extends HttpKernel
         'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
         
         'locked' => \App\Http\Middleware\CheckLock::class,
+        'owner' => \App\Http\Middleware\CheckOwner::class,
     ];
 
     /**

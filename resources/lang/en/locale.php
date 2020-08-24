@@ -31,6 +31,10 @@ return [
     "fillCreateForm" => "Fill the below form to create a new account.",
     "Login" => "Login",
     "qrcodeScanRate" => "QR Code Scan Rate",
+    "Username" => "Username",
+    "Logout" => "Logout",
+    "userPanel" => "User panel",
+    "adminPanel" => "Admin panel",
     "campaign" => [
         "title" => "Campaigns",
         "create" => "Create Campaign",
@@ -46,7 +50,7 @@ return [
         "authorEmail" => "Author Email",
         "reset" => "Reset",
         "logo" => "Logo",
-        "maxfileSize" => "Allowed JPG or PNG. Max size of 800kB",
+        "allow" => "Allowed JPG, GIF or PNG. Max size of 800kB",
         "field" => [
             "name" => "Campaign name",
             "namePlace" => "Enter campaign Name...",
@@ -88,8 +92,23 @@ return [
             "delete" => "The user is deleted successfully."
         ],
     ],
+    "profile" => [
+        "title" => "Profile",
+        "save" => "Save changes",
+        "edit" => "Edit Profile",
+        "general" => "General",
+        "changePassword" => "Change Password",
+        "upload" => "Upload new photo",
+        "allow" => "Allowed JPG, GIF or PNG. Max size of 800kB",
+        "updateSuccess" => "The profile is saved successfully.",
+        "oldPassword" => "Old Password",
+        "newPassword" => "New Password",
+        "retypePassword" => "Retype New Password"
+
+    ],
     "error" => [
         "lockTitle" => "Your account is locked!",
-        "lockDescription" => "Your account is locked by admin now, contact to admin."
+        "lockDescription" => "Your account is locked by admin now, contact to admin.",
+        "notMatchPassword" => "The specified password does not match the database password."
     ]
 ];
