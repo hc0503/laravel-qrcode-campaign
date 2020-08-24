@@ -22,25 +22,6 @@ class ProfileController extends Controller
     }
 
     /**
-     * User profile show.
-     *
-     * @param \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function showProfile(User $user)
-    {
-        $breadcrumbs = [
-            ['link'=>"",'name'=>trans('locale.profile.title')], ['name'=>trans('locale.profile.view')]
-        ];
-
-        return view('/pages/profiles/view', [
-            'pageConfigs' => $this->pageConfigs,
-            'breadcrumbs' => $breadcrumbs,
-            'user' => $user
-        ]);
-    }
-
-    /**
      * User profile edit.
      *
      * @param \App\Models\User  $user
