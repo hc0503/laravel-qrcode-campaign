@@ -96,11 +96,15 @@ return [
         "changePassword" => "Change Password",
         "upload" => "Upload new photo",
         "allow" => "Allowed JPG, GIF or PNG. Max size of 800kB",
-        "updateSuccess" => "The profile is saved successfully."
+        "updateSuccess" => "The profile is saved successfully.",
+        "oldPassword" => "Old Password",
+        "newPassword" => "New Password",
+        "retypePassword" => "Retype New Password"
 
     ],
     "error" => [
         "lockTitle" => "Your account is locked!",
-        "lockDescription" => "Your account is locked by admin now, contact to admin."
+        "lockDescription" => "Your account is locked by admin now, contact to admin.",
+        "notMatchPassword" => "The specified password does not match the database password."
     ]
 ];

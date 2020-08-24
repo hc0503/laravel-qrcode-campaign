@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use File;
+use Hash;
 
 class ProfileController extends Controller
 {
@@ -100,6 +101,37 @@ class ProfileController extends Controller
                 ]);
             }
         }
+
+        return redirect()
+            ->route('profile-edit', $user->id)
+            ->with('message', trans('locale.profile.updateSuccess'));
+    }
+
+    /**
+     * User password change.
+     *
+     * @param \App\Models\User  $user
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function changePassword(User $user, Request $request)
+    {
+        $validator = $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|min:6',
+            'retype_password' => 'required|min:6|same:new_password',
+        ]);
+
+        if (!Hash::check($request->old_password, $user->password)) {
+            // validation error message
+            return back()
+                ->withInput()
+                ->withErrors(['old_password' => trans('locale.error.notMatchPassword')]);
+        }
+
+        $user->update([
+            'password' => $request->new_password
+        ]);
 
         return redirect()
             ->route('profile-edit', $user->id)
