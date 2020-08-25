@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
+use App\Models\Notification;
 
 class User extends Authenticatable
 {
@@ -53,5 +54,17 @@ class User extends Authenticatable
     public function campaigns()
     {
         return $this->hasMany(Campaign::Class);
+    }
+
+    public function readNotifications()
+    {
+        return $this->belongsToMany(Notification::class, 'user_notification');
+    }
+
+    public function notReadNotifications()
+    {
+        $readNotifications = $this->readNotifications()->pluck('id')->toArray();
+
+        return Notification::whereNotIn('id', $readNotifications)->get();
     }
 }

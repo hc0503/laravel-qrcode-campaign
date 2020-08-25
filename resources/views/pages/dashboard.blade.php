@@ -16,6 +16,17 @@
 @endsection
 
 @section('content')
+
+	@foreach($notReadNotifications as $notReadNotification)
+		<div class="alert alert-primary alert-dismissible fade show" role="alert">
+			<p class="mb-0">
+				{{ $notReadNotification->text }}
+			</p>
+			<button type="button" onclick="readNotification({{ $notReadNotification->id }});" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+	</div>
+	@endforeach
 	<div class="row">
 		<!-- Usage Statistics -->
 		<div class="col-lg-6 col-md-12 col-sm-12">
@@ -183,6 +194,12 @@
 			$('input[type=radio][name=mapRadio]').change(function(e) {
 				initMap(this.value);
 		  });
+
+		  $.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
 		});
 
 		/**
@@ -290,5 +307,21 @@
 		};
 		// Create the chart
 		var barChart = new Chart(barChartctx, barChartconfig);
+
+		function readNotification(notificationId) {
+			$.ajax({
+				url: "{{ url('/notifications/read') }}",
+				type: "POST",
+				data: {
+					notification_id: notificationId
+				},
+				dataType: "text",
+				success : function (data, status, jqXhr) {
+					if (jqXhr.status === 200) {
+						console.log('success');
+					}
+				}
+			});
+		}
 	</script>
 @endsection

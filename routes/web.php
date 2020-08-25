@@ -33,6 +33,9 @@ Route::group(['middleware' => ['auth','locked']], function () {
   // coordinates
   Route::get('coordinates', 'DashboardController@getCoordinates')->name('get-coordinates');
 
+  // Set read notification
+  Route::post('notifications/read', 'DashboardController@readNotification');
+
   Route::group(['middleware' => ['permission:user_manage'], 'prefix' => 'admin'], function () {
     // Roles
     Route::resource('roles', 'Admin\RoleController');
@@ -40,6 +43,10 @@ Route::group(['middleware' => ['auth','locked']], function () {
     // Users
     Route::resource('users', 'Admin\UserController');
     Route::post('users/setlock', 'Admin\UserController@setLock');
+
+    // Notifications
+    Route::resource('notifications', 'Admin\NotificationController');
+    Route::post('notifications/status', 'Admin\NotificationController@setStatus');
 
     // Admin dashboard
     Route::get('/', 'Admin\DashboardController@adminDashboard');
