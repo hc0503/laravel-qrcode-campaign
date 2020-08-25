@@ -10,4 +10,13 @@ class Notification extends Model
      * @var string
      */
     protected $table = 'notifications';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title', 'text', 'status'
+    ];
 }
