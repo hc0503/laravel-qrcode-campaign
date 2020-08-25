@@ -43,6 +43,7 @@ Route::group(['middleware' => ['auth','locked']], function () {
 
     // Notifications
     Route::resource('notifications', 'Admin\NotificationController');
+    Route::post('notifications/status', 'Admin\NotificationController@setStatus');
 
     // Admin dashboard
     Route::get('/', 'Admin\DashboardController@adminDashboard');

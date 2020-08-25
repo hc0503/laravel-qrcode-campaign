@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Notification;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 
 class NotificationController extends Controller
 {
@@ -132,5 +133,20 @@ class NotificationController extends Controller
         return redirect()
             ->route('notifications.index')
             ->with('message', trans('locale.notification.message.delete'));
+    }
+
+    /**
+     * Set notification status, default status is 1.
+     * 
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function setStatus(Request $request)
+    {
+        $notification = Notification::findOrfail($request->notification_id);
+        $notification->status = $request->state;
+        $notification->save();
+
+        return new JsonResponse(null, 204);
     }
 }
