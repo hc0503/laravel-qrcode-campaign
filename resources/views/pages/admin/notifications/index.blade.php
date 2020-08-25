@@ -9,6 +9,17 @@
 	<link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/toastr.css')) }}">
 @endsection
 
+@section('page-style')
+	<style>
+		.custom-switch .custom-control-label:before {
+			background-color: #28C76F !important;
+		}
+		.switch-text-right {
+			color: white !important;
+		}
+	</style>
+@endsection
+
 @section('content')
 	@if (session()->get('message'))
 	<div class="alert alert-primary alert-dismissible fade show" role="alert">
@@ -48,7 +59,7 @@
 								<td>{{ $notification->text }}</td>
 								<td>
 									<div class="custom-control custom-switch custom-switch-danger switch-lg mr-2">
-										<input id="locked_{{ $notification->id }}" class="custom-control-input" type="checkbox" {{ $notification->status == 1 ? "checked" : "" }} onchange="changeStatus(this.checked, {{ $notification->id }})">
+										<input id="locked_{{ $notification->id }}" class="custom-control-input" type="checkbox" {{ $notification->status == 0 ? "checked" : "" }} onchange="changeStatus(this.checked, {{ $notification->id }})">
 										<label class="custom-control-label" for="locked_{{ $notification->id }}">
 											<span class="switch-text-left">Denied</span>
 											<span class="switch-text-right">Allowed</span>

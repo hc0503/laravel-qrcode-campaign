@@ -24,7 +24,7 @@ class NotificationController extends Controller
     }
 
     /**
-     * Display a listing of the noticication.
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -40,5 +40,42 @@ class NotificationController extends Controller
             'breadcrumbs' => $breadcrumbs,
             'notifications' => $notifications
         ]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $breadcrumbs = [
+            ['link'=>"/admin/notifications",'name'=>trans('locale.notification.title')], ['name'=>trans('locale.notification.create')]
+        ];
+        
+        return view('/pages/admin/notifications/create', [
+            'pageConfigs' => $this->pageConfigs,
+            'breadcrumbs' => $breadcrumbs
+        ]);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'title'=>'required|max:90',
+            'text'=>'required|max:190',
+            'status'=>'required'
+        ]);
+
+        $user = Notification::create($request->all());
+
+        return redirect()->route('notifications.index')
+            ->with('message', trans('locale.notification.message.save'));
     }
 }

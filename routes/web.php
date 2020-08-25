@@ -42,10 +42,7 @@ Route::group(['middleware' => ['auth','locked']], function () {
     Route::post('users/setlock', 'Admin\UserController@setLock');
 
     // Notifications
-    Route::get('notifications', 'Admin\NotificationController@index');
-    Route::get('notifications/create', 'Admin\NotificationController@create')->name('notifications.create');
-    Route::get('notifications/edit', 'Admin\NotificationController@edit')->name('notifications.edit');
-    Route::delete('notifications/destroy', 'Admin\NotificationController@destroy')->name('notifications.destroy');
+    Route::resource('notifications', 'Admin\NotificationController');
 
     // Admin dashboard
     Route::get('/', 'Admin\DashboardController@adminDashboard');

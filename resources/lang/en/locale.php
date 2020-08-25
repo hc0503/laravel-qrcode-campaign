@@ -98,7 +98,14 @@ return [
         "text" => "Text",
         "status" => "Status",
         "list" => "Notification List",
-        "create" => "Create Notification"
+        "create" => "Create Notification",
+        "details" => "Notification Details",
+        "save" => "Save Notification",
+        "message" => [
+            "save" => "The notification is added successfully.",
+            "update" => "The role is updated successfully.",
+            "delete" => "The role is deleted successfully."
+        ]
     ],
     "profile" => [
         "title" => "Profile",
