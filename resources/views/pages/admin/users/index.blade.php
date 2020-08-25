@@ -153,7 +153,7 @@
 				dataType: "JSON",
 				success : function (data, status, jqXhr) {
 					if (jqXhr.status === 204) {
-						toastr.success('That user was locked successfully.', 'Notification', {
+						toastr.success('That user status is changed successfully.', 'Notification', {
 							"showMethod": "fadeIn",
 							"hideMethod": "fadeOut",
 							"closeButton": true,
