@@ -35,8 +35,8 @@
 				<fieldset class="form-group">
 					<label for="title">@lang('locale.notification.status')</label>
 					<select name="status" class="custom-select" id="status">
-						<option value="1" {{ $notification->status === 1 ? 'selected' : '' }}>Allowed</option>
-						<option value="0" {{ $notification->status === 0 ? 'selected' : '' }}>Denied</option>
+						<option value="0" {{ $notification->status === 0 ? 'selected' : '' }}>Allowed</option>
+						<option value="1" {{ $notification->status === 1 ? 'selected' : '' }}>Denied</option>
 					</select>
 			  </fieldset>
 				
