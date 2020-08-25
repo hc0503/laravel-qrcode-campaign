@@ -101,10 +101,11 @@ return [
         "create" => "Create Notification",
         "details" => "Notification Details",
         "save" => "Save Notification",
+        "edit" => "Edit Notification",
         "message" => [
             "save" => "The notification is added successfully.",
-            "update" => "The role is updated successfully.",
-            "delete" => "The role is deleted successfully."
+            "update" => "The notification is updated successfully.",
+            "delete" => "The notification is deleted successfully."
         ]
     ],
     "profile" => [

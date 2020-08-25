@@ -78,4 +78,44 @@ class NotificationController extends Controller
         return redirect()->route('notifications.index')
             ->with('message', trans('locale.notification.message.save'));
     }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \Spatie\Permission\Models\Notification  $notification
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Notification $notification)
+    {
+        $breadcrumbs = [
+            ['link'=>"/admin/notifications",'name'=>trans('locale.notification.title')], ['name'=>trans('locale.notification.edit')]
+        ];
+        
+        return view('/pages/admin/notifications/edit', [
+            'pageConfigs' => $this->pageConfigs,
+            'breadcrumbs' => $breadcrumbs,
+            'notification' => $notification
+        ]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Spatie\Permission\Models\Notification  $notification
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Notification $notification)
+    {
+        $this->validate($request, [
+            'title'=>'required|max:90',
+            'text'=>'required|max:190',
+            'status'=>'required'
+        ]);
+
+        $notification->update($request->all());
+        
+        return redirect()->route('notifications.index')
+            ->with('message', trans('locale.notification.message.update'));
+    }
 }
