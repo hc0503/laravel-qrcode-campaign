@@ -10,6 +10,11 @@
         "url": "admin/users",
         "name": "user.title",
         "icon": "feather icon-unlock"
+    },
+    {
+        "url": "admin/notifications",
+        "name": "notification.title",
+        "icon": "feather icon-alert-triangle"
     }
   ]
 }
