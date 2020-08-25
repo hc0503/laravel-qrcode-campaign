@@ -34,8 +34,8 @@
 				<fieldset class="form-group">
 					<label for="title">@lang('locale.notification.status')</label>
 					<select name="status" class="custom-select" id="status">
-						 <option value="1" selected>Allowed</option>
-						 <option value="0">Denied</option>
+						<option value="1" selected>Allowed</option>
+						<option value="0">Denied</option>
 					</select>
 			  </fieldset>
 				
