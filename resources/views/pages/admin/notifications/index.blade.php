@@ -59,7 +59,7 @@
 								<td>{{ $notification->text }}</td>
 								<td>
 									<div class="custom-control custom-switch custom-switch-danger switch-lg mr-2">
-										<input id="locked_{{ $notification->id }}" class="custom-control-input" type="checkbox" {{ $notification->status == 0 ? "checked" : "" }} onchange="setStatus(this.checked, {{ $notification->id }})">
+										<input id="locked_{{ $notification->id }}" class="custom-control-input" type="checkbox" {{ $notification->status == 1 ? "checked" : "" }} onchange="setStatus(this.checked, {{ $notification->id }})">
 										<label class="custom-control-label" for="locked_{{ $notification->id }}">
 											<span class="switch-text-left">Denied</span>
 											<span class="switch-text-right">Allowed</span>
