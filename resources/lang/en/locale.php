@@ -92,6 +92,14 @@ return [
             "delete" => "The user is deleted successfully."
         ],
     ],
+    "notification" => [
+        'title' => "Notification",
+        "name" => "Title",
+        "text" => "Text",
+        "status" => "Status",
+        "list" => "Notification List",
+        "create" => "Create Notification"
+    ],
     "profile" => [
         "title" => "Profile",
         "save" => "Save changes",
