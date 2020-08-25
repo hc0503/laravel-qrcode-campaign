@@ -118,4 +118,19 @@ class NotificationController extends Controller
         return redirect()->route('notifications.index')
             ->with('message', trans('locale.notification.message.update'));
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \Spatie\Permission\Models\Notification  $notification
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Notification $notification)
+    {
+        $notification->delete();
+
+        return redirect()
+            ->route('notifications.index')
+            ->with('message', trans('locale.notification.message.delete'));
+    }
 }
