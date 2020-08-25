@@ -34,11 +34,14 @@ class DashboardController extends Controller
             array_push($campaignHitCounts, $campaign->campaignHits()->count());
         }
         
+        $notReadNotifications = Auth::user()->notReadNotifications();
+
         return view('/pages/dashboard', [
             'pageConfigs' => $this->pageConfigs,
             'campaignNames' => $campaigns->pluck('campaign_name'),
             'campaignHitCounts' => json_encode($campaignHitCounts),
-            'campaignHits' => $campaignHits
+            'campaignHits' => $campaignHits,
+            'notReadNotifications' => $notReadNotifications
         ]);
     }
 
@@ -78,6 +81,20 @@ class DashboardController extends Controller
         }
 
         return new JsonResponse($data);
+    }
+
+    /**
+     * Set read notification.
+     * 
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function readNotification(Request $request)
+    {
+        $notification = \App\Models\Notification::findOrfail($request->notification_id);
+        $request->user()->readNotifications()->attach($notification);
+
+        return new JsonResponse(null, 204);
     }
 
 }

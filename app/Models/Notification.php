@@ -19,4 +19,9 @@ class Notification extends Model
     protected $fillable = [
         'title', 'text', 'status'
     ];
+
+    public function readUsers()
+    {
+        return $this->belongsToMany(User::class, 'user_notification');
+    }
 }
