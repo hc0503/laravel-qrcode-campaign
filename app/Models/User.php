@@ -65,6 +65,8 @@ class User extends Authenticatable
     {
         $readNotifications = $this->readNotifications()->pluck('id')->toArray();
 
-        return Notification::whereNotIn('id', $readNotifications)->get();
+        return Notification::whereNotIn('id', $readNotifications)
+            ->where('status', 0)
+            ->get();
     }
 }
