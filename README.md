@@ -8,6 +8,11 @@ Dynamic QR code generate, tracking QR code scan, hitmap dashboard and admin pane
 ![ScreenShot](/screenshots/screenshot2.png)
 ![ScreenShot](/screenshots/screenshot3.png)
 ![ScreenShot](/screenshots/screenshot4.png)
+![ScreenShot](/screenshots/screenshot5.png)
+![ScreenShot](/screenshots/screenshot6.png)
+![ScreenShot](/screenshots/screenshot7.png)
+![ScreenShot](/screenshots/screenshot8.png)
+![ScreenShot](/screenshots/screenshot9.png)
 
 ## Installation
 
