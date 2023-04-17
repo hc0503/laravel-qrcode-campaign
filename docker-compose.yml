@@ -20,7 +20,7 @@ services:
       - qrnet
 
   app:
-    image: semiodigital/qrman:latest
+    image: ghcr.io/semiodigital/qrman:latest
     container_name: sd_qrman_app
     restart: unless-stopped
     depends_on:
