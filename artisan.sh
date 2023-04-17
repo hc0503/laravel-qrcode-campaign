@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd /app
+wait-for-it db:3306 -t 45
 
 if [ "$FIRST_RUN" == "true" ]; then
     echo yes | php artisan migrate
