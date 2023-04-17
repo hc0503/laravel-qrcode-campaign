@@ -29,6 +29,7 @@ nano .env
 cp .env.laravel.example .env.laravel
 nano .env.laravel
 ```
+Please note than when you run the project the first time you should set variable FIRST_TIME to TRUE. It will be then automatically set to false.
 
 Then run with docker-compose:
 
