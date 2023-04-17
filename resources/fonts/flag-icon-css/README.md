@@ -4,14 +4,14 @@ flag-icon-css
 [![Bower version](https://badge.fury.io/bo/flag-icon-css.svg)](https://badge.fury.io/bo/flag-icon-css)
 
 A collection of all country flags in SVG — plus the CSS for easier integration.
-See the [demo](http://lipis.github.io/flag-icon-css/).
+See the [demo](https://lipis.github.io/flag-icon-css/).
 
 Usage
 -----
 
 For using the flags inline with text add the classes `.flag-icon` and
 `.flag-icon-xx` (where `xx` is the
-[ISO 3166-1-alpha-2 code](http://www.iso.org/iso/country_names_and_code_elements)
+[ISO 3166-1-alpha-2 code](https://www.iso.org/iso/country_names_and_code_elements)
 of a country) to an empty `<span>`. If you want to have a squared version flag
 then add the class `flag-icon-squared` as well. Example:
 

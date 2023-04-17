@@ -5,7 +5,7 @@
    * because if an input is removed, we have to remove the
    * maxlength object associated (if any).
    * From:
-   * http://stackoverflow.com/questions/2200494/jquery-trigger-event-when-an-element-is-removed-from-the-dom
+   * https://stackoverflow.com/questions/2200494/jquery-trigger-event-when-an-element-is-removed-from-the-dom
    */
   if (!$.event.special.destroyed) {
     $.event.special.destroyed = {

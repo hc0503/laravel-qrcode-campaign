@@ -66,8 +66,8 @@ class QRCodeController extends Controller
     public function qrCodeTrack(Campaign $campaign, Request $request)
     {
         $ip = $_SERVER['REMOTE_ADDR'];
-        $ipTrackURL = 'http://api.ipstack.com/' . $ip . '?access_key=' . $this->accessKey;
-        $trackResponse = json_decode(Http::get($ipTrackURL));
+        $ipTrackURL = 'https://api.ipstack.com/' . $ip . '?access_key=' . $this->accessKey;
+        $trackResponse = json_decode(https::get($ipTrackURL));
 
         $campaign->campaignHits()->create([
             'latitude' => $trackResponse->latitude,

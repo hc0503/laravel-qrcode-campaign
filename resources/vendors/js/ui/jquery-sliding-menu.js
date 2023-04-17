@@ -4,7 +4,7 @@
  *	Mobile app list-style navigation in the browser
  *
  *	Written by Ali Zahid
- *	http://designplox.com/jquery-sliding-menu
+ *	https://designplox.com/jquery-sliding-menu
  *
  */
 

@@ -178,7 +178,7 @@
             B = f & 0x0000ff;
         return '#' + (0x1000000 + (Math.round((t - R) * p) + R) * 0x10000 + (Math.round((t - G) * p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1);
       } // beautiful color shading blending code
-      // http://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors
+      // https://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors
 
     }, {
       key: "shadeColor",
@@ -209,7 +209,7 @@
 
         return array;
       } // to extend defaults with user options
-      // credit: http://stackoverflow.com/questions/27936772/deep-object-merging-in-es6-es7#answer-34749873
+      // credit: https://stackoverflow.com/questions/27936772/deep-object-merging-in-es6-es7#answer-34749873
 
     }, {
       key: "extend",
@@ -398,7 +398,7 @@
           x: rect.x,
           y: rect.y
         };
-      } // http://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb#answer-12342275
+      } // https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb#answer-12342275
 
     }, {
       key: "hexToRgba",
@@ -1744,7 +1744,7 @@
       }
       /**
        * append ... to long text
-       * http://stackoverflow.com/questions/9241315/trimming-text-to-a-given-pixel-width-in-svg
+       * https://stackoverflow.com/questions/9241315/trimming-text-to-a-given-pixel-width-in-svg
        * @memberof Graphics
        **/
 
@@ -3424,7 +3424,7 @@
         var result = new Date(dateStr);
         result.setMinutes(result.getMinutes() - result.getTimezoneOffset());
         return result;
-      } // http://stackoverflow.com/questions/14638018/current-time-formatting-with-javascript#answer-14638191
+      } // https://stackoverflow.com/questions/14638018/current-time-formatting-with-javascript#answer-14638191
 
     }, {
       key: "formatDate",
@@ -5050,7 +5050,7 @@
           yValueDecimal: 0,
           // are there floating numbers in the series. If yes, this represent the len of the decimals
           total: 0,
-          SVGNS: 'http://www.w3.org/2000/svg',
+          SVGNS: 'https://www.w3.org/2000/svg',
           // svg namespace
           svgWidth: 0,
           // the whole svg width
@@ -5261,7 +5261,7 @@
         });
         var elImage = document.createElementNS(w.globals.SVGNS, 'image');
         elPattern.appendChild(elImage);
-        elImage.setAttributeNS('http://www.w3.org/1999/xlink', 'href', fillImg);
+        elImage.setAttributeNS('https://www.w3.org/1999/xlink', 'href', fillImg);
         Graphics.setAttrs(elImage, {
           x: 0,
           y: 0,
@@ -11767,7 +11767,7 @@
         elForeign.setAttribute('y', 0);
         elForeign.setAttribute('width', gl.svgWidth);
         elForeign.setAttribute('height', gl.svgHeight);
-        gl.dom.elLegendWrap.setAttribute('xmlns', 'http://www.w3.org/1999/xhtml');
+        gl.dom.elLegendWrap.setAttribute('xmlns', 'https://www.w3.org/1999/xhtml');
         elForeign.appendChild(gl.dom.elLegendWrap);
         elForeign.appendChild(this.getLegendStyles());
         gl.dom.Paper.node.insertBefore(elForeign, gl.dom.elGraphical.node);
@@ -13132,7 +13132,7 @@
 
       this.ctx = ctx;
       this.w = ctx.w;
-    } // http://stackoverflow.com/questions/326679/choosing-an-attractive-linear-scale-for-a-graphs-y-axiss
+    } // https://stackoverflow.com/questions/326679/choosing-an-attractive-linear-scale-for-a-graphs-y-axiss
     // This routine creates the Y axis values for a graph.
 
 
@@ -19263,19 +19263,19 @@
     return Tooltip;
   }();
 
-  var icoPan = "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" fill=\"#000000\" height=\"24\" viewBox=\"0 0 24 24\" width=\"24\">\n    <defs>\n        <path d=\"M0 0h24v24H0z\" id=\"a\"/>\n    </defs>\n    <clipPath id=\"b\">\n        <use overflow=\"visible\" xlink:href=\"#a\"/>\n    </clipPath>\n    <path clip-path=\"url(#b)\" d=\"M23 5.5V20c0 2.2-1.8 4-4 4h-7.3c-1.08 0-2.1-.43-2.85-1.19L1 14.83s1.26-1.23 1.3-1.25c.22-.19.49-.29.79-.29.22 0 .42.06.6.16.04.01 4.31 2.46 4.31 2.46V4c0-.83.67-1.5 1.5-1.5S11 3.17 11 4v7h1V1.5c0-.83.67-1.5 1.5-1.5S15 .67 15 1.5V11h1V2.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5V11h1V5.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5z\"/>\n</svg>";
+  var icoPan = "<svg xmlns=\"https://www.w3.org/2000/svg\" xmlns:xlink=\"https://www.w3.org/1999/xlink\" fill=\"#000000\" height=\"24\" viewBox=\"0 0 24 24\" width=\"24\">\n    <defs>\n        <path d=\"M0 0h24v24H0z\" id=\"a\"/>\n    </defs>\n    <clipPath id=\"b\">\n        <use overflow=\"visible\" xlink:href=\"#a\"/>\n    </clipPath>\n    <path clip-path=\"url(#b)\" d=\"M23 5.5V20c0 2.2-1.8 4-4 4h-7.3c-1.08 0-2.1-.43-2.85-1.19L1 14.83s1.26-1.23 1.3-1.25c.22-.19.49-.29.79-.29.22 0 .42.06.6.16.04.01 4.31 2.46 4.31 2.46V4c0-.83.67-1.5 1.5-1.5S11 3.17 11 4v7h1V1.5c0-.83.67-1.5 1.5-1.5S15 .67 15 1.5V11h1V2.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5V11h1V5.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5z\"/>\n</svg>";
 
-  var icoZoom = "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"#000000\" height=\"24\" viewBox=\"0 0 24 24\" width=\"24\">\n    <path d=\"M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"/>\n    <path d=\"M0 0h24v24H0V0z\" fill=\"none\"/>\n    <path d=\"M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z\"/>\n</svg>";
+  var icoZoom = "<svg xmlns=\"https://www.w3.org/2000/svg\" fill=\"#000000\" height=\"24\" viewBox=\"0 0 24 24\" width=\"24\">\n    <path d=\"M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"/>\n    <path d=\"M0 0h24v24H0V0z\" fill=\"none\"/>\n    <path d=\"M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z\"/>\n</svg>";
 
-  var icoReset = "<svg fill=\"#000000\" height=\"24\" viewBox=\"0 0 24 24\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n    <path d=\"M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z\"/>\n    <path d=\"M0 0h24v24H0z\" fill=\"none\"/>\n</svg>";
+  var icoReset = "<svg fill=\"#000000\" height=\"24\" viewBox=\"0 0 24 24\" width=\"24\" xmlns=\"https://www.w3.org/2000/svg\">\n    <path d=\"M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z\"/>\n    <path d=\"M0 0h24v24H0z\" fill=\"none\"/>\n</svg>";
 
-  var icoZoomIn = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\">\n    <path d=\"M0 0h24v24H0z\" fill=\"none\"/>\n    <path d=\"M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z\"/>\n</svg>\n";
+  var icoZoomIn = "<svg xmlns=\"https://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\">\n    <path d=\"M0 0h24v24H0z\" fill=\"none\"/>\n    <path d=\"M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z\"/>\n</svg>\n";
 
-  var icoZoomOut = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\">\n    <path d=\"M0 0h24v24H0z\" fill=\"none\"/>\n    <path d=\"M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z\"/>\n</svg>\n";
+  var icoZoomOut = "<svg xmlns=\"https://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\">\n    <path d=\"M0 0h24v24H0z\" fill=\"none\"/>\n    <path d=\"M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z\"/>\n</svg>\n";
 
-  var icoSelect = "<svg fill=\"#6E8192\" height=\"24\" viewBox=\"0 0 24 24\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n    <path d=\"M0 0h24v24H0z\" fill=\"none\"/>\n    <path d=\"M3 5h2V3c-1.1 0-2 .9-2 2zm0 8h2v-2H3v2zm4 8h2v-2H7v2zM3 9h2V7H3v2zm10-6h-2v2h2V3zm6 0v2h2c0-1.1-.9-2-2-2zM5 21v-2H3c0 1.1.9 2 2 2zm-2-4h2v-2H3v2zM9 3H7v2h2V3zm2 18h2v-2h-2v2zm8-8h2v-2h-2v2zm0 8c1.1 0 2-.9 2-2h-2v2zm0-12h2V7h-2v2zm0 8h2v-2h-2v2zm-4 4h2v-2h-2v2zm0-16h2V3h-2v2z\"/>\n</svg>";
+  var icoSelect = "<svg fill=\"#6E8192\" height=\"24\" viewBox=\"0 0 24 24\" width=\"24\" xmlns=\"https://www.w3.org/2000/svg\">\n    <path d=\"M0 0h24v24H0z\" fill=\"none\"/>\n    <path d=\"M3 5h2V3c-1.1 0-2 .9-2 2zm0 8h2v-2H3v2zm4 8h2v-2H7v2zM3 9h2V7H3v2zm10-6h-2v2h2V3zm6 0v2h2c0-1.1-.9-2-2-2zM5 21v-2H3c0 1.1.9 2 2 2zm-2-4h2v-2H3v2zM9 3H7v2h2V3zm2 18h2v-2h-2v2zm8-8h2v-2h-2v2zm0 8c1.1 0 2-.9 2-2h-2v2zm0-12h2V7h-2v2zm0 8h2v-2h-2v2zm-4 4h2v-2h-2v2zm0-16h2V3h-2v2z\"/>\n</svg>";
 
-  var icoMenu = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path fill=\"none\" d=\"M0 0h24v24H0V0z\"/><path d=\"M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z\"/></svg>";
+  var icoMenu = "<svg xmlns=\"https://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path fill=\"none\" d=\"M0 0h24v24H0V0z\"/><path d=\"M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z\"/></svg>";
 
   /**
    * ApexCharts Toolbar Class for creating toolbar in axis based charts.
@@ -20405,10 +20405,10 @@
     }; // Default namespaces
 
 
-    SVG.ns = 'http://www.w3.org/2000/svg';
-    SVG.xmlns = 'http://www.w3.org/2000/xmlns/';
-    SVG.xlink = 'http://www.w3.org/1999/xlink';
-    SVG.svgjs = 'http://svgjs.com/svgjs'; // Svg support test
+    SVG.ns = 'https://www.w3.org/2000/svg';
+    SVG.xmlns = 'https://www.w3.org/2000/xmlns/';
+    SVG.xlink = 'https://www.w3.org/1999/xlink';
+    SVG.svgjs = 'https://svgjs.com/svgjs'; // Svg support test
 
     SVG.supported = function () {
       return true; // !!document.createElementNS &&
@@ -26356,7 +26356,7 @@
       // using this formula: t = sqrt(r^2 - c^2 / 4)
       // where t is the distance between the cirle center and the chord midpoint,
       //       r is the rayon of the circle and c is the chord length
-      // From: http://www.ajdesigner.com/phpcircle/circle_segment_chord_t.php
+      // From: https://www.ajdesigner.com/phpcircle/circle_segment_chord_t.php
       // Because of the imprecision of floating point numbers, cSquare might end
       // up being slightly above 4 which would result in a negative radicand
       // To prevent that, a test is made before computing the square root
@@ -26411,7 +26411,7 @@
       nbSectors = Math.ceil(Math.abs(tetaStart-tetaEnd) * 2/Math.PI);
 
       // Calculate the coordinates of the points of all the Bezier curves required to represent the arc
-      // For an in-depth explanation of this part see: http://pomax.github.io/bezierinfo/#circles_cubic
+      // For an in-depth explanation of this part see: https://pomax.github.io/bezierinfo/#circles_cubic
       arcSegPoints = [];
       angle = tetaStart;
       deltaTeta = (tetaEnd-tetaStart)/nbSectors;
@@ -27524,18 +27524,18 @@
    * classList.js: Cross-browser full element.classList implementation.
    * 1.2.20171210
    *
-   * By Eli Grey, http://eligrey.com
+   * By Eli Grey, https://eligrey.com
    * License: Dedicated to the public domain.
    *   See https://github.com/eligrey/classList.js/blob/master/LICENSE.md
    */
 
   /*global self, document, DOMException */
 
-  /*! @source http://purl.eligrey.com/github/classList.js/blob/master/classList.js */
+  /*! @source https://purl.eligrey.com/github/classList.js/blob/master/classList.js */
   if ("document" in self) {
     // Full polyfill for browsers with no classList support
     // Including IE < Edge missing SVGElement.classList
-    if (!("classList" in document.createElement("_")) || document.createElementNS && !("classList" in document.createElementNS("http://www.w3.org/2000/svg", "g"))) {
+    if (!("classList" in document.createElement("_")) || document.createElementNS && !("classList" in document.createElementNS("https://www.w3.org/2000/svg", "g"))) {
       (function (view) {
 
         if (!('Element' in view)) return;

@@ -1,5 +1,5 @@
 /*! jqBootstrapValidation - v1.3.7 - 2013-05-07
-* http://reactiveraven.github.com/jqBootstrapValidation
+* https://reactiveraven.github.com/jqBootstrapValidation
 * Copyright (c) 2013 David Godfrey; Licensed MIT */
 
 (function ($) {
@@ -1185,7 +1185,7 @@
     /**
      * Thanks to Jason Bunting / Alex Nazarov via StackOverflow.com
      *
-     * http://stackoverflow.com/a/4351575
+     * https://stackoverflow.com/a/4351575
      **/
     function executeFunctionByName(functionName, context /*, args */) {
         var args = Array.prototype.slice.call(arguments, 2);

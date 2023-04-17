@@ -7663,13 +7663,13 @@ document.addEventListener("DOMContentLoaded", function () {
  * Diff Match and Patch
  *
  * Copyright 2006 Google Inc.
- * http://code.google.com/p/google-diff-match-patch/
+ * https://code.google.com/p/google-diff-match-patch/
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
+ *   https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -7955,7 +7955,7 @@ function diff_commonPrefix(text1, text2) {
     return 0;
   }
   // Binary search.
-  // Performance analysis: http://neil.fraser.name/news/2007/10/09/
+  // Performance analysis: https://neil.fraser.name/news/2007/10/09/
   var pointermin = 0;
   var pointermax = Math.min(text1.length, text2.length);
   var pointermid = pointermax;
@@ -7987,7 +7987,7 @@ function diff_commonSuffix(text1, text2) {
     return 0;
   }
   // Binary search.
-  // Performance analysis: http://neil.fraser.name/news/2007/10/09/
+  // Performance analysis: https://neil.fraser.name/news/2007/10/09/
   var pointermin = 0;
   var pointermax = Math.min(text1.length, text2.length);
   var pointermid = pointermax;

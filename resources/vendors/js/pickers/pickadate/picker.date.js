@@ -1,6 +1,6 @@
 /*!
  * Date picker for pickadate.js v3.6.4
- * http://amsul.github.io/pickadate.js/date.htm
+ * https://amsul.github.io/pickadate.js/date.htm
  */
 
 (function ( factory ) {
@@ -647,7 +647,7 @@ DatePicker.prototype.formats = (function() {
     function getWordLengthFromCollection( string, collection, dateObject ) {
 
         // Grab the first word from the string.
-        // Regex pattern from http://stackoverflow.com/q/150033
+        // Regex pattern from https://stackoverflow.com/q/150033
         var word = string.match( /[^\x00-\x7F]+|[a-zA-Z0-9_\u0080-\u00FF]+/ )[ 0 ]
 
         // If there's no month index, add it to the date object
