@@ -1,8 +1,8 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/devdreamcatch/laravel-qrcode-campaign)
-
-# ✨Laravel QRCode Scan✨
+# ✨SemioQR✨
 
 Dynamic QR code, logo QR code generate, tracking QR code scan, hitmap dashboard and admin panel using [Laravel 7](https://laravel.com) framework, [Vuexy](https://themeforest.net/item/vuexy-vuejs-html-laravel-admin-dashboard-template/23328599) template, [endroid/qr-code](https://github.com/endroid/qr-code) library
+
+This is a fork of https://github.com/devdreamsolution/laravel7-qrcode-campaign. We re trying to fix some problems with the webapp, add docker and fix the documentation since it can be a really useful tool internally and for the community,
 
 
 ## Screenshots
@@ -20,30 +20,36 @@ Dynamic QR code, logo QR code generate, tracking QR code scan, hitmap dashboard 
 
 #### Composer install
 ```sh
-$ composer install
+sudo composer self-update --2
+composer install
+composer require predis/predis
 ```
 
 #### Laravel key generate
+Only when you start the project the first time, run
+
 ```sh
-$ php artisan key:generate
+php artisan key:generate
 ```
 
 #### Node module install
 ```sh
-$ npm i
+npm i
 ```
 
 #### Mix build
 ```sh
-$ npm run dev
+npm run dev
 ```
 
 #### Database migrate and seed
+Only when you start the project the first time, run
 ```sh
-$ php artisan migrate --seed
+php artisan migrate --seed
 ```
 
 #### Run server
 ```sh
-$ php artisan serve
+php artisan storage:link
+php artisan serve --host=0.0.0.0
 ```

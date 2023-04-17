@@ -8,7 +8,7 @@ $configData = Helper::applClasses();
     <ul class="nav navbar-nav flex-row">
       <li class="nav-item mr-auto"><a class="navbar-brand" href="dashboard-analytics">
           <div class="brand-logo"></div>
-          <h2 class="brand-text mb-0">Vuexy</h2>
+          <h2 class="brand-text mb-0">SemioDigital</h2>
         </a></li>
       <li class="nav-item nav-toggle">
         <a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse">
