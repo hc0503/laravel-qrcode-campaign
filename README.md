@@ -18,6 +18,37 @@ This is a fork of https://github.com/devdreamsolution/laravel7-qrcode-campaign. 
 
 ## Installation
 
+### Docker
+
+We suggest to use docker for an easy deployment, make sure to copy the example env files and then edit them accordingly to your needs:
+
+```sh
+cp .env.docker.example .env
+nano .env
+
+cp .env.laravel.example .env.laravel
+nano .env.laravel
+```
+
+Then run with docker-compose:
+
+```sh
+docker compose up -d
+```
+
+We suggest to move docker-compose and the env files in a separate location/repo for production.
+
+If you are using a proxy remove the ports directive and point to port 8000.
+
+### Manual
+
+If you want to run manually ignore .env.docker.example and copy/edit .env.laravel.example:
+
+```sh
+cp .env.laravel.example .env
+nano .env
+```
+
 #### Composer install
 ```sh
 sudo composer self-update --2
