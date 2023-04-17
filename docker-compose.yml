@@ -43,3 +43,8 @@ networks:
         driver: bridge
         ipam:
             driver: default
+
+volumes:
+  qrman_config:
+  qrman_storage:
+  qrman_db:     
