@@ -27,7 +27,7 @@ class QRCodeController extends Controller
      */
     public function generateQRCode(Campaign $campaign, Request $request)
     {
-        $url = route('qrcode-track', $campaign);
+        $url = secure_url(route('qrcode-track', $campaign));
         $qrCode = new QrCode($url);
         $qrCode->setSize(400);
         $qrCode->setMargin(10);
@@ -43,7 +43,7 @@ class QRCodeController extends Controller
                                 , 'b' => $this->convertRGB($campaign->background)[2], 'a' => 0]);
 
         if ($campaign->logo != null) {
-          $qrCode->setLogoPath(asset("storage/" . $campaign->logo));
+          $qrCode->setLogoPath(secure_asset("storage/" . $campaign->logo));
           $qrCode->setLogoSize(150, 150);
         }
         $qrCode->setValidateResult(false);
