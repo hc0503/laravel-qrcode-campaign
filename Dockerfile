@@ -1,4 +1,4 @@
-FROM bitnami/laravel:7-debian-10
+FROM bitnami/laravel:8-debian-10
 
 RUN curl -sS https://getcomposer.org/installer​ | php -- \
      --install-dir=/usr/local/bin --filename=composer
@@ -21,13 +21,13 @@ RUN sudo chmod -R 755 ./*
 USER bitnami
 RUN sudo composer self-update --2
 RUN composer install
-RUN composer require predis/predis
+#RUN composer require predis/predis
 #RUN php artisan migrate --seed
 #RUN php artisan key:generate
 RUN npm i
 RUN npm run dev
 CMD [ "./artisan.sh" ]
 #CMD [ "/usr/bin/tail -f /dev/null" ]
-#/opt/bitnami/php/bin/php artisan serve --host=0.0.0.0 || 
-# Must command with different container "php artisan key:generate && php artisan migrate --seed" 
+#/opt/bitnami/php/bin/php artisan serve --host=0.0.0.0 ||
+# Must command with different container "php artisan key:generate && php artisan migrate --seed"
 # and "php artisan serve --host=0.0.0.0"
