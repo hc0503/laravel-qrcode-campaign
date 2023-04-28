@@ -8,7 +8,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.3.0",
+        "php": "^8.0",
         "endroid/qr-code": "^3.9",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.2",
