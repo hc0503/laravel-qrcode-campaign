@@ -27,33 +27,49 @@ class QRCodeController extends Controller
      */
     public function generateQRCode(Campaign $campaign, Request $request)
     {
-        $url = secure_url(route('qrcode-track', $campaign));
-        $qrCode = new QrCode($url);
-        $qrCode->setSize(400);
-        $qrCode->setMargin(10);
-
-        $qrCode->setWriterByName('png');
-        $qrCode->setEncoding('UTF-8');
-        $qrCode->setErrorCorrectionLevel(ErrorCorrectionLevel::HIGH());
-        $qrCode->setForegroundColor(['r' => $this->convertRGB($campaign->foreground)[0]
-                                , 'g' => $this->convertRGB($campaign->foreground)[1]
-                                , 'b' => $this->convertRGB($campaign->foreground)[2], 'a' => 0]);
-        $qrCode->setBackgroundColor(['r' => $this->convertRGB($campaign->background)[0]
-                                , 'g' => $this->convertRGB($campaign->background)[1]
-                                , 'b' => $this->convertRGB($campaign->background)[2], 'a' => 0]);
-
+        $url = route('qrcode-track', $campaign);
+        $cmd = "";
+        $logo = "";
+        $output = "";
+        $myfile = fopen("/app/storage/logs/qrlogs.log", "a") or die("Unable to open file!");
         if ($campaign->logo != null) {
-          $qrCode->setLogoPath(secure_asset("storage/" . $campaign->logo));
-          $qrCode->setLogoSize(150, 150);
+          $logo = "/app/public/storage/" . $campaign->logo;
+          $cmd = escapeshellcmd("/app/qrgen.py " . $url . " --fg " . $campaign->foreground . " --bg " . $campaign->background . " --output /app/public/storage/qrs/" . " --logo " . $logo);
         }
-        $qrCode->setValidateResult(false);
-        $qrCode->setRoundBlockSize(true, QrCode::ROUND_BLOCK_SIZE_MODE_MARGIN); // The size of the qr code is shrinked, if necessary, but the size of the final image remains unchanged due to additional margin being added (default)
-        $qrCode->setRoundBlockSize(true, QrCode::ROUND_BLOCK_SIZE_MODE_ENLARGE); // The size of the qr code and the final image is enlarged, if necessary
-        $qrCode->setRoundBlockSize(true, QrCode::ROUND_BLOCK_SIZE_MODE_SHRINK); // The size of the qr code and the final image is shrinked, if necessary
+        else {
+          $cmd = escapeshellcmd("/app/qrgen.py " . $url . " --fg " . $campaign->foreground . " --bg " . $campaign->background . " --output /app/public/storage/qrs/");
+        }
+        $output = system($cmd);
+        echo "OUT IS: $output and cmd is $cmd\n";
+        fwrite($myfile, "$output" . "OUTPUT:$cmd\n");
+        return response()->json(['success' => $output], 200);
+    //     $url = url(route('qrcode-track', $campaign));
+    //     $qrCode = new QrCode($url);
+    //     $qrCode->setSize(400);
+    //     $qrCode->setMargin(10);
 
-        $qrCode->setWriterOptions(['exclude_xml_declaration' => true]);
+    //     $qrCode->setWriterByName('png');
+    //     $qrCode->setEncoding('UTF-8');
+    //     $qrCode->setErrorCorrectionLevel(ErrorCorrectionLevel::HIGH());
+    //     $qrCode->setForegroundColor(['r' => $this->convertRGB($campaign->foreground)[0]
+    //                             , 'g' => $this->convertRGB($campaign->foreground)[1]
+    //                             , 'b' => $this->convertRGB($campaign->foreground)[2], 'a' => 0]);
+    //     $qrCode->setBackgroundColor(['r' => $this->convertRGB($campaign->background)[0]
+    //                             , 'g' => $this->convertRGB($campaign->background)[1]
+    //                             , 'b' => $this->convertRGB($campaign->background)[2], 'a' => 0]);
 
-        return response($qrCode->writeString())->header('Content-Type: ', $qrCode->getContentType());
+    //     if ($campaign->logo != null) {
+    //       $qrCode->setLogoPath(asset("storage/" . $campaign->logo));
+    //       $qrCode->setLogoSize(150, 150);
+    //     }
+    //     $qrCode->setValidateResult(false);
+    //     $qrCode->setRoundBlockSize(true, QrCode::ROUND_BLOCK_SIZE_MODE_MARGIN); // The size of the qr code is shrinked, if necessary, but the size of the final image remains unchanged due to additional margin being added (default)
+    //     $qrCode->setRoundBlockSize(true, QrCode::ROUND_BLOCK_SIZE_MODE_ENLARGE); // The size of the qr code and the final image is enlarged, if necessary
+    //     $qrCode->setRoundBlockSize(true, QrCode::ROUND_BLOCK_SIZE_MODE_SHRINK); // The size of the qr code and the final image is shrinked, if necessary
+
+    //     $qrCode->setWriterOptions(['exclude_xml_declaration' => true]);
+
+    //     return response($qrCode->writeString())->header('Content-Type: ', $qrCode->getContentType());
     }
 
     /**
