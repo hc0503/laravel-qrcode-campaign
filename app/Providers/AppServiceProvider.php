@@ -26,12 +26,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-<<<<<<< HEAD
         if(env('APP_ENV') !== 'local') {
             URL::forceScheme('https');
         }
-=======
-        // URL::forceScheme('https');
->>>>>>> origin/php8-py
     }
 }
