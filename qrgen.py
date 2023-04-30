@@ -6,11 +6,8 @@ from PIL import ImageColor
 from PIL import Image
 import secrets
 import logging
-<<<<<<< HEAD
-=======
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
->>>>>>> pythonqr
 
 parser = argparse.ArgumentParser()
 parser.add_argument("text", help="Text to insert in qrcode")
