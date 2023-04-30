@@ -12,4 +12,4 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 /vuexy-shell-scripts
-container_migrations.sh
+docker-compose-test.yml
