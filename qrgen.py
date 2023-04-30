@@ -6,6 +6,8 @@ from PIL import ImageColor
 from PIL import Image
 import secrets
 import logging
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 parser = argparse.ArgumentParser()
 parser.add_argument("text", help="Text to insert in qrcode")
@@ -16,9 +18,8 @@ parser.add_argument("--output", help="Output Path of PNG")
 parser.add_argument("--debug", help="Enable Debug", action='store_true')
 args = parser.parse_args()
 
-logging.basicConfig(filename='/app/storage/logs/qr.log', level=logging.DEBUG)
-
 if args.debug:
+    logging.basicConfig(filename='/app/storage/logs/qr.log', level=logging.DEBUG)
     logging.debug("PARSED ARGS")
     
 if args.fg is None:
@@ -32,8 +33,6 @@ args.bg = args.bg.replace("\\", "")
 
 if args.output is None:
     args.output = f"./{secrets.token_hex(15)}.png"
-else:
-    args.output += f"{secrets.token_hex(15)}.png"
 
 if args.debug:
     logging.debug("ARGS SETTED")
@@ -56,4 +55,5 @@ try:
 except Exception as e:
     if args.debug:
         logging.debug(f"EXCEPTION {e} OCCURRED")
-    print(f"failed {e}")
+    exit(-1)
+print(args.output)

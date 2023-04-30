@@ -36,17 +36,23 @@ class QRCodeController extends Controller
         }
         if ($campaign->logo != null) {
           $logo = "/app/public/storage/" . $campaign->logo;
-          $cmd = escapeshellcmd("/app/qrgen.py " . $url . " --fg " . $campaign->foreground . " --bg " . $campaign->background . " --output /app/public/storage/qrs/" . " --logo " . $logo);
+          $cmd = escapeshellcmd("/app/qrgen.py $url --fg $campaign->foreground --bg $campaign->background --output /app/public/storage/qrs/$campaign->id.png --logo $logo");
         }
         else {
-          $cmd = escapeshellcmd("/app/qrgen.py " . $url . " --fg " . $campaign->foreground . " --bg " . $campaign->background . " --output /app/public/storage/qrs/");
+          $cmd = escapeshellcmd("/app/qrgen.py $url --fg $campaign->foreground --bg $campaign->background --output /app/public/storage/qrs/$campaign->id.png");
         }
         $output = system($cmd);
-        echo "OUT IS: $output and cmd is $cmd\n";
+        
         if(env('APP_DEBUG') == 'true') {
+            echo "CMD is $cmd\n";
+            echo "OUTPUT IS: $output\n";
             fwrite($myfile, "$output" . "OUTPUT:$cmd\n");
         }
-        return response()->json(['success' => $output], 200);
+        
+        if(file_exists($output))
+            $output = str_replace("/app/public/", env('APP_URL'), $output);
+            return redirect()->away($output);
+        return response()->json(['error' => $output], 500);
     //     return response($qrCode->writeString())->header('Content-Type: ', $qrCode->getContentType());
     }
 
