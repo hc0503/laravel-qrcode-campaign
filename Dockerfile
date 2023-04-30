@@ -10,15 +10,12 @@ RUN sudo apt update -y && sudo apt upgrade -y && curl -fsSL https://deb.nodesour
   libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python3-tk\
   libharfbuzz-dev libfribidi-dev libxcb1-dev
 
-WORKDIR /opt/bitnami/python/lib/python3.8/
-RUN python3 -m ensurepip --upgrade && python3 -m pip install pillow qrcode
-
 RUN sudo rm -R /app && sudo mkdir /app && sudo chown -R bitnami:bitnami /app
 WORKDIR /app
 RUN git clone -b dev https://github.com/SemioDigital/qrman .
 
 COPY ./artisan.sh ./artisan.sh
-RUN sudo chown -R bitnami:bitnami ./* && sudo chmod -R 755 ./*
+RUN sudo chown -R bitnami:bitnami ./* && sudo chmod -R 755 ./* && mkdir ./storage/app/public/qrs
 
 USER bitnami
 
