@@ -30,6 +30,7 @@ cp .env.laravel.example .env.laravel
 nano .env.laravel
 ```
 Please note than when you run the project the first time you should set variable FIRST_TIME to TRUE. It will be then automatically set to false.
+Morehower the variable APP_ENV should be set to *production* when you want to enforce HTTPS. Otherwise, leave *local* when testing without https.
 
 Then run with docker-compose:
 
