@@ -12,7 +12,7 @@ sudo apt-get install -y nodejs git php wait-for-it
 
 RUN sudo rm -R /app && sudo mkdir /app && sudo chown -R bitnami:bitnami /app
 WORKDIR /app
-RUN git clone -b php8-py https://github.com/SemioDigital/qrman .
+RUN git clone https://github.com/SemioDigital/qrman .
 COPY ./artisan.sh ./artisan.sh
 RUN sudo chown -R bitnami:bitnami ./*
 RUN sudo chmod -R 755 ./*
