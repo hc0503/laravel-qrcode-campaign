@@ -5,29 +5,29 @@ RUN curl -sS https://getcomposer.org/installer​ | php -- \
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-RUN sudo apt update -y && sudo apt upgrade -y
+RUN sudo apt update -y && sudo apt upgrade -y && curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+  sudo apt install -y nodejs git php wait-for-it python3-dev python3-setuptools libtiff5-dev libjpeg62-turbo-dev libopenjp2-7-dev zlib1g-dev\
+  libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python3-tk\
+  libharfbuzz-dev libfribidi-dev libxcb1-dev
 
-RUN curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs git php wait-for-it
+WORKDIR /opt/bitnami/python/lib/python3.8/
+RUN python3 -m ensurepip --upgrade && python3 -m pip install pillow qrcode
 
 RUN sudo rm -R /app && sudo mkdir /app && sudo chown -R bitnami:bitnami /app
 WORKDIR /app
-RUN git clone -b php8-py https://github.com/SemioDigital/qrman .
+RUN git clone -b dev https://github.com/SemioDigital/qrman .
 COPY ./artisan.sh ./artisan.sh
-RUN sudo chown -R bitnami:bitnami ./*
-RUN sudo chmod -R 755 ./*
+RUN sudo chown -R bitnami:bitnami ./* && sudo chmod -R 755 ./*
 
-# RUN composer update --ignore-platform-reqs
 USER bitnami
-RUN sudo composer self-update --2
-RUN composer install
-#RUN composer require predis/predis
-#RUN php artisan migrate --seed
-#RUN php artisan key:generate
-RUN npm i
-RUN npm run dev
+
+WORKDIR /opt/bitnami/python/lib/python3.8/
+RUN python3 -m ensurepip --upgrade && python3 -m pip install pillow qrcode
+
+WORKDIR /app
+# RUN composer update
+RUN sudo composer self-update --2 && composer install
+
+RUN npm i && npm audit fix && npm run dev
 CMD [ "./artisan.sh" ]
-#CMD [ "/usr/bin/tail -f /dev/null" ]
-#/opt/bitnami/php/bin/php artisan serve --host=0.0.0.0 ||
-# Must command with different container "php artisan key:generate && php artisan migrate --seed"
-# and "php artisan serve --host=0.0.0.0"
+
