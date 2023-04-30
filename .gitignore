@@ -6,9 +6,11 @@
 .env
 .env.laravel
 .env.backup
+.env.laravel
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
 /vuexy-shell-scripts
+docker-compose-test.yml

@@ -78,6 +78,9 @@
 						</div>
 					</div>
 				</div>
+				<div class="text-center">
+					<a href="{!! url('/qrcode/generate', $campaign->id) !!}" class="btn btn-primary" download>Download QRCode</a>
+				</div>
 			</div>
 		</div>
 	</div>
