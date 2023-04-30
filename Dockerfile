@@ -16,6 +16,7 @@ RUN python3 -m ensurepip --upgrade && python3 -m pip install pillow qrcode
 RUN sudo rm -R /app && sudo mkdir /app && sudo chown -R bitnami:bitnami /app
 WORKDIR /app
 RUN git clone -b dev https://github.com/SemioDigital/qrman .
+
 COPY ./artisan.sh ./artisan.sh
 RUN sudo chown -R bitnami:bitnami ./* && sudo chmod -R 755 ./*
 
