@@ -21,6 +21,16 @@
           </ul>
         </div>
         <ul class="nav navbar-nav float-right">
+          <li class="nav-item d-none d-lg-block">
+            <div class="custom-control custom-switch custom-switch mr-2 mb-1">
+              <p class="mb-0"></br></p>
+              <input type="checkbox" onclick="theme()" class="custom-control-input" id="customSwitch11">
+              <label class="custom-control-label" for="customSwitch11">
+                <span class="switch-icon-left"><i class="feather icon-moon"></i></span>
+                <span class="switch-icon-right"><i class="feather icon-sun"></i></span>
+              </label>
+            </div>
+          </li>
           <li class="dropdown dropdown-language nav-item">
             <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="flag-icon flag-icon-us"></i>
@@ -82,3 +92,21 @@
 <form id="logout" action="{{ route('logout') }}" method="POST" style="display: none;">
   @csrf
 </form>
+
+
+<script>
+  //console.log($configData["theme"])
+  function theme() {
+    var t = document.getElementById("customSwitch11");
+    if(t.value=="ON") {
+      console.log("ON {{ $configData['theme'] }}")
+      t.value="OFF";
+      "{{ $configData['theme'] = 'dark' }}"
+    }
+    else {
+      console.log("OFF {{ $configData['theme'] }}")
+      t.value="ON";
+      "{{ $configData['theme'] = 'light' }}"
+    }
+  }
+</script>
