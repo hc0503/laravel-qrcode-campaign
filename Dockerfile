@@ -1,4 +1,4 @@
-FROM bitnami/laravel:8-debian-10
+FROM bitnami/laravel:9-debian-11
 
 RUN curl -sS https://getcomposer.org/installer​ | php -- \
      --install-dir=/usr/local/bin --filename=composer
