@@ -14,3 +14,4 @@ npm-debug.log
 yarn-error.log
 /vuexy-shell-scripts
 docker-compose-test.yml
+package-lock.json
