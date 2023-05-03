@@ -101,12 +101,10 @@
     if(t.value=="ON") {
       console.log("ON {{ $configData['theme'] }}")
       t.value="OFF";
-      "{{ $configData['theme'] = 'dark' }}"
     }
-    else {
+    else if (t.value=="OFF"){
       console.log("OFF {{ $configData['theme'] }}")
       t.value="ON";
-      "{{ $configData['theme'] = 'light' }}"
     }
   }
 </script>
