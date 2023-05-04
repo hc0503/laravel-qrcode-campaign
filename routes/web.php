@@ -36,6 +36,13 @@ Route::group(['middleware' => ['auth','locked']], function () {
   // Set read notification
   Route::post('notifications/read', 'DashboardController@readNotification');
 
+  //Theme
+  Route::post('change_theme', 'ThemeController@changeTheme')->name('theme.change');
+  Route::post('get_theme',    'ThemeController@getTheme')->name('theme.get');
+  Route::get('change_theme', 'ThemeController@changeTheme')->name('theme.gchange');
+  Route::get('get_theme',    'ThemeController@getTheme')->name('theme.gget');
+
+
   Route::group(['middleware' => ['permission:user_manage'], 'prefix' => 'admin'], function () {
     // Roles
     Route::resource('roles', 'Admin\RoleController');

@@ -6,7 +6,7 @@
 .env
 .env.laravel
 .env.backup
-.env.laravel
+.env.docker
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
