@@ -1,4 +1,4 @@
-FROM bitnami/laravel:8-debian-10
+FROM bitnami/laravel:9-debian-11
 
 RUN curl -sS https://getcomposer.org/installer​ | php -- \
      --install-dir=/usr/local/bin --filename=composer
@@ -6,15 +6,16 @@ RUN curl -sS https://getcomposer.org/installer​ | php -- \
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 RUN sudo apt update -y && sudo apt upgrade -y && curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
-  sudo apt install -y nodejs git php wait-for-it python3-dev python3-setuptools libtiff5-dev libjpeg62-turbo-dev libopenjp2-7-dev zlib1g-dev\
+
+  sudo apt install -y nodejs git wait-for-it python3-dev python3-setuptools libtiff5-dev libjpeg62-turbo-dev libopenjp2-7-dev zlib1g-dev\
   libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python3-tk\
   libharfbuzz-dev libfribidi-dev libxcb1-dev
 
 RUN sudo rm -R /app && sudo mkdir /app && sudo chown -R bitnami:bitnami /app
 WORKDIR /app
-RUN git clone -b dev https://github.com/SemioDigital/qrman .
 
-COPY ./artisan.sh ./artisan.sh
+RUN git clone -b dev https://github.com/SemioDigital/qrman .
+COPY ./entrypoint.sh ./entrypoint.sh
 
 USER bitnami
 RUN sudo chown -R bitnami:bitnami ./* && sudo chmod -R 755 ./* && mkdir ./storage/app/public/qrs
@@ -26,6 +27,6 @@ WORKDIR /app
 # RUN composer update
 RUN sudo composer self-update --2 && composer install
 
-RUN npm i && npm audit fix && npm run dev
-CMD [ "./artisan.sh" ]
 
+RUN npm i && npm run dev
+ENTRYPOINT [ "./entrypoint.sh" ]
