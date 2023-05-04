@@ -27,8 +27,8 @@ WORKDIR /app
 RUN sudo composer self-update --2 && composer install
 
 # RUN sudo npm i -g npm-check-updates && ncu -u -x sass,sass-loader,webpack-cli && npm i --package-lock-only && npm audit fix && npm i && npm run dev
-RUN sudo npm i -g npm-check-updates
-RUN ncu -u -x sass,sass-loader,webpack-cli
+# RUN sudo npm i -g npm-check-updates
+# RUN ncu -u -x sass,sass-loader,webpack-cli
 RUN npm i
 RUN npm run dev
 CMD [ "./artisan.sh" ]
