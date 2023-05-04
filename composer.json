@@ -10,7 +10,6 @@
     "require": {
         "php": "^8.0.2",
         "endroid/qr-code": "^4.7",
-        "fideloper/proxy": "^4.4.2",
         "fruitcake/laravel-cors": "^3.0",
         "illuminate/support": "^9.52.7",
         "guzzlehttp/guzzle": "^7.5.0",

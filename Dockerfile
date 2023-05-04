@@ -14,7 +14,7 @@ RUN sudo rm -R /app && sudo mkdir /app && sudo chown -R bitnami:bitnami /app
 WORKDIR /app
 RUN git clone -b laravel9 https://github.com/SemioDigital/qrman .
 
-COPY ./artisan.sh ./artisan.sh
+COPY ./entrypoint.sh ./entrypoint.sh
 
 USER bitnami
 RUN sudo chown -R bitnami:bitnami ./* && sudo chmod -R 755 ./* && mkdir ./storage/app/public/qrs
@@ -30,4 +30,4 @@ RUN sudo composer self-update --2 && composer install
 # RUN sudo npm i -g npm-check-updates
 # RUN ncu -u -x sass,sass-loader,webpack-cli
 RUN npm i && npm run dev
-CMD [ "./artisan.sh" ]
+ENTRYPOINT [ "./entrypoint.sh" ]
