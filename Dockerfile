@@ -15,9 +15,9 @@ WORKDIR /app
 RUN git clone -b laravel9 https://github.com/SemioDigital/qrman .
 
 COPY ./artisan.sh ./artisan.sh
-RUN sudo chown -R bitnami:bitnami ./* && sudo chmod -R 755 ./* && mkdir ./storage/app/public/qrs
 
 USER bitnami
+RUN sudo chown -R bitnami:bitnami ./* && sudo chmod -R 755 ./* && mkdir ./storage/app/public/qrs
 
 WORKDIR /opt/bitnami/python/lib/python3.8/
 RUN python3 -m ensurepip --upgrade && python3 -m pip install pillow qrcode
@@ -26,5 +26,9 @@ WORKDIR /app
 # RUN composer update
 RUN sudo composer self-update --2 && composer install
 
-RUN sudo npm i -g npm-check-updates && ncu -u -x sass,sass-loader,webpack-cli && npm i --package-lock-only && npm audit fix && npm i && npm run dev
+# RUN sudo npm i -g npm-check-updates && ncu -u -x sass,sass-loader,webpack-cli && npm i --package-lock-only && npm audit fix && npm i && npm run dev
+RUN sudo npm i -g npm-check-updates
+RUN ncu -u -x sass,sass-loader,webpack-cli
+RUN npm i
+RUN npm run dev
 CMD [ "./artisan.sh" ]
