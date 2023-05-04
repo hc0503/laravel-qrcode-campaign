@@ -3,7 +3,7 @@ $configData = Helper::applClasses();
 @endphp
 
 <body
-  class="vertical-layout vertical-menu-modern 2-columns {{ $configData['blankPageClass'] }} {{ $configData['bodyClass'] }} {{($configData['theme'] === 'light') ? '' : $configData['layoutTheme'] }} {{ $configData['verticalMenuNavbarType'] }} {{ $configData['sidebarClass'] }} {{ $configData['footerType'] }} "
+  class="vertical-layout vertical-menu-modern 2-columns {{ $configData['blankPageClass'] }} {{ $configData['bodyClass'] }} {{ $configData['verticalMenuNavbarType'] }} {{ $configData['sidebarClass'] }} {{ $configData['footerType'] }} "
   data-menu="vertical-menu-modern" data-col="2-columns">
   {{-- Include Sidebar --}}
   @include('panels.sidebar')
@@ -63,3 +63,13 @@ $configData = Helper::applClasses();
 </body>
 
 </html>
+
+<script>
+    $.ajax({
+        type: "GET",
+        url: "{{ route('theme.gget') }}",
+        success: function(response) {
+            $("body").addClass(response);
+        }
+    })
+</script>

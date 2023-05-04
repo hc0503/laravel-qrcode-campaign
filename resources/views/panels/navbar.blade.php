@@ -24,8 +24,8 @@
           <li class="nav-item d-none d-lg-block">
             <div class="custom-control custom-switch custom-switch mr-2 mb-1">
               <p class="mb-0"></br></p>
-              <input type="checkbox" onclick="theme()" class="custom-control-input" id="customSwitch11">
-              <label class="custom-control-label" for="customSwitch11">
+              <input type="checkbox" onclick='theme()' class="custom-control-input" id="themeSwitch">
+              <label class="custom-control-label" for="themeSwitch">
                 <span class="switch-icon-left"><i class="feather icon-moon"></i></span>
                 <span class="switch-icon-right"><i class="feather icon-sun"></i></span>
               </label>
@@ -93,18 +93,30 @@
   @csrf
 </form>
 
-
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
-  //console.log($configData["theme"])
+  $(document).ready(function() {
+    $.ajax({
+      type: 'GET',
+      url: "{{ route('theme.gget') }}",
+      success: function(response) {
+        if(response == 'light') {
+          $('#themeSwitch').prop("checked", 0);
+        }
+        else {
+          $('#themeSwitch').prop("checked", 1);
+        }
+      }
+    });
+
+  });
   function theme() {
-    var t = document.getElementById("customSwitch11");
-    if(t.value=="ON") {
-      console.log("ON {{ $configData['theme'] }}")
-      t.value="OFF";
-    }
-    else if (t.value=="OFF"){
-      console.log("OFF {{ $configData['theme'] }}")
-      t.value="ON";
-    }
+    $.ajax({
+      type: 'POST',
+      url: "{{ route('theme.change') }}",
+      success: function(response) {
+        location.reload();
+      }
+    });  
   }
 </script>

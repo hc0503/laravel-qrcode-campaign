@@ -26,7 +26,7 @@ $configData = Helper::applClasses();
 @endphp
 
 <body
-    class="horizontal-layout horizontal-menu navbar-floating {{$configData['horizontalMenuType']}} {{ $configData['blankPageClass'] }} {{ $configData['bodyClass'] }} {{($configData['theme'] === 'dark') ? 'dark-layout' : 'light' }} {{ $configData['sidebarClass'] }} {{ $configData['verticalMenuNavbarType'] }} {{ $configData['footerType'] }}  footer-light"
+    class="horizontal-layout horizontal-menu navbar-floating {{$configData['horizontalMenuType']}} {{ $configData['blankPageClass'] }} {{ $configData['bodyClass'] }} {{ $configData['sidebarClass'] }} {{ $configData['verticalMenuNavbarType'] }} {{ $configData['footerType'] }}  footer-light"
     data-menu="horizontal-menu" data-col="2-columns" data-open="hover">
 
     {{-- Include Sidebar --}}
@@ -78,3 +78,13 @@ $configData = Helper::applClasses();
 </body>
 
 </html>
+
+<script>
+    $.ajax({
+        type: "GET",
+        url: "{{ route('theme.gget') }}",
+        success: function(response) {
+            $("body").addClass(response);
+        }
+    })
+</script>
