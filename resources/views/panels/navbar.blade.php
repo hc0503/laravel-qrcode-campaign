@@ -3,7 +3,7 @@
   <div class="navbar-header d-xl-block d-none">
     <ul class="nav navbar-nav flex-row">
       <li class="nav-item">
-        <a class="navbar-brand" href="dashboard-analytics">
+        <a class="navbar-brand" href="{{ route('user-dashboard') }}">
           <div class="brand-logo"></div>
         </a>
       </li>
