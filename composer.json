@@ -22,7 +22,7 @@
         "predis/predis": "^2.1"
     },
     "require-dev": {
-        "spatie/laravel-ignition": "^2.0",
+        "spatie/laravel-ignition": "^1.0",
         "beyondcode/laravel-dump-server": "^1.9.0",
         "filp/whoops": "^2.14",
         "fzaninotto/faker": "^1.9.2",
