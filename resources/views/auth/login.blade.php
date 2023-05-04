@@ -62,7 +62,9 @@
                     </div>
                     <div class="text-right"><a href="{{ route('password.request') }}" class="card-link">Forgot Password?</a></div>
                   </div>
+                  @if (env('APP_REGISTRATION', 'False') == 'True')
                   <a href="register" class="btn btn-outline-primary float-left btn-inline">Register</a>
+                  @endif
                   <button type="submit" class="btn btn-primary float-right btn-inline">Login</button>
               </form>
               </div>
