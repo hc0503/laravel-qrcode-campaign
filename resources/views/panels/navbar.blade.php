@@ -100,6 +100,9 @@
       type: 'GET',
       url: "{{ route('theme.gget') }}",
       success: function(response) {
+        @if (env('APP_DEBUG', "false") == 'true')
+            console.log("THEME: " + response);
+        @endif
         if(response == 'light') {
           $('#themeSwitch').prop("checked", 0);
         }
@@ -112,9 +115,12 @@
   });
   function theme() {
     $.ajax({
-      type: 'POST',
-      url: "{{ route('theme.change') }}",
+      type: 'GET',
+      url: "{{ route('theme.gchange') }}",
       success: function(response) {
+        @if (env('APP_DEBUG', "false") == 'true')
+            console.log("SETTED THEME: " + response);
+        @endif
         location.reload();
       }
     });  

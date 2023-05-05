@@ -22,7 +22,8 @@ class ThemeController extends Controller
         else {
             $request->session()->put('theme', 'light');
         }
-        return response($request->session()->get('theme', 'light'), 200)->header('Content-Type', 'text/plain');
+        return $request->session()->get('theme', 'light');
+        //return response($request->session()->get('theme', 'light'), 200)->header('Content-Type', 'text/plain');
     }
 
     /**
@@ -33,7 +34,8 @@ class ThemeController extends Controller
      */
     public function getTheme(Request $request)
     {
-        return response($request->session()->get('theme', 'light'), 200)->header('Content-Type', 'text/plain');
+        return $request->session()->get('theme', 'light');
+        //return response($request->session()->get('theme', 'light'), 200)->header('Content-Type', 'text/plain');
     }
 
 }
