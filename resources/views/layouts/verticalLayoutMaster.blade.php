@@ -13,7 +13,7 @@ $configData = Helper::applClasses();
         success: function(response) {
             $("body").addClass(response);
             @if (env('APP_DEBUG', "false") == 'true')
-                console.log("vL: " + response);
+                console.log("vL : " + response);
             @endif
         }
     })
