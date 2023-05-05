@@ -26,5 +26,5 @@ WORKDIR /app
 # RUN composer update
 RUN sudo composer self-update --2 && composer install
 
-RUN npm i && npm audit fix && npm run dev
+RUN npm i && npm run dev
 ENTRYPOINT [ "./entrypoint.sh" ]
