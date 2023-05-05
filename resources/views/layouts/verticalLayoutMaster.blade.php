@@ -5,6 +5,19 @@ $configData = Helper::applClasses();
 <body
   class="vertical-layout vertical-menu-modern 2-columns {{ $configData['blankPageClass'] }} {{ $configData['bodyClass'] }} {{ $configData['verticalMenuNavbarType'] }} {{ $configData['sidebarClass'] }} {{ $configData['footerType'] }} "
   data-menu="vertical-menu-modern" data-col="2-columns">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+    $.ajax({
+        type: "GET",
+        url: "{{ route('theme.gget') }}",
+        success: function(response) {
+            $("body").addClass(response);
+            @if (env('APP_DEBUG', "false") == 'true')
+                console.log("vL: " + response);
+            @endif
+        }
+    })
+  </script>
   {{-- Include Sidebar --}}
   @include('panels.sidebar')
 
@@ -63,13 +76,3 @@ $configData = Helper::applClasses();
 </body>
 
 </html>
-
-<script>
-    $.ajax({
-        type: "GET",
-        url: "{{ route('theme.gget') }}",
-        success: function(response) {
-            $("body").addClass(response);
-        }
-    })
-</script>

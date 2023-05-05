@@ -26,9 +26,21 @@ $configData = Helper::applClasses();
 @endphp
 
 <body
-    class="horizontal-layout horizontal-menu navbar-floating {{$configData['horizontalMenuType']}} {{ $configData['blankPageClass'] }} {{ $configData['bodyClass'] }} {{ $configData['sidebarClass'] }} {{ $configData['verticalMenuNavbarType'] }} {{ $configData['footerType'] }}  footer-light"
+    class="horizontal-layout horizontal-menu navbar-floating {{$configData['horizontalMenuType']}} {{ $configData['blankPageClass'] }} {{ $configData['bodyClass'] }} {{ $configData['sidebarClass'] }} {{ $configData['verticalMenuNavbarType'] }} {{ $configData['footerType'] }} footer-light"
     data-menu="horizontal-menu" data-col="2-columns" data-open="hover">
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $.ajax({
+            type: "GET",
+            url: "{{ route('theme.gget') }}",
+            success: function(response) {
+                $("body").addClass(response);
+                @if (env('APP_DEBUG', "false") == 'true')
+                    console.log("hdl: " + response);
+                @endif
+            }
+        })
+    </script>
     {{-- Include Sidebar --}}
     @include('panels.sidebar')
 
@@ -78,13 +90,3 @@ $configData = Helper::applClasses();
 </body>
 
 </html>
-
-<script>
-    $.ajax({
-        type: "GET",
-        url: "{{ route('theme.gget') }}",
-        success: function(response) {
-            $("body").addClass(response);
-        }
-    })
-</script>
