@@ -17,7 +17,7 @@ RUN git clone -b dev https://github.com/SemioDigital/qrman .
 COPY ./entrypoint.sh ./entrypoint.sh
 
 USER bitnami
-RUN mkdir ./storage/app/public/qrs && sudo chown -R bitnami:bitnami ./* && sudo chmod -R 755 ./*
+RUN sudo mkdir ./storage/app/public/qrs && sudo chown -R bitnami:bitnami ./* && sudo chmod -R 755 ./*
 
 WORKDIR /opt/bitnami/python/lib/python3.8/
 RUN python3 -m ensurepip --upgrade && python3 -m pip install pillow qrcode
