@@ -8,7 +8,7 @@
         @endif
         <p class="clearfix blue-grey lighten-2 mb-0"><span
                 class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2023<a
-                    class="text-bold-800 grey darken-2" href="/"
+                    class="text-bold-800 grey darken-2" href="https://github.com/SemioDigital/qrman"
                     target="https://github.com/SemioDigital/qrman">QRMan,</a>MIT License</span><span
                 class="float-md-right d-none d-md-block">Hand-crafted & Made with<i
                     class="feather icon-heart pink"></i></span>
