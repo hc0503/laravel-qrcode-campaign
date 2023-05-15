@@ -39,6 +39,7 @@ nano .env.laravel
 - When you run the project the first time you should set variable **FIRST_TIME** to *TRUE*. It will be then automatically set to false.
 - The variable **APP_ENV** should be set to *production* when you want to enforce HTTPS. Otherwise, leave *local* when testing without https.
 - The variable **APP_DEBUG** should be set to *FALSE* unless you are actually debugging
+- The variable **APP_REGISTRATION** can be set to to enable or disable the possibility to register new users from the login page.
 
 Then run with docker-compose:
 
