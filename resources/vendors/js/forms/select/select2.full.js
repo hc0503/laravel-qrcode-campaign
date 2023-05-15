@@ -45,7 +45,7 @@ var S2;(function () { if (!S2 || !S2.requirejs) {
 if (!S2) { S2 = {}; } else { require = S2; }
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
- * Released under MIT license, http://github.com/requirejs/almond/LICENSE
+ * Released under MIT license, https://github.com/requirejs/almond/LICENSE
  */
 //Going sloppy to avoid 'use strict' string cost, but strict practices should
 //be followed.
@@ -429,7 +429,7 @@ var requirejs, require, define;
         } else {
             //Using a non-zero value because of concern for what old browsers
             //do, and latest browsers "upgrade" to 4 if lower value is used:
-            //http://www.whatwg.org/specs/web-apps/current-work/multipage/timers.html#dom-windowtimers-settimeout:
+            //https://www.whatwg.org/specs/web-apps/current-work/multipage/timers.html#dom-windowtimers-settimeout:
             //If want a value immediately, use require('id') instead -- something
             //that works in almond on the global level, but not guaranteed and
             //unlikely to work in other AMD implementations.
@@ -713,7 +713,7 @@ S2.define('select2/utils',[
     // Adapted from the function created by @ShadowScripter
     // and adapted by @BillBarry on the Stack Exchange Code Review website.
     // The original code can be found at
-    // http://codereview.stackexchange.com/q/13338
+    // https://codereview.stackexchange.com/q/13338
     // and was designed to be used with the Sizzle selector engine.
 
     var $el = $(el);
@@ -4987,7 +4987,7 @@ S2.define('select2/defaults',[
 
   Defaults.prototype.reset = function () {
     function stripDiacritics (text) {
-      // Used 'uni range + named function' from http://jsperf.com/diacritics/18
+      // Used 'uni range + named function' from https://jsperf.com/diacritics/18
       function match(a) {
         return DIACRITICS[a] || a;
       }
@@ -6452,7 +6452,7 @@ S2.define('select2/selection/stopPropagation',[
  *
  * Copyright jQuery Foundation and other contributors
  * Released under the MIT license
- * http://jquery.org/license
+ * https://jquery.org/license
  */
 
 (function (factory) {

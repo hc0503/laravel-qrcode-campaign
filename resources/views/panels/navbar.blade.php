@@ -3,7 +3,7 @@
   <div class="navbar-header d-xl-block d-none">
     <ul class="nav navbar-nav flex-row">
       <li class="nav-item">
-        <a class="navbar-brand" href="dashboard-analytics">
+        <a class="navbar-brand" href="{{ route('user-dashboard') }}">
           <div class="brand-logo"></div>
         </a>
       </li>
@@ -21,6 +21,16 @@
           </ul>
         </div>
         <ul class="nav navbar-nav float-right">
+          <li class="nav-item d-none d-lg-block">
+            <div class="custom-control custom-switch custom-switch mr-2 mb-1">
+              <p class="mb-0"></br></p>
+              <input type="checkbox" onclick='theme()' class="custom-control-input" id="themeSwitch">
+              <label class="custom-control-label" for="themeSwitch">
+                <span class="switch-icon-left"><i class="feather icon-moon"></i></span>
+                <span class="switch-icon-right"><i class="feather icon-sun"></i></span>
+              </label>
+            </div>
+          </li>
           <li class="dropdown dropdown-language nav-item">
             <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="flag-icon flag-icon-us"></i>
@@ -82,3 +92,37 @@
 <form id="logout" action="{{ route('logout') }}" method="POST" style="display: none;">
   @csrf
 </form>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $.ajax({
+      type: 'GET',
+      url: "{{ route('theme.gget') }}",
+      success: function(response) {
+        @if (env('APP_DEBUG', "false") == 'true')
+            console.log("THEME: " + response);
+        @endif
+        if(response == 'light') {
+          $('#themeSwitch').prop("checked", 0);
+        }
+        else {
+          $('#themeSwitch').prop("checked", 1);
+        }
+      }
+    });
+
+  });
+  function theme() {
+    $.ajax({
+      type: 'GET',
+      url: "{{ route('theme.gchange') }}",
+      success: function(response) {
+        @if (env('APP_DEBUG', "false") == 'true')
+            console.log("SETTED THEME: " + response);
+        @endif
+        location.reload();
+      }
+    });  
+  }
+</script>

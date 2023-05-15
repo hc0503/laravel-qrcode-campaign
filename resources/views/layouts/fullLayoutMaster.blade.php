@@ -26,9 +26,21 @@ $configData = Helper::applClasses();
 @endphp
 
 <body
-    class="vertical-layout vertical-menu-modern 1-column {{ $configData['blankPageClass']}} {{ $configData['bodyClass']}} {{($configData['theme'] === 'light') ? '' : $configData['layoutTheme'] }} {{ $configData['footerType'] }}"
+    class="vertical-layout vertical-menu-modern 1-column {{ $configData['blankPageClass']}} {{ $configData['bodyClass']}} {{ $configData['footerType'] }}"
     data-menu="vertical-menu-modern" data-col="1-column">
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $.ajax({
+            type: "GET",
+            url: "{{ route('theme.gget') }}",
+            success: function(response) {
+                $("body").addClass(response);
+                @if (env('APP_DEBUG', "false") == 'true')
+                    console.log("flm: " + response);
+                @endif
+            }
+        })
+    </script>
     <!-- BEGIN: Header-->
     <div class="content-overlay"></div>
     <div class="header-navbar-shadow"></div>

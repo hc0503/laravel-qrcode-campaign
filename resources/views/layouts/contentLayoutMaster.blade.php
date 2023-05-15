@@ -3,7 +3,7 @@
 @endisset
 
 <!DOCTYPE html>
-<html lang="@if(session()->has('locale')){{session()->get('locale')}}@else{{"en"}}@endif"
+<html lang="@if(session()->has('locale')){{session()->get('locale')}}@else{{'en'}}@endif"
     data-textdirection="{{ env('MIX_CONTENT_DIRECTION') === 'rtl' ? 'rtl' : 'ltr' }}">
 
 <head>

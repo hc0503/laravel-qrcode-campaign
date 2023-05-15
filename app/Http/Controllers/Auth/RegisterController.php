@@ -82,9 +82,11 @@ class RegisterController extends Controller
             'bodyClass' => "bg-full-screen-image",
             'blankPage' => true
         ];
-
-        return view('/auth/register', [
-            'pageConfigs' => $pageConfigs
-        ]);
+        if (env('APP_REGISTRATION', 'False') == 'True') {
+            return view('/auth/register', [
+                'pageConfigs' => $pageConfigs
+            ]);
+        }
+        return redirect("/login");
     }
 }

@@ -3,9 +3,21 @@ $configData = Helper::applClasses();
 @endphp
 
 <body
-    class="horizontal-layout horizontal-menu {{$configData['horizontalMenuType']}} {{ $configData['blankPageClass'] }} {{ $configData['bodyClass'] }} {{($configData['theme'] === 'dark') ? 'dark-layout' : 'light' }} {{ $configData['sidebarClass'] }} {{ $configData['footerType'] }}  footer-light"
+    class="horizontal-layout horizontal-menu {{$configData['horizontalMenuType']}} {{ $configData['blankPageClass'] }} {{ $configData['bodyClass'] }} {{ $configData['sidebarClass'] }} {{ $configData['footerType'] }}  footer-light"
     data-menu="horizontal-menu" data-col="2-columns" data-open="hover">
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $.ajax({
+            type: "GET",
+            url: "{{ route('theme.gget') }}",
+            success: function(response) {
+                $("body").addClass(response);
+                @if (env('APP_DEBUG', "false") == 'true')
+                    console.log("hl: " + response);
+                @endif
+            }
+        })
+    </script>
     {{-- Include Sidebar --}}
     @include('panels.sidebar')
 

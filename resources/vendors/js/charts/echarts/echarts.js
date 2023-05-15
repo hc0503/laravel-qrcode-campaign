@@ -13,7 +13,7 @@
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -205,7 +205,7 @@ function detect(ua) {
         // IE10/11 does not support touch event, and MS Edge supports them but not by
         // default, so we dont check navigator.maxTouchPoints for them here.
         touchEventsSupported: 'ontouchstart' in window && !browser.ie && !browser.edge,
-        // <http://caniuse.com/#search=pointer%20event>.
+        // <https://caniuse.com/#search=pointer%20event>.
         pointerEventsSupported: 'onpointerdown' in window
             // Firefox supports pointer but not by default, only MS browsers are reliable on pointer
             // events currently. So we dont use that on other browsers unless tested sufficiently.
@@ -1755,7 +1755,7 @@ function clientToLocal(el, e, out, calculate) {
     // to the padding edge of the target element. The only browser using this convention
     // is IE. Webkit uses the border edge, Opera uses the content edge, and FireFox does
     // not support the properties.
-    // (see http://www.jacklmoore.com/notes/mouse-position/)
+    // (see https://www.jacklmoore.com/notes/mouse-position/)
     // In zr painter.dom, padding edge equals to border edge.
 
     if (calculate || !env$1.canvasSupported) {
@@ -2980,7 +2980,7 @@ Transformable.getLocalTransform = function (target, m) {
 
 /**
  * 缓动代码来自 https://github.com/sole/tween.js/blob/master/src/Tween.js
- * @see http://sole.github.io/tween.js/examples/03_graphs.html
+ * @see https://sole.github.io/tween.js/examples/03_graphs.html
  * @exports zrender/animation/easing
  */
 var easing = {
@@ -5213,7 +5213,7 @@ Element.prototype = {
      * 用于裁剪的路径(shape)，所有 Group 内的路径在绘制时都会被这个路径裁剪
      * 该路径会继承被裁减对象的变换
      * @type {module:zrender/graphic/Path}
-     * @see http://www.w3.org/TR/2dcontext/#clipping-region
+     * @see https://www.w3.org/TR/2dcontext/#clipping-region
      * @readOnly
      */
     clipPath: null,
@@ -6581,7 +6581,7 @@ function shapeCompareFunc(a, b) {
         if (a.z === b.z) {
             // if (a.z2 === b.z2) {
             //     // FIXME Slow has renderidx compare
-            //     // http://stackoverflow.com/questions/20883421/sorting-in-javascript-should-every-compare-function-have-a-return-0-statement
+            //     // https://stackoverflow.com/questions/20883421/sorting-in-javascript-should-every-compare-function-have-a-return-0-statement
             //     // https://github.com/v8/v8/blob/47cce544a31ed5577ffe2963f67acb4144ee0232/src/js/array.js#L1012
             //     return a.__renderidx - b.__renderidx;
             // }
@@ -10535,7 +10535,7 @@ Painter.prototype = {
  * @author pissang(https://github.com/pissang)
  */
 // TODO Additive animation
-// http://iosoteric.com/additive-animations-animatewithduration-in-ios-8/
+// https://iosoteric.com/additive-animations-animatewithduration-in-ios-8/
 // https://developer.apple.com/videos/wwdc2014/#236
 
 /**
@@ -11582,7 +11582,7 @@ var zrender = (Object.freeze || Object)({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -12141,7 +12141,7 @@ function groupData(array, getKey) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -12395,7 +12395,7 @@ function enableClassManagement(entity, options) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -12441,7 +12441,7 @@ var makeStyleMapper = function (properties) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -12501,7 +12501,7 @@ var lineStyleMixin = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -12776,7 +12776,7 @@ function cubicProjectPoint(
     x0, y0, x1, y1, x2, y2, x3, y3,
     x, y, out
 ) {
-    // http://pomax.github.io/bezierinfo/#projections
+    // https://pomax.github.io/bezierinfo/#projections
     var t;
     var interval = 0.005;
     var d = Infinity;
@@ -12975,7 +12975,7 @@ function quadraticProjectPoint(
     x0, y0, x1, y1, x2, y2,
     x, y, out
 ) {
-    // http://pomax.github.io/bezierinfo/#projections
+    // https://pomax.github.io/bezierinfo/#projections
     var t;
     var interval = 0.005;
     var d = Infinity;
@@ -13264,7 +13264,7 @@ function fromArc(
  * 可以用于 isInsidePath 判断以及获取boundingRect
  *
  * @module zrender/core/PathProxy
- * @author Yi Shen (http://www.github.com/pissang)
+ * @author Yi Shen (https://www.github.com/pissang)
  */
 
 // TODO getTotalLength, getPointAtLength
@@ -15488,7 +15488,7 @@ function createPathOptions(str, opts) {
 
 /**
  * Create a Path object from path string data
- * http://www.w3.org/TR/SVG/paths.html#PathData
+ * https://www.w3.org/TR/SVG/paths.html#PathData
  * @param  {Object} opts Other options
  */
 function createFromString(str, opts) {
@@ -16768,7 +16768,7 @@ inherits(IncrementalDisplayble, Displayable);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -18168,7 +18168,7 @@ var graphic = (Object.freeze || Object)({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -18230,7 +18230,7 @@ var textStyleMixin = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -18279,7 +18279,7 @@ var itemStyleMixin = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -18493,7 +18493,7 @@ mixin$1(Model, itemStyleMixin);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -18675,7 +18675,7 @@ function enableTopologicalTravel(entity, dependencyGetter) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -19233,7 +19233,7 @@ var number = (Object.freeze || Object)({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -19524,7 +19524,7 @@ var format = (Object.freeze || Object)({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -20025,7 +20025,7 @@ function copyLayoutParams(target, source) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -20058,7 +20058,7 @@ var boxLayoutMixin = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -20277,7 +20277,7 @@ mixin(ComponentModel, boxLayoutMixin);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -20324,7 +20324,7 @@ var globalDefault = {
         fontWeight: 'normal'
     },
 
-    // http://blogs.adobe.com/webplatform/2014/02/24/using-blend-modes-in-html-canvas/
+    // https://blogs.adobe.com/webplatform/2014/02/24/using-blend-modes-in-html-canvas/
     // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation
     // Default is source-over
     blendMode: null,
@@ -20360,7 +20360,7 @@ var globalDefault = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -20436,7 +20436,7 @@ var colorPaletteMixin = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -20608,7 +20608,7 @@ function isCategory(axisModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -20639,7 +20639,7 @@ var SERIES_LAYOUT_BY_ROW = 'row';
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -20777,7 +20777,7 @@ enableClassCheck(Source);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -21337,7 +21337,7 @@ function doGuessOrdinal(
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -22094,7 +22094,7 @@ mixin(GlobalModel, colorPaletteMixin);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -22126,7 +22126,7 @@ function ExtensionAPI(chartInstance) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -22185,7 +22185,7 @@ CoordinateSystemManager.get = function (type) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -22537,7 +22537,7 @@ function parseRawOption(rawOption, optionPreprocessorFuncs, isNew) {
 }
 
 /**
- * @see <http://www.w3.org/TR/css3-mediaqueries/#media1>
+ * @see <https://www.w3.org/TR/css3-mediaqueries/#media1>
  * Support: width, height, aspectRatio
  * Can use max or min as prefix.
  */
@@ -22643,7 +22643,7 @@ function mergeOption(oldOption, newOption) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -22942,7 +22942,7 @@ var compatStyle = function (option, isTheme) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -23052,7 +23052,7 @@ var backwardCompat = function (option, isTheme) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -23180,7 +23180,7 @@ function calculateStack(stackInfoList) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -23551,7 +23551,7 @@ function retrieveRawAttr(data, dataIndex, attr) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -23688,7 +23688,7 @@ var dataFormatMixin = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -24034,7 +24034,7 @@ taskProto.setOutputEnd = function (end) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -24629,7 +24629,7 @@ function getCurrentTask(seriesModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -24696,7 +24696,7 @@ enableClassManagement(Component$1, {registerWhenExtend: true});
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -24735,7 +24735,7 @@ var createRenderPlanner = function () {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -24997,7 +24997,7 @@ var progressMethodMap = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -25172,7 +25172,7 @@ function clear(obj, fnAttr) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -25230,7 +25230,7 @@ var seriesColor = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -25348,7 +25348,7 @@ var lang = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -25513,7 +25513,7 @@ var aria = function (dom, ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -25627,7 +25627,7 @@ var loadingDefault = function (api, opts) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -26182,7 +26182,7 @@ function mockMethods(target, Clz) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -26218,7 +26218,7 @@ var lightTheme = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -26370,7 +26370,7 @@ theme.categoryAxis.splitLine.show = false;
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -27133,7 +27133,7 @@ function parseSVG(xml, opt) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -27233,7 +27233,7 @@ var parsers = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -29590,7 +29590,7 @@ var dataTool = {};
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -29737,7 +29737,7 @@ function initIndexMap(arr, map, keyArr, keyGetterName, dataDiffer) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -29887,7 +29887,7 @@ function mayLabelDimType(dimType) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -31903,7 +31903,7 @@ listProto.CHANGABLE_METHODS = ['filterSelf', 'selectRange'];
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -32175,7 +32175,7 @@ function genName(name, map$$1, fromZero) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -32220,7 +32220,7 @@ var createDimensions = function (source, opt) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -32381,7 +32381,7 @@ function getStackedDimension(data, targetDim) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -32503,7 +32503,7 @@ function firstDataNotNull(data) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -32668,7 +32668,7 @@ enableClassManagement(Scale, {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -32812,7 +32812,7 @@ function getName(obj) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -32826,7 +32826,7 @@ function getName(obj) {
  * Linear continuous scale
  * @module echarts/coord/scale/Ordinal
  *
- * http://en.wikipedia.org/wiki/Level_of_measurement
+ * https://en.wikipedia.org/wiki/Level_of_measurement
  */
 
 // FIXME only one data
@@ -32942,7 +32942,7 @@ OrdinalScale.create = function () {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -33061,7 +33061,7 @@ function intervalScaleGetTicks(interval, extent, niceTickExtent, intervalPrecisi
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -33267,7 +33267,7 @@ IntervalScale.create = function () {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -33710,7 +33710,7 @@ function getValueAxisStart(baseAxis, valueAxis, stacked) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -33935,7 +33935,7 @@ TimeScale.create = function (model) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -34134,7 +34134,7 @@ function fixRoundingError(val, originalVal) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -34527,7 +34527,7 @@ function shouldShowAllLabels(axis) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -34623,7 +34623,7 @@ var axisModelCommonMixin = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -34993,7 +34993,7 @@ function createSymbol(symbolType, x, y, w, h, color, keepAspect) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -35103,7 +35103,7 @@ function contain$1(points, x, y) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -35279,7 +35279,7 @@ Region.prototype = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -35423,7 +35423,7 @@ var parseGeoJson$1 = function (geoJson) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -35780,7 +35780,7 @@ function makeLabelsByCustomizedCategoryInterval(axis, categoryInterval, onlyTick
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -36113,7 +36113,7 @@ function fixOnBandTicksCoords(axis, ticksCoords, tickCategoryInterval, alignWith
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -36180,7 +36180,7 @@ each$1(
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -36280,7 +36280,7 @@ SeriesModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -36322,7 +36322,7 @@ function getDefaultLabel(data, dataIndex) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -36702,7 +36702,7 @@ inherits(SymbolClz$1, Group);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -36900,7 +36900,7 @@ function makeSeriesScope(data) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -37004,7 +37004,7 @@ function getStackedOnPoint(dataCoordInfo, coordSys, data, idx) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -37203,7 +37203,7 @@ var lineAnimationDiff = function (
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -37607,7 +37607,7 @@ var Polygon$1 = Path.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -38393,7 +38393,7 @@ Chart.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -38482,7 +38482,7 @@ var visualSymbol = function (seriesType, defaultSymbolType, legendSymbol) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -38567,7 +38567,7 @@ var pointsLayout = function (seriesType) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -38674,7 +38674,7 @@ var dataSample = function (seriesType) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -38800,7 +38800,7 @@ Cartesian.prototype = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -38935,7 +38935,7 @@ inherits(Cartesian2D, Cartesian);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -39061,7 +39061,7 @@ inherits(Axis2D, Axis);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -39251,7 +39251,7 @@ axisDefault.logAxis = defaults({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -39354,7 +39354,7 @@ var axisModelCreator = function (axisName, BaseAxisModelClass, axisTypeDefaulter
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -39438,7 +39438,7 @@ axisModelCreator('y', AxisModel, getAxisType, extraOption);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -39491,7 +39491,7 @@ ComponentModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -40117,7 +40117,7 @@ CoordinateSystemManager.register('cartesian2d', Grid);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -40836,7 +40836,7 @@ function buildAxisLabel(axisBuilder, axisModel, opt) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -41177,7 +41177,7 @@ function makeKey(model) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -41294,7 +41294,7 @@ AxisView.getAxisPointerClass = function (type) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -41380,7 +41380,7 @@ function layout$1(gridModel, axisModel, opt) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -41630,7 +41630,7 @@ CartesianAxisView.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -41649,7 +41649,7 @@ CartesianAxisView.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -41696,7 +41696,7 @@ registerPreprocessor(function (option) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -41725,7 +41725,7 @@ registerProcessor(
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -41804,7 +41804,7 @@ var BaseBarSeries = SeriesModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -41856,7 +41856,7 @@ BaseBarSeries.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -41902,7 +41902,7 @@ function fixPosition(style, labelPositionOutside) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -41948,7 +41948,7 @@ var barItemStyle = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -42379,7 +42379,7 @@ function setLargeStyle(el, seriesModel, data) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -42412,7 +42412,7 @@ registerVisual({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -42461,7 +42461,7 @@ var createListSimply = function (seriesModel, opt, nameList) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -42571,7 +42571,7 @@ var selectableMixin = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -42743,7 +42743,7 @@ mixin(PieSeries, selectableMixin);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -43155,7 +43155,7 @@ var PieView = Chart.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -43211,7 +43211,7 @@ var createDataSelectAction = function (seriesType, actionInfos) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -43290,7 +43290,7 @@ var dataColor = function (seriesType) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -43551,7 +43551,7 @@ var labelLayout = function (seriesModel, r, viewWidth, viewHeight, sum) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -43714,7 +43714,7 @@ var pieLayout = function (seriesType, ecModel, api, payload) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -43758,7 +43758,7 @@ var dataFilter = function (seriesType) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -43795,7 +43795,7 @@ registerProcessor(dataFilter('pie'));
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -43888,7 +43888,7 @@ SeriesModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -44160,7 +44160,7 @@ largeSymbolProto._clearIncremental = function () {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -44255,7 +44255,7 @@ extendChartView({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -44301,7 +44301,7 @@ registerLayout(pointsLayout('scatter'));
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -44348,7 +44348,7 @@ inherits(IndicatorAxis, Axis);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -44604,7 +44604,7 @@ CoordinateSystemManager.register('radar', Radar);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -44752,7 +44752,7 @@ var RadarModel = extendComponentModel({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -44943,7 +44943,7 @@ extendComponentView({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -44962,7 +44962,7 @@ extendComponentView({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -45040,7 +45040,7 @@ var RadarSeries = SeriesModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -45265,7 +45265,7 @@ extendChartView({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -45330,7 +45330,7 @@ function getValueMissingPoint(coordSys) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -45381,7 +45381,7 @@ var backwardCompat$1 = function (option) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -45408,7 +45408,7 @@ registerPreprocessor(backwardCompat$1);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -45472,7 +45472,7 @@ var fixNanhai = function (mapType, regions) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -45512,7 +45512,7 @@ var fixTextCoord = function (mapType, region) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -45548,7 +45548,7 @@ var fixGeoCoord = function (mapType, region) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -45593,7 +45593,7 @@ var fixDiaoyuIsland = function (mapType, region) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -45678,7 +45678,7 @@ function getBoundingRect$1(regions) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -45815,7 +45815,7 @@ function buildGraphic(mapRecord, boundingRect) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -45934,7 +45934,7 @@ function retrieveMap(mapName) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -46187,7 +46187,7 @@ mixin(MapSeries, selectableMixin);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -46242,7 +46242,7 @@ registerAction(
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -46509,7 +46509,7 @@ function isAvailableBehavior(behaviorToCheck, e, settings) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -46578,7 +46578,7 @@ function updateViewOnZoom(controllerHost, zoomDelta, zoomX, zoomY) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -46614,7 +46614,7 @@ function onIrrelevantElement(e, api, targetCoordSysModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -47041,7 +47041,7 @@ MapDraw.prototype = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -47272,7 +47272,7 @@ function enterRegionHighDown(highDownRecord, toHighOrDown) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -47345,7 +47345,7 @@ function updateCenterAndZoom(
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -47410,7 +47410,7 @@ registerAction({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -47718,7 +47718,7 @@ function doConvert$1(methodName, ecModel, finder, value) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -47923,7 +47923,7 @@ function doConvert(methodName, ecModel, finder, value) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -48153,7 +48153,7 @@ registerCoordinateSystem('geo', geoCreator);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -48226,7 +48226,7 @@ var mapSymbolLayout = function (ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -48262,7 +48262,7 @@ var mapVisual = function (ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -48360,7 +48360,7 @@ var mapDataStatistic = function (ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -48392,7 +48392,7 @@ var backwardCompat$2 = function (option) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -48430,7 +48430,7 @@ createDataSelectAction('map', [{
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -48578,7 +48578,7 @@ function linkSingle(data, dataType, mainData, opt) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -49112,7 +49112,7 @@ function addChild(child, node) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -49290,7 +49290,7 @@ SeriesModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -49621,7 +49621,7 @@ function defaultSeparation(node1, node2) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -50107,7 +50107,7 @@ function getEdgeShape(seriesScope, sourceLayout, targetLayout) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -50161,7 +50161,7 @@ registerAction({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -50229,7 +50229,7 @@ function eachBefore(root, callback) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -50345,7 +50345,7 @@ function commonLayout(seriesModel, api) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -50367,7 +50367,7 @@ registerLayout(treeLayout);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -50440,7 +50440,7 @@ function wrapTreePathInfo(node, seriesModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -50592,7 +50592,7 @@ SeriesModel.extend({
         // data: {
         //      value: [],
         //      children: [],
-        //      link: 'http://xxx.xxx.xxx',
+        //      link: 'https://xxx.xxx.xxx',
         //      target: 'blank' or 'self'
         // }
     },
@@ -50808,7 +50808,7 @@ function setDefault(levels, ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -50990,7 +50990,7 @@ function packEventData(el, seriesModel, itemNode) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -51104,7 +51104,7 @@ function createWrap() {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -52028,7 +52028,7 @@ function calculateZ(depth, zInLevel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -52088,7 +52088,7 @@ registerAction(
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -52725,7 +52725,7 @@ function littleThan(close, a, b) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -52962,7 +52962,7 @@ function mapVisual$1(nodeModel, visuals, child, index, mapping, seriesModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -53555,7 +53555,7 @@ function getUpperLabelHeight(model) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -53577,7 +53577,7 @@ registerLayout(treemapLayout);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -54108,7 +54108,7 @@ enableClassCheck(Edge);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -54195,7 +54195,7 @@ var createGraphFromNodeEdge = function (nodes, edges, seriesModel, directed, bef
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -54470,7 +54470,7 @@ var GraphSeries = extendSeriesModel({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -54542,7 +54542,7 @@ var LinePath = extendShape({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -54940,7 +54940,7 @@ inherits(Line$1, Group);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -55114,7 +55114,7 @@ function lineNeedsDraw(pts) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -55158,7 +55158,7 @@ function getSymbolSize$1(node) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -55327,7 +55327,7 @@ var adjustEdge = function (graph, scale$$1) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -55704,7 +55704,7 @@ extendChartView({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -55748,7 +55748,7 @@ registerAction({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -55796,7 +55796,7 @@ registerAction(actionInfo, function (payload, ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -55849,7 +55849,7 @@ var categoryFilter = function (ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -55923,7 +55923,7 @@ var categoryVisual = function (ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -55995,7 +55995,7 @@ var edgeVisual = function (ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -56045,7 +56045,7 @@ function simpleLayoutEdge(graph) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -56103,7 +56103,7 @@ var simpleLayout = function (ecModel, api) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -56252,7 +56252,7 @@ var _layoutNodesBasedOn = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -56279,7 +56279,7 @@ var circularLayout = function (ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -56437,7 +56437,7 @@ function forceLayout$1(nodes, edges, opts) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -56581,7 +56581,7 @@ var forceLayout = function (ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -56672,7 +56672,7 @@ var createView = function (ecModel, api) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -56706,7 +56706,7 @@ registerCoordinateSystem('graphView', {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -56831,7 +56831,7 @@ var GaugeSeries = SeriesModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -56895,7 +56895,7 @@ var PointerPath = Path.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -57317,7 +57317,7 @@ var GaugeView = Chart.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -57336,7 +57336,7 @@ var GaugeView = Chart.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -57447,7 +57447,7 @@ var FunnelSeries = extendSeriesModel({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -57665,7 +57665,7 @@ var FunnelView = Chart.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -57922,7 +57922,7 @@ var funnelLayout = function (ecModel, api, payload) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -57945,7 +57945,7 @@ registerProcessor(dataFilter('funnel'));
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -58012,7 +58012,7 @@ function mergeAxisOptionFromParallel(option) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -58081,7 +58081,7 @@ inherits(ParallelAxis, Axis);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -58185,7 +58185,7 @@ function restrict$1(value, extend) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -58722,7 +58722,7 @@ function layoutAxisWithExpand(axisIndex, layoutInfo) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -58777,7 +58777,7 @@ CoordinateSystemManager.register('parallel', {create: create$2});
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -58918,7 +58918,7 @@ axisModelCreator('parallel', AxisModel$2, getAxisType$1, defaultOption$1);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -59056,7 +59056,7 @@ ComponentModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -59108,7 +59108,7 @@ registerAction('parallelAxisExpand', function (payload, ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -60105,7 +60105,7 @@ function getLineRenderer(xyIndex) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -60154,7 +60154,7 @@ function normalizeRect(rect) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -60347,7 +60347,7 @@ function getCoordSysModel(axisModel, ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -60366,7 +60366,7 @@ function getCoordSysModel(axisModel, ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -60495,7 +60495,7 @@ registerPreprocessor(parallelPreprocessor);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -60613,7 +60613,7 @@ function convertDimNameToNumber(dimName) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -60877,7 +60877,7 @@ function isEmptyValue(val, axisType) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -60942,7 +60942,7 @@ var parallelVisual = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -60963,7 +60963,7 @@ registerVisual(parallelVisual);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -61168,7 +61168,7 @@ var SankeySeries = SeriesModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -61586,7 +61586,7 @@ function createGridClipShape$2(rect, seriesModel, cb) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -61616,7 +61616,7 @@ registerAction({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -62113,7 +62113,7 @@ function computeEdgeDepths(nodes, orient) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -62167,7 +62167,7 @@ var sankeyVisual = function (ecModel, payload) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -62189,7 +62189,7 @@ registerVisual(sankeyVisual);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -62316,7 +62316,7 @@ var seriesModelMixin = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -62403,7 +62403,7 @@ mixin(BoxplotSeries, seriesModelMixin, true);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -62573,7 +62573,7 @@ function transInit(points, dim, itemLayout) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -62625,7 +62625,7 @@ var boxplotVisual = function (ecModel, api) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -62820,7 +62820,7 @@ function layoutSingleSeries(seriesModel, offset, boxWidth) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -62842,7 +62842,7 @@ registerLayout(boxplotLayout);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -62948,7 +62948,7 @@ mixin(CandlestickSeries, seriesModelMixin, true);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -63235,7 +63235,7 @@ function setLargeStyle$1(sign, el, seriesModel, data) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -63267,7 +63267,7 @@ var preprocessor = function (option) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -63353,7 +63353,7 @@ var candlestickVisual = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -63582,7 +63582,7 @@ function calculateCandleWidth(seriesModel, data) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -63605,7 +63605,7 @@ registerLayout(candlestickLayout);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -63683,7 +63683,7 @@ SeriesModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -63921,7 +63921,7 @@ inherits(EffectSymbol, Group);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -63983,7 +63983,7 @@ extendChartView({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -64005,7 +64005,7 @@ registerLayout(pointsLayout('effectScatter'));
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -64329,7 +64329,7 @@ var LinesSeries = SeriesModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -64525,7 +64525,7 @@ inherits(EffectLine, Group);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -64623,7 +64623,7 @@ inherits(Polyline$2, Group);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -64745,7 +64745,7 @@ inherits(EffectPolyline, EffectLine);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -64988,7 +64988,7 @@ largeLineProto._clearIncremental = function () {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -65083,7 +65083,7 @@ var linesLayout = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -65257,7 +65257,7 @@ extendChartView({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -65317,7 +65317,7 @@ var linesVisual = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -65339,7 +65339,7 @@ registerVisual(linesVisual);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -65400,7 +65400,7 @@ SeriesModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -65564,7 +65564,7 @@ Heatmap.prototype = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -65885,7 +65885,7 @@ extendChartView({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -65904,7 +65904,7 @@ extendChartView({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -65964,7 +65964,7 @@ var PictorialBarSeries = BaseBarSeries.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -66746,7 +66746,7 @@ function toIntTimes(times) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -66771,7 +66771,7 @@ registerVisual(visualSymbol('pictorialBar', 'roundRect'));
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -66879,7 +66879,7 @@ inherits(SingleAxis, Axis);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -67164,7 +67164,7 @@ Single.prototype = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -67226,7 +67226,7 @@ CoordinateSystemManager.register('single', {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -67304,7 +67304,7 @@ function layout$2(axisModel, opt) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -67428,7 +67428,7 @@ var SingleAxisView = AxisView.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -67530,7 +67530,7 @@ axisModelCreator('single', AxisModel$4, getAxisType$2, defaultOption$2);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -67598,7 +67598,7 @@ var findPointFromSeries = function (finder, ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -68008,7 +68008,7 @@ function illegalPoint(point) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -68120,7 +68120,7 @@ var AxisPointerModel = extendComponentModel({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -68255,7 +68255,7 @@ function unregister(key, api) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -68322,7 +68322,7 @@ var AxisPointerView = extendComponentView({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -68849,7 +68849,7 @@ enableClassExtend(BaseAxisPointer);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -69078,7 +69078,7 @@ function makeSectorShape(cx, cy, r0, r, startAngle, endAngle) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -69212,7 +69212,7 @@ AxisView.registerAxisPointerClass('CartesianAxisPointer', CartesianAxisPointer);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -69266,7 +69266,7 @@ registerAction({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -69397,7 +69397,7 @@ AxisView.registerAxisPointerClass('SingleAxisPointer', SingleAxisPointer);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -69420,7 +69420,7 @@ extendComponentView({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -69706,7 +69706,7 @@ var ThemeRiverSeries = SeriesModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -69884,7 +69884,7 @@ function createGridClipShape$3(rect, seriesModel, cb) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -70038,7 +70038,7 @@ function computeBaseline(data) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -70083,7 +70083,7 @@ var themeRiverVisual = function (ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -70106,7 +70106,7 @@ registerProcessor(dataFilter('themeRiver'));
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -70314,7 +70314,7 @@ function completeTreeValue$1(dataNode) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -70730,7 +70730,7 @@ function fillDefaultColor(node, seriesModel, color) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -70978,7 +70978,7 @@ var SunburstView = Chart.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -71067,7 +71067,7 @@ registerAction(
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -71269,7 +71269,7 @@ function sort$2(children, sortOrder) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -71292,7 +71292,7 @@ registerProcessor(curry(dataFilter, 'sunburst'));
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -71345,7 +71345,7 @@ var prepareCartesian2d = function (coordSys) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -71401,7 +71401,7 @@ var prepareGeo = function (coordSys) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -71451,7 +71451,7 @@ var prepareSingleAxis = function (coordSys) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -71518,7 +71518,7 @@ var preparePolar = function (coordSys) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -71565,7 +71565,7 @@ var prepareCalendar = function (coordSys) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -72323,7 +72323,7 @@ function hasOwn(host, prop) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -72342,7 +72342,7 @@ function hasOwn(host, prop) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -72640,7 +72640,7 @@ function calRadialBar(barSeries, api) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -72692,7 +72692,7 @@ inherits(RadiusAxis, Axis);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -72813,7 +72813,7 @@ inherits(AngleAxis, Axis);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -73070,7 +73070,7 @@ Polar.prototype = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -73144,7 +73144,7 @@ axisModelCreator('radius', PolarAxisModel, getAxisType$3, polarAxisDefaultExtend
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -73202,7 +73202,7 @@ extendComponentModel({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -73364,7 +73364,7 @@ CoordinateSystemManager.register('polar', polarCreator);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -73641,7 +73641,7 @@ AxisView.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -73660,7 +73660,7 @@ AxisView.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -73819,7 +73819,7 @@ function layoutAxis(polar, radiusAxisModel, axisAngle) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -73838,7 +73838,7 @@ function layoutAxis(polar, radiusAxisModel, axisAngle) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -73988,7 +73988,7 @@ AxisView.registerAxisPointerClass('PolarAxisPointer', PolarAxisPointer);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -74015,7 +74015,7 @@ extendComponentView({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -74182,7 +74182,7 @@ mixin(GeoModel, selectableMixin);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -74237,7 +74237,7 @@ extendComponentView({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -74292,7 +74292,7 @@ makeAction('unSelect', {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -74767,7 +74767,7 @@ CoordinateSystemManager.register('calendar', Calendar);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -74916,7 +74916,7 @@ function mergeAndNormalizeLayoutParams(target, raw) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -75407,7 +75407,7 @@ extendComponentView({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -75426,7 +75426,7 @@ extendComponentView({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -75970,7 +75970,7 @@ function setEventData(el, graphicModel, elOption) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -76000,7 +76000,7 @@ function get$1(name) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -76089,7 +76089,7 @@ var ToolboxModel = extendComponentModel({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -76168,7 +76168,7 @@ function makeBackground(rect, componentModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -76436,7 +76436,7 @@ function isUserFeatureName(featureName) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -76534,7 +76534,7 @@ register$1(
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -76720,7 +76720,7 @@ register$1('magicType', MagicType);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -77188,7 +77188,7 @@ registerAction({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -77641,7 +77641,7 @@ function getSize(xyMinMax) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -77753,7 +77753,7 @@ function giveStore(ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -77777,7 +77777,7 @@ ComponentModel.registerSubTypeDefaulter('dataZoom', function () {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -77921,7 +77921,7 @@ function createLinkedNodesFinder(forEachNode, forEachEdgeType, edgeIdGetter) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -78453,7 +78453,7 @@ function setMinMaxSpan(axisProxy) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -79021,7 +79021,7 @@ function updateRangeUse(dataZoomModel, rawOption) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -79107,7 +79107,7 @@ var DataZoomView = Component$1.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -79130,7 +79130,7 @@ DataZoomModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -79153,7 +79153,7 @@ DataZoomView.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -79243,7 +79243,7 @@ registerProcessor({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -79294,7 +79294,7 @@ registerAction('dataZoom', function (payload, ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -79318,7 +79318,7 @@ registerAction('dataZoom', function (payload, ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -79630,7 +79630,7 @@ registerPreprocessor(function (option) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -79683,7 +79683,7 @@ registerAction(
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -79702,7 +79702,7 @@ registerAction(
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -79829,7 +79829,7 @@ extendComponentModel({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -80036,7 +80036,7 @@ TooltipContent.prototype = {
 
         el.style.cssText = gCssText + assembleCssText(tooltipModel)
             // Because of the reason described in:
-            // http://stackoverflow.com/questions/21125587/css3-transition-not-working-in-chrome-anymore
+            // https://stackoverflow.com/questions/21125587/css3-transition-not-working-in-chrome-anymore
             // we should set initial value to `left` and `top`.
             + ';left:' + this._x + 'px;top:' + this._y + 'px;'
             + (tooltipModel.get('extraCssText') || '');
@@ -80135,7 +80135,7 @@ TooltipContent.prototype = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -80322,7 +80322,7 @@ TooltipRichContent.prototype = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -81144,7 +81144,7 @@ function isCenterAlign(align) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -81193,7 +81193,7 @@ registerAction(
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -81269,7 +81269,7 @@ function removeDuplicate(arr) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -81484,7 +81484,7 @@ function incrementalApplyVisual(stateList, visualMappings, getValueState, dim) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -81591,7 +81591,7 @@ function inLineRange(p, range) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -81922,7 +81922,7 @@ function getBoundingRectFromMinMax(minMax) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -82081,7 +82081,7 @@ function generateBrushOption(option, brushOption) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -82198,7 +82198,7 @@ function updateController(brushModel, ecModel, api, payload) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -82260,7 +82260,7 @@ registerAction(
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -82397,7 +82397,7 @@ register$1('brush', Brush);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -82422,7 +82422,7 @@ registerPreprocessor(preprocessor$1);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -82653,7 +82653,7 @@ extendComponentView({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -82750,7 +82750,7 @@ function has$1(obj, attr) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -82774,7 +82774,7 @@ ComponentModel.registerSubTypeDefaulter('timeline', function () {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -82829,7 +82829,7 @@ registerAction(
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -83025,7 +83025,7 @@ var TimelineModel = ComponentModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -83142,7 +83142,7 @@ mixin(SliderTimelineModel, dataFormatMixin);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -83165,7 +83165,7 @@ var TimelineView = Component$1.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -83237,7 +83237,7 @@ inherits(TimelineAxis, Axis);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -83937,7 +83937,7 @@ function pointerMoveTo(pointer, dataIndex, axis, timelineModel, noAnimation) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -83962,7 +83962,7 @@ registerPreprocessor(preprocessor$2);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -84103,7 +84103,7 @@ mixin(MarkerModel, dataFormatMixin);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -84151,7 +84151,7 @@ MarkerModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -84389,7 +84389,7 @@ function numCalculate(data, valueDataDim, type) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -84441,7 +84441,7 @@ var MarkerView = extendComponentView({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -84624,7 +84624,7 @@ function createList$1(coordSys, seriesModel, mpModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -84649,7 +84649,7 @@ registerPreprocessor(function (opt) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -84704,7 +84704,7 @@ MarkerModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -85098,7 +85098,7 @@ function createList$2(coordSys, seriesModel, mlModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -85122,7 +85122,7 @@ registerPreprocessor(function (opt) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -85174,7 +85174,7 @@ MarkerModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -85505,7 +85505,7 @@ function createList$3(coordSys, seriesModel, maModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -85529,7 +85529,7 @@ registerPreprocessor(function (opt) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -85772,7 +85772,7 @@ var LegendModel = extendComponentModel({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -85865,7 +85865,7 @@ registerAction(
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -86268,7 +86268,7 @@ function dispatchDownplayAction(seriesName, dataName, api, excludeSeriesId) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -86307,7 +86307,7 @@ var legendFilter = function (ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -86337,7 +86337,7 @@ ComponentModel.registerSubTypeDefaulter('legend', function () {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -86425,7 +86425,7 @@ function mergeAndNormalizeLayoutParams$1(legendModel, target, raw) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -86862,7 +86862,7 @@ var ScrollableLegendView = LegendView.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -86901,7 +86901,7 @@ registerAction(
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -86924,7 +86924,7 @@ registerAction(
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -87009,7 +87009,7 @@ var SliderZoomModel = DataZoomModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -87817,7 +87817,7 @@ function getCursor(orient) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -87836,7 +87836,7 @@ function getCursor(orient) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -87872,7 +87872,7 @@ DataZoomModel.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -88098,7 +88098,7 @@ function mergeControllerParams(dataZoomInfos) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -88358,7 +88358,7 @@ var getDirectionInfo = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -88377,7 +88377,7 @@ var getDirectionInfo = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -88401,7 +88401,7 @@ var getDirectionInfo = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -88460,7 +88460,7 @@ function has$2(obj, name) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -88495,7 +88495,7 @@ ComponentModel.registerSubTypeDefaulter('visualMap', function (option) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -88597,7 +88597,7 @@ function getColorVisual(seriesModel, visualMapModel, value, valueState) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -88680,7 +88680,7 @@ var defaultOption$3 = {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -89225,7 +89225,7 @@ var VisualMapModel = extendComponentModel({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -89481,7 +89481,7 @@ function getColorStopValues(visualMapModel, valueState, dataExtent) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -89645,7 +89645,7 @@ var VisualMapView = extendComponentView({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -89719,7 +89719,7 @@ function makeHighDownBatch(batch, visualMapModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -90571,7 +90571,7 @@ function getCursor$1(orient) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -90605,7 +90605,7 @@ registerAction(actionInfo$2, function (payload, ecModel) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -90630,7 +90630,7 @@ registerPreprocessor(preprocessor$3);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -91166,7 +91166,7 @@ function normalizeReverse(thisOption, pieceList) {
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -91397,7 +91397,7 @@ var PiecewiseVisualMapView = VisualMapView.extend({
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -91422,7 +91422,7 @@ registerPreprocessor(preprocessor$3);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an
@@ -91476,12 +91476,12 @@ function initVML() {
         doc.createStyleSheet().addRule('.zrvml', 'behavior:url(#default#VML)');
     }
     else {
-        // http://msdn.microsoft.com/en-us/library/ms531194%28VS.85%29.aspx
+        // https://msdn.microsoft.com/en-us/library/ms531194%28VS.85%29.aspx
         styleSheets[0].addRule('.zrvml', 'behavior:url(#default#VML)');
     }
 }
 
-// http://www.w3.org/TR/NOTE-VML
+// https://www.w3.org/TR/NOTE-VML
 // TODO Use proxy like svg instead of overwrite brush methods
 
 var CMD$3 = PathProxy.CMD;
@@ -92736,7 +92736,7 @@ each$1([
 
 registerPainter('vml', VMLPainter);
 
-var svgURI = 'http://www.w3.org/2000/svg';
+var svgURI = 'https://www.w3.org/2000/svg';
 
 function createElement(name) {
     return document.createElementNS(svgURI, name);
@@ -92791,7 +92791,7 @@ function attr(el, key, val) {
 }
 
 function attrXLink(el, key, val) {
-    el.setAttributeNS('http://www.w3.org/1999/xlink', key, val);
+    el.setAttributeNS('https://www.w3.org/1999/xlink', key, val);
 }
 
 function bindStyle(svgEl, style, isText, el) {
@@ -94352,7 +94352,7 @@ var SVGPainter = function (root, storage, opts, zrId) {
     this._opts = opts = extend({}, opts || {});
 
     var svgRoot = createElement('svg');
-    svgRoot.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    svgRoot.setAttribute('xmlns', 'https://www.w3.org/2000/svg');
     svgRoot.setAttribute('version', '1.1');
     svgRoot.setAttribute('baseProfile', 'full');
     svgRoot.style.cssText = 'user-select:none;position:absolute;left:0;top:0;';
@@ -94679,7 +94679,7 @@ registerPainter('svg', SVGPainter);
 * "License"); you may not use this file except in compliance
 * with the License.  You may obtain a copy of the License at
 *
-*   http://www.apache.org/licenses/LICENSE-2.0
+*   https://www.apache.org/licenses/LICENSE-2.0
 *
 * Unless required by applicable law or agreed to in writing,
 * software distributed under the License is distributed on an

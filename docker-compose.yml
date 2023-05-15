@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+  db:
+    image: mariadb:latest
+    container_name: sd_qrman_db
+    restart: unless-stopped
+    volumes:
+      - qrman_db:/var/lib/mysql
+    env_file:
+      - .env
+    networks:
+      - qrnet
+
+  redis:
+    image: redis:alpine
+    container_name: sd_qrman_redis
+    restart: unless-stopped
+    networks:
+      - qrnet
+
+  app:
+    image: ghcr.io/semiodigital/qrman:latest
+    container_name: sd_qrman_app
+    restart: unless-stopped
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - qrman_config:/app/config
+      - ./.env:/app/.env.sys
+      - ./.env.laravel:/app/.env
+      - qrman_storage:/app/storage
+    env_file:
+      - .env
+    networks:
+      - qrnet
+    ports:
+      - 8000:8000
+
+networks:
+    qrnet:
+        driver: bridge
+        ipam:
+            driver: default
+
+volumes:
+  qrman_config:
+  qrman_storage:
+  qrman_db:     
